@@ -36,7 +36,7 @@ if db(db.auth_user).count() <1:
 		dict(role='User', description='User')
 	])
 
-	db.auth_user.bulk_insert([
+	db.auth_user.insert([
 		dict(
 			first_name='System',
 			last_name='Admin',
@@ -52,4 +52,4 @@ if db(db.auth_user).count() <1:
 	])
 
 	auth.add_membership(user_id=1, group_id=1)
-	auth.add_membership(user_id=2, group_id=1)
+	auth.add_membership(user_id=1, gruop_id=1)
