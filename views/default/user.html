@@ -1,27 +1,37 @@
 {{extend 'mylayout.html'}}
-
-<h2>
-{{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
-</h2>
-
-<div class="container">
-    <div class="row">
-        <div id="web2py_user_form" class="col-lg-6">
-        {{
-        if request.args(0)=='login':
-            if not 'register' in auth.settings.actions_disabled:
-                form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn btn-default')
-            pass
-            if not 'request_reset_password' in auth.settings.actions_disabled:
-                form.add_button(T('Lost Password'),URL(args='request_reset_password'),_class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored')
-            pass
-        pass
-        =form
-        }}
+<link rel="stylesheet" href="{{=URL('static', 'css/custom.css')}}"/>
+<div class = "mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="login-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">
+                    {{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
+                </h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                <div class="container">
+                    <div class="row">
+                        <div id="web2py_user_form" class="col-lg-6">
+                            {{
+                                if request.args(0)=='login':
+                                    if not 'register' in auth.settings.actions_disabled:
+                                        form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn btn-default')
+                                    pass
+                                    if not 'request_reset_password' in auth.settings.actions_disabled:
+                                        form.add_button(T('Forget'),URL(args='request_reset_password'),_class='btn btn-default')
+                                    pass
+                                pass
+                                =form
+                            }}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="mdl-layout-spacer"></div>
 </div>
-
 
 {{block page_js}}
 <script>

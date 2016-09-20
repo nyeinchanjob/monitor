@@ -1,0 +1,17 @@
+{{extend 'mylayout.html'}}
+<main class="section--center mdl-grid">
+
+    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+
+          <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+              <div class="mdl-card__title">
+                  <h2 class="mdl-card__title-text">{{=response.moduleTitle}}</h2>
+                </div>
+            <div class="section__circle-container mdl-cell mdl-cell--12-col mdl-cell--8-col-phone">
+                {{=form}}
+            </div>
+          </div>
+        </div>
+    </section>
+</main>

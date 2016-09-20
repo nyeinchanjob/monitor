@@ -17,13 +17,34 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
-    response.flash = T("Hello World")
+    response.flash = T("Welcome")
     return dict(message=T('Welcome to web2py!'))
 
 
 def about():
     return dict(message="This is about")
 
+def brand():
+    # grid = SQLFORM.smartgrid(
+    #     db.brand,
+    #     paginate=10,
+    #     csv=False
+    # )
+
+    response.moduleTitle = 'Brand'
+    data = db().select(db.brand.ALL, orderby=~db.brand.id)
+    return dict(form=SQLFORM(db.brand).process(), data=data)
+
+def model():
+    db.model.brand.requires=IS_IN_DB(db, db.brand.id, '%(name)s')
+    grid = SQLFORM.smartgrid(
+        db.model,
+        paginate=10,
+        csv=False
+    )
+    # grid=SQLFORM(db.model).process()
+    response.moduleTitle = 'Model'
+    return dict(form=grid)
 
 def user():
     """
@@ -42,6 +63,8 @@ def user():
     also notice there is http://..../[app]/appadmin/manage/auth to allow administrator to manage users
     """
     return dict(form=auth())
+
+
 
 
 @cache.action()

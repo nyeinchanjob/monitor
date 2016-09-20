@@ -1,0 +1,219 @@
+(dp1
+S'output'
+p2
+S'Unable to open included view file: /home/nyeinchan/web2py/applications/monitor/views/index.html'
+p3
+sS'layer'
+p4
+S"'mylayout.html'"
+p5
+sS'code'
+p6
+S'<!DOCTYPE html>\n<html class="no-js" lang="{{=T.accepted_language or \'en\'}}">\n    <head>\n        <meta charset="utf-8">\n        <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and \',chrome=1\' or \'\'}}">\n        <meta name="viewport" content="width=device-width, initial-scale=1.0">\n\n        <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">\n        <title>{{=response.title or request.application}}</title>\n        <meta name="application-name" content="{{=request.application}}">\n        <meta name="google-site-verification" content="">\n        <meta name="mobile-web-app-capable" content="yes">\n        <link rel="icon" sizes="192x192" href="{{=URL(\'static\',\'images/android-desktop.png\')}}">\n\n        <!-- Add to homescreen for Safari on iOS -->\n        <meta name="apple-mobile-web-app-capable" content="yes">\n        <meta name="apple-mobile-web-app-status-bar-style" content="black">\n        <meta name="apple-mobile-web-app-title" content="Material Design Lite">\n        <link rel="apple-touch-icon-precomposed" href="{{=URL(\'static\',\'images/ios-desktop.png\')}}">\n<!-- include stylesheets -->\n        <link rel="stylesheet" href="{{=URL(\'static\',\'css/bootstrap.min.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\',\'css/web2py-bootstrap3.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/custom.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/mdl-style.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/myansanspro.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/material.min.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/material.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/angular-material.css\')}}"/>\n        <link rel="stylesheet" href="{{=URL(\'static\', \'css/materialicons.css\')}}"/>\n        <link rel="shortcut icon" href="{{=URL(\'static\',\'images/favicon.ico\')}}" type="image/x-icon"/>\n        <link rel="apple-touch-icon" href="{{=URL(\'static\',\'images/favicon.png\')}}"/>\n\n        <script src="{{=URL(\'static\',\'js/modernizr-2.8.3.min.js\')}}"></script>\n            {{include \'web2py_ajax.html\'}}\n    </head>\n    <body ng-app="MyApp" layout="column" ng-cloak="">\n<!-- Always shows a header, even in smaller screens. -->\n\n<!-- Masthead ===================================== -->\n        {{block header}}\n        <md-content flex layout="column" layout-fill ng-controller="AppCtrl">\n            <md-toolbar class="md-toolbar-tools shadow-z-1" layout="row" style="background-color:#F44336;">\n                <md-button class="md-icon-button" ng-show="true" aria-label="menu" ng-click="toggleLeft()">\n                  <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/menu_white_24px.svg\')}}"></md-icon>\n                </md-button>\n                <label class="md-title" layout-padding>{{=response.title or request.application}}</label>\n                <span flex>&nbsp;</span>\n                <div layout="row" layout-align="center center">\n                  <md-button class="md-icon-button" ng-show="true" aria-label="favrioute">\n                    <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                  </md-button>\n                  <md-button class="md-icon-button" ng-show="true" aria-label="edit">\n                    <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                  </md-button>\n                  <md-button class="md-icon-button" ng-show="true" aria-label="delete">\n                    <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                  </md-button>\n                </div>\n              </md-toolbar>\n        {{end}}\n        <md-content flex layout="row"  class="content-color">\n            <md-sidenav flex="20" class="md-sidenav-left md-whiteframe-z2"\n                md-component-id="left" md-is-locked-open="$mdMedia(\'gt-md\')" >\n                <md-content flex layout="column" class="content-color">\n                    <md-list>\n                        <md-list-item ng-click="show_layout=\'index\'" class="md-actions content-color">\n                            <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                            <p>Home</p>\n                        </md-list-item>\n                        <md-subheader class="md-no-sticky body-color">Set Up</md-subheader>\n                            <md-list-item ng-click="show_layout=\'brand\'" class="md-actions content-color">\n                                <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                                <p>Brand</p>\n                            </md-list-item>\n                            <md-list-item ng-click="show_layout=\'model\'" class="md-actions">\n                                <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                                <p>Model</p>\n                            </md-list-item>\n                            <md-divider></md-divider>\n                        <md-subheader class="md-no-sticky body-color">List</md-subheader>\n                            <md-list-item ng-click="show_layout=\'deals_range_list\'" class="md-actions">\n                                <md-icon md-svg-icon="{{=URL(\'static\', \'images/icons/bottle_white_24px.svg\')}}"></md-icon>\n                                <p>Deals Range</p>\n                            </md-list-item>\n                    </md-list>\n                    <spand flex>&nbsp;</spand>\n                </md-content>\n            </md-sidenav>\n        </md-content>\n        <!-- <div class="mdl-layout__drawer">\n            <span class="mdl-layout-title">Menu</span>\n            <nav class="mdl-navigation">\n                <a class="mdl-navigation__link" href="{{=URL(\'default\', \'index\')}}">Home</a>\n                <a class="mdl-navigation__link" href="{{=URL(\'default\', \'brand\')}}">Brand</a>\n                <a class="mdl-navigation__link" href="{{=URL(\'default\', \'model\')}}">Model</a>\n                <a class="mdl-navigation__link" href="{{=URL(\'default\', \'about\')}}">About</a>\n            </nav>\n        </div> -->\n        <!-- <main class="mdl-layout__content">\n            <div class="page-content"> -->\n<!-- Main ========================================= -->\n<!-- Begin page content -->\n<!-- <md-content class="container body-content body-color" md-scroll-y flex>\n        <div flex> -->\n\n                {{block center}}\n                    <!-- {{include}} -->\n                    <md-content class="container body-content body-color" md-scroll-y flex>\n                        <div flex ng-show="show_layout==\'index\'">{{include \'index.html\'}}</div>\n                        <div flex ng-show="show_layout==\'brand\'" >{{include \'brand.html\'}}</div>\n                        <div flex ng-show="show_layout==\'model\'" >{{include \'model.html\'}}</div>\n                  </md-content>\n                {{end}}\n            <!-- </div>\n        </main>\n    </div> -->\n        <!-- </div>\n        </md-content> -->\n    </md-content>\n    {{block footer}}\n<!-- this is default footer -->\n    <div id="web2py-my-toast" class="mdl-js-snackbar mdl-snackbar">\n        <div class="mdl-snackbar__text"></div>\n        <button class="mdl-snackbar__action" type="button"></button>\n    </div>\n    {{end}}\n    <!-- The javascript =============================== -->\n    <script src="{{=URL(\'static\',\'js/bootstrap.min.js\')}}"></script>\n    <script src="{{=URL(\'static\',\'js/web2py-bootstrap3.js\')}}"></script>\n\n        <script src="{{=URL(\'static\', \'js/angular.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/material.min.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/angular-material.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/angular-aria.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/angular-animate.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/angular-messages.js\')}}"></script>\n        <script src="{{=URL(\'static\', \'js/script.js\')}}"></script>\n\n    {{block page_js}}{{end page_js}}\n    <script>\n        // var MyApp = angular.module(\'MyApp\', [\'ngMaterial\', \'ngMessages\']);\n        // MyApp.controller(\'AppCtrl\', [\'$scope\', \'$mdDialog\', \'$http\', function($scope, $mdDialog, $http) {\n        //\n        // }]);\n        (function() {\n            \'use strict\';\n            var snackbarContainer = document.querySelector(\'#web2py-my-toast\');\n            var data = {message: \'{{=response.flash or \'\'}}\'};\n            var timeout_id = setTimeout(function () {\n                snackbarContainer.MaterialSnackbar.showSnackbar(data);\n            }, 1000);\n        }());\n    </script>\n\n  </body>\n</html>\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__getslice__'
+p12
+S"<method-wrapper '__getslice__' of exceptions.IOError object>"
+p13
+sS'__str__'
+p14
+S"<method-wrapper '__str__' of exceptions.IOError object>"
+p15
+sS'__reduce__'
+p16
+S'<built-in method __reduce__ of exceptions.IOError object>'
+p17
+sS'__dict__'
+p18
+S'{}'
+p19
+sS'__sizeof__'
+p20
+S'<built-in method __sizeof__ of exceptions.IOError object>'
+p21
+sS'__init__'
+p22
+S"<method-wrapper '__init__' of exceptions.IOError object>"
+p23
+sS'__setattr__'
+p24
+S"<method-wrapper '__setattr__' of exceptions.IOError object>"
+p25
+sS'__reduce_ex__'
+p26
+S'<built-in method __reduce_ex__ of exceptions.IOError object>'
+p27
+sS'__new__'
+p28
+S'<built-in method __new__ of type object>'
+p29
+sS'errno'
+p30
+S'2'
+sS'__format__'
+p31
+S'<built-in method __format__ of exceptions.IOError object>'
+p32
+sS'__class__'
+p33
+S"<type 'exceptions.IOError'>"
+p34
+sS'filename'
+p35
+S"'/home/nyeinchan/web2py/applications/monitor/views/index.html'"
+p36
+sS'__doc__'
+p37
+S"'I/O operation failed.'"
+p38
+sS'__getitem__'
+p39
+S"<method-wrapper '__getitem__' of exceptions.IOError object>"
+p40
+sS'__setstate__'
+p41
+S'<built-in method __setstate__ of exceptions.IOError object>'
+p42
+sS'__getattribute__'
+p43
+S"<method-wrapper '__getattribute__' of exceptions.IOError object>"
+p44
+sS'args'
+p45
+S"(2, 'No such file or directory')"
+p46
+sS'__subclasshook__'
+p47
+S'<built-in method __subclasshook__ of type object>'
+p48
+sS'__unicode__'
+p49
+S'<built-in method __unicode__ of exceptions.IOError object>'
+p50
+sS'strerror'
+p51
+S"'No such file or directory'"
+p52
+sS'__delattr__'
+p53
+S"<method-wrapper '__delattr__' of exceptions.IOError object>"
+p54
+sS'__repr__'
+p55
+S"<method-wrapper '__repr__' of exceptions.IOError object>"
+p56
+sS'__hash__'
+p57
+S"<method-wrapper '__hash__' of exceptions.IOError object>"
+p58
+ssS'evalue'
+p59
+S"[Errno 2] No such file or directory: '/home/nyeinchan/web2py/applications/monitor/views/index.html'"
+p60
+sS'frames'
+p61
+(lp62
+(dp63
+S'file'
+p64
+S'/home/nyeinchan/web2py/gluon/template.py'
+p65
+sS'dump'
+p66
+(dp67
+S'builtinopen'
+p68
+S'<built-in function open>'
+p69
+sS'fileobj'
+p70
+S'undefined'
+p71
+sS'filepath'
+p72
+S"'/home/nyeinchan/web2py/applications/monitor/views/index.html'"
+p73
+ssS'lnum'
+p74
+I450
+sS'lines'
+p75
+(dp76
+I448
+S'        # try to read the text.'
+p77
+sI449
+S'        try:'
+p78
+sI450
+S"            fileobj = open(filepath, 'rb')"
+p79
+sI451
+S'            text = fileobj.read()'
+p80
+sI452
+S'            fileobj.close()'
+p81
+sI453
+S'        except IOError:'
+p82
+sI454
+S"            self._raise_error('Unable to open included view file: ' + filepath)"
+p83
+sI445
+S'        # Get the path of the file on the system.'
+p84
+sI446
+S'        filepath = self.path and os.path.join(self.path, filename) or filename'
+p85
+sI447
+S''
+ssS'call'
+p86
+S"(self=<gluon.template.TemplateParser object>, filename='index.html')"
+p87
+sS'func'
+p88
+S'_get_file_text'
+p89
+sasS'pyver'
+p90
+S'Python 2.7.12: /usr/bin/python (prefix: /usr)'
+p91
+sS'etype'
+p92
+S"<type 'exceptions.IOError'>"
+p93
+sS'date'
+p94
+S'Sun Sep 18 22:42:17 2016'
+p95
+sS'locals'
+p96
+(dp97
+S'self'
+p98
+S'<gluon.template.TemplateParser object>'
+p99
+sS'filepath'
+p100
+S"'/home/nyeinchan/web2py/applications/monitor/views/index.html'"
+p101
+sS'context'
+p102
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p103
+sg35
+S"'index.html'"
+p104
+sssS'traceback'
+p105
+S'Traceback (most recent call last):\n  File "/home/nyeinchan/web2py/gluon/template.py", line 450, in _get_file_text\n    fileobj = open(filepath, \'rb\')\nIOError: [Errno 2] No such file or directory: \'/home/nyeinchan/web2py/applications/monitor/views/index.html\'\n'
+p106
+s.
