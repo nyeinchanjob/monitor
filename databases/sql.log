@@ -312,3 +312,60 @@ CREATE TABLE sim(
 ) ENGINE=InnoDB CHARACTER SET utf8;
 success!
 success!
+timestamp: 2016-09-20T10:59:07.810163
+ALTER TABLE apps ADD app_type INT  , ADD INDEX app_type__idx (app_type), ADD FOREIGN KEY (app_type) REFERENCES general_table (id) ON DELETE CASCADE;
+success!
+success!
+success!
+timestamp: 2016-09-20T15:44:27.863506
+CREATE TABLE email(
+    id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(512),
+    default_password VARCHAR(512),
+    user_type INT  , INDEX user_type__idx (user_type), FOREIGN KEY (user_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    license_type INT  , INDEX license_type__idx (license_type), FOREIGN KEY (license_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2016-09-20T15:49:24.073714
+CREATE TABLE email_account(
+    id INT AUTO_INCREMENT NOT NULL,
+    username VARCHAR(512),
+    default_password VARCHAR(512),
+    user_type INT  , INDEX user_type__idx (user_type), FOREIGN KEY (user_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    license_type INT  , INDEX license_type__idx (license_type), FOREIGN KEY (license_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    is_active CHAR(1),
+    created_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2016-09-20T16:38:58.344336
+CREATE TABLE device(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    serial_number VARCHAR(512),
+    fixed_assets_number VARCHAR(512),
+    device_type INT  , INDEX device_type__idx (device_type), FOREIGN KEY (device_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    model_id INT  , INDEX model_id__idx (model_id), FOREIGN KEY (model_id) REFERENCES model (id) ON DELETE CASCADE,
+    os_type INT  , INDEX os_type__idx (os_type), FOREIGN KEY (os_type) REFERENCES general_table (id) ON DELETE CASCADE,
+    cpu VARCHAR(512),
+    memory VARCHAR(512),
+    hard_disk VARCHAR(512),
+    Drive VARCHAR(512),
+    is_use CHAR(1),
+    is_active CHAR(1),
+    created_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
