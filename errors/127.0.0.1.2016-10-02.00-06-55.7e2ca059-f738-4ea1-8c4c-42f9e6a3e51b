@@ -1,0 +1,351 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'DAL' object has no attribute 'email'"
+p3
+sS'layer'
+p4
+S'/home/nyeinchan/web2py/applications/monitor/models/dbsetup.py'
+p5
+sS'code'
+p6
+S'from datetime import datetime\nfrom gluon.contrib.appconfig import AppConfig\nmyconf = AppConfig(reload=True)\n\n\n## brand\ndb.define_table(\'brand\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Brand"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n## model\ndb.define_table(\'model\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Model"),\n\tField(\'brand\', \'reference brand\', requires=[ IS_IN_DB(db, db.brand.id, \'%(name)s\'), IS_NOT_EMPTY() ], label="Brand"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat = \'%(name)s\')\n\ndb.model.brand.requires=IS_IN_DB(db, db.brand.id, \'%(name)s\')\n\n\n## config group\ndb.define_table(\'config_group\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()]),\n\tField(\'is_active\', \'boolean\', default=True),\n\tformat=\'%(name)s\'\n)\n\n## config\ndb.define_table(\'general_table\',\n\tField(\'code\', \'string\', requires=[IS_NOT_EMPTY()], label="Code"),\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'config_type\', \'reference config_group\', requires=[IS_IN_DB(db, db.config_group.id, \'%(name)s\'), IS_NOT_EMPTY()], label="Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\ndb.general_table.config_type.requires=IS_IN_DB(db, db.config_group.id, \'%(name)s\')\n\n## Room\ndb.define_table(\'room\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Room"),\n\tField(\'config\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type ==db(db.config_group.name==myconf.get(\'default_type.loc\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY() ], label="Location"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\nlocation_id = \'\'\n\nfor id in db(db.config_group.name==myconf.get(\'default_type.loc\')).select(db.config_group.id):\n    location_id = id\nl_code = db(db.general_table.config_type == location_id).select(db.general_table.id, db.general_table.code)\ndb.room.config.requires=IS_IN_DB(db(db.general_table.config_type == location_id), db.general_table.id, \'%(name)s\', sort=True)\n\n\n## apps\ndb.define_table(\'apps\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'app_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.app\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\napplication_id=\'\'\nfor id in db(db.config_group.name==myconf.get(\'default_type.app\')).select(db.config_group.id):\n    application_id = id\ndb.apps.app_type.requires=IS_IN_DB(db(db.general_table.config_type == application_id), db.general_table.id, \'%(name)s\', sort=True)\n\n## employee\ndb.define_table(\'employee\',\n\tField(\'code\', \'string\', requires=[IS_NOT_EMPTY()], label="Code"),\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'job_title\', \'string\', label="Job Title"),\n\tField(\'department\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.dpt\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Department"),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\')\n\ndepartment_id = \'\'\nfor id in db(db.config_group.name==myconf.get(\'default_type.dpt\')).select(db.config_group.id):\n    department_id = id\ndb.employee.department.requires=IS_IN_DB(db(db.general_table.config_type == department_id), db.general_table.id, \'%(name)s\', sort=True)\n\n##sim\ndb.define_table(\'sim\',\n\tField(\'sim_number\', \'string\', requires=[IS_NOT_EMPTY()],label="Phone Number"),\n\tField(\'brand_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.opt\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Operator"),\n\tField(\'empty_col\', \'string\', requires=[IS_NOT_EMPTY()], label="Empty", default=None, readable=True, writable=False),\n\tField(\'plan_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.pln\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Plan"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\noperator_id = \'\'\nplan_id = \'\'\nfor id in db(db.config_group.name==myconf.get(\'default_type.opt\')).select(db.config_group.id):\n\toperator_id = id\ndb.sim.brand_type.requires=IS_IN_DB(db(db.general_table.config_type == operator_id), db.general_table.id, \'%(name)s\', sort=True)\nfor id in db(db.config_group.name==myconf.get(\'default_type.pln\')).select(db.config_group.id):\n\toperator_id = id\ndb.sim.plan_type.requires=IS_IN_DB(db(db.general_table.config_type == plan_id), db.general_table.id, \'%(name)s\', sort=True)\n\n## email\ndb.define_table(\'email_account\',\n\tField(\'username\', \'string\', requires=[IS_NOT_EMPTY()], label="Email Address"),\n\tField(\'default_password\', \'string\', label="Default Password"),\n\tField(\'user_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.user\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="User Type"),\n\tField(\'empty_col\', \'string\', requires=[IS_NOT_EMPTY()], default=None, label="Empty", readable=True, writable=False),\n\tField(\'license_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.lns\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="License Type"),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\')\n\nuser_id = \'\'\nlicense_id = \'\'\nfor id in db(db.config_group.name==myconf.get(\'default_type.usr\')).select(db.config_group.id):\n    user_id = id\ndb.email_account.user_type.requires=IS_IN_DB(db(db.general_table.config_type == user_id), db.general_table.id, \'%(name)s\', sort=True)\nfor id in db(db.config_group.name==myconf.get(\'default_type.lns\')).select(db.config_group.id):\n    license_id = id\ndb.email_account.license_type.requires=IS_IN_DB(db(db.general_table.config_type == license_id), db.general_table.id, \'%(name)s\', sort=True)\n\n## email\ndb.define_table(\'device\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'device_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.dvc\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Type"),\n\tField(\'model_id\', \'reference model\', requires=[ IS_IN_DB(db, db.model.id, \'%(name)s\'), IS_NOT_EMPTY() ], label="Model"),\n\tField(\'os_type\', \'reference general_table\', requires=[\n\tIS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get(\'default_type.oss\')).select(db.config_group.id)),\n\tdb.general_table.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Operation System"),\n\tField(\'cpu\', \'string\', requires=[IS_NOT_EMPTY()], label="CPU"),\n\tField(\'ram\', \'string\', requires=[IS_NOT_EMPTY()], label="RAM"),\n\tField(\'hard_disk\', \'string\', requires=[IS_NOT_EMPTY()], label="HDD"),\n\tField(\'drive\', \'string\', label="CD/DVD"),\n\tField(\'screen_size\', \'string\', label="Display"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\')\n\n\ndevice_id = \'\'\nos_id = \'\'\ndb.device.model_id.requires=IS_IN_DB(db, db.model.id, \'%(name)s\')\nfor id in db(db.config_group.name==myconf.get(\'default_type.dvc\')).select(db.config_group.id):\n    device_id = id\ndb.device.device_type.requires=IS_IN_DB(db(db.general_table.config_type == device_id), db.general_table.id, \'%(name)s\', sort=True)\nd_code = db(db.general_table.config_type == device_id).select(db.general_table.id, db.general_table.code)\nfor id in db(db.config_group.name==myconf.get(\'default_type.oss\')).select(db.config_group.id):\n    os_id = id\ndb.device.os_type.requires=IS_IN_DB(db(db.general_table.config_type == os_id), db.general_table.id, \'%(name)s\', sort=True)\ndb.device.name.readonly = True\n\n\ndb.define_table(\'assign\',\n    Field(\'employee_id\', \'reference employee\'),\n    Field(\'assign_date\', \'datetime\'),\n\tField(\'email_id\', \'reference email_account\'),\n\tField(\'room_id\', \'reference room\'),\n    format=lambda r: "[%s] %s" % (r.assign_date.strftime("%Y-%m-%d"),\n                                   db.employee(r.employee_id).name))\n\ndb.define_table(\'assign_detail\',\n    Field(\'assign_id\', \'reference assign\'),\n    Field(\'device_id\', \'reference device\'),\n    Field(\'serial\', \'string\'),\n    Field(\'asset_number\', \'string\'))\n\ndb.assign.employee_id.requires = IS_IN_DB(db(db.employee.is_used == False and db.employee.is_active == True), db.employee.id, \'%(name)s\')\ndb.assign.email_id.requires = IS_IN_DB(db(db.email.is_used == False and db.email.is_active == True), db.email.id, \'%(name)s\')\ndb.assign.room_id.requires = IS_IN_DB(db(db.room.is_active == True), db.email.id, \'%(name)s\')\n\n\n## default user root\nif db(db.auth_user).count() <1:\n\tdb.auth_group.bulk_insert([\n\t\tdict(role=\'Admin\', description=\'System user\'),\n\t\tdict(role=\'Manager\', description=\'Manager\'),\n\t\tdict(role=\'User\', description=\'User\')\n\t])\n\n\tdb.auth_user.bulk_insert([\n\t\tdict(\n\t\t\tfirst_name=\'System\',\n\t\t\tlast_name=\'Admin\',\n\t\t\temail=\'root@coca-cola.com.mm\',\n\t\t\tpassword=db.auth_user.password.validate(\'C0ke@12345\')[0]\n\t\t),\n\t\tdict(\n\t\t\tfirst_name=\'Nyein\',\n\t\t\tlast_name=\'Chan\',\n\t\t\temail=\'nyeinchan@coca-cola.com.mm\',\n\t\t\tpassword=db.auth_user.password.validate(\'Basn4@C01\')[0]\n\t\t)\n\t])\n\n\tauth.add_membership(user_id=1, group_id=1)\n\tauth.add_membership(user_id=2, group_id=1)\n\nif db(db.config_group).count() < 1:\n\tdb.config_group.bulk_insert([\n\t\tdict(name=myconf.get(\'default_type.acs\')),\n\t\tdict(name=myconf.get(\'default_type.app\')),\n\t\tdict(name=myconf.get(\'default_type.dpt\')),\n\t\tdict(name=myconf.get(\'default_type.dvc\')),\n\t\tdict(name=myconf.get(\'default_type.eml\')),\n\t\tdict(name=myconf.get(\'default_type.loc\')),\n\t\tdict(name=myconf.get(\'default_type.lnc\')),\n\t\tdict(name=myconf.get(\'default_type.opt\')),\n\t\tdict(name=myconf.get(\'default_type.pln\')),\n\t\tdict(name=myconf.get(\'default_type.usr\'))\n\t])\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.AttributeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.AttributeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.AttributeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.AttributeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.AttributeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.AttributeError object>'
+p23
+sS'args'
+p24
+S'("\'DAL\' object has no attribute \'email\'",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.AttributeError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.AttributeError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.AttributeError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.AttributeError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.AttributeError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.AttributeError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.AttributeError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.AttributeError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.AttributeError object>'
+p47
+sS'__doc__'
+p48
+S"'Attribute not found.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.AttributeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"'DAL' object has no attribute 'email'"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S'sBc\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>email_account</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">adminLanguage</td><td style="vertical-align:top;">:</td><td><div>my-mm<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-38e9d62a-4595-4c1e-ac56-f0c71dd08b56<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_monitor</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_mrnyein</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-a807a927-0491-4101-83b3-d24858bc3773<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_mrnyein=127.0.0.1-a807a927-0491-4101-83b3-d24858bc3773; adminLanguage=my-mm; session_id_monitor=127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc; session_id_admin=127.0.0.1-38e9d62a-4595-4c1e-ac56-f0c71dd08b56</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://localhost:8000/my-mm/email_account/email_account/new/email_account?_signature=762a8a299bcba93825289b524b053283dafc2c05</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/my-mm/email_account/email_account</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div>_signature=c35f4bad408c0eed2cd4c830d8238db9ac0da0a5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>40544</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/nyeinchan/web2py/applications/monitor/&#x27;, &#x27;/home/nyeinchan/web2py/applications/admin/&#x27;, &#x27;/home/nyeinchan/web2py/applications/mrnyein/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f4bf977b830: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;HTY-L-PC09DD2CU&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/nyeinchan/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_mrnyein=127.0.0.1-a807a927-0491-4101-83b3-d24858bc3773; adminLanguage=my-mm; session_id_monitor=127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc; session_id_admin=127.0.0.1-38e9d62a-4595-4c1e-ac56-f0c71dd08b56</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>localhost:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://localhost:8000/my-mm/email_account/email_account/new/email_account?_signature=762a8a299bcba93825289b524b053283dafc2c05</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/my-mm/email_account/email_account</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div>_signature=c35f4bad408c0eed2cd4c830d8238db9ac0da0a5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>40544</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/monitor/my-mm/default/email_account/email_account?_signature=c35f4bad408c0eed2cd4c830d8238db9ac0da0a5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_original_uri</td><td style="vertical-align:top;">:</td><td><div>/my-mm/email_account/email_account?_signature=c35f4bad408c0eed2cd4c830d8238db9ac0da0a5</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f4bff1f81e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f4bf95f56d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f4bce20fcd0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7f4bff1f81e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7f4bf95f56d0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7f4bce20fcd0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py/applications/monitor/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>email_account</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/nyeinchan/web2py/applications/monitor/&#x27;, &#x27;/home/nyeinchan/web2py/applications/admin/&#x27;, &#x27;/home/nyeinchan/web2py/applications/mrnyein/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7f4bf977b830: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;HTY-L-PC09DD2CU&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8000, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/nyeinchan/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.6-stable+timestamp.2016.05.10.00.21.47</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 10, 2, 0, 6, 55, 884052)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">uri_language</td><td style="vertical-align:top;">:</td><td><div>my-mm</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/my-mm/email_account/email_account</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 10, 1, 17, 36, 55, 884067)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7f4bf81c62d0&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/nyeinchan/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x7f4bce41e5b0, file "/.../applications/monitor/models/dbsetup.py", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code="from datetime import datetime\\nfrom gluon.contrib...\\n\\t\\tdict(name=myconf.get(\'default_type.usr\'))\\n\\t])\\n", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=\'/home/nyeinchan/web2py/applications/monitor/models/dbsetup.py\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/nyeinchan/web2py/applications/monitor/models/dbsetup.py'
+p88
+sg64
+(dp89
+S'db.email'
+p90
+S'undefined'
+p91
+sS'builtinFalse'
+p92
+S'False'
+p93
+sS'db.assign'
+p94
+S'<Table assign (id, employee_id, assign_date, email_id, room_id)>'
+p95
+sS'db.assign.email_id'
+p96
+S'<pydal.objects.Field object>'
+p97
+sS'builtinTrue'
+p98
+S'True'
+p99
+sS'db'
+p100
+S'<DAL uri="mysql:******@localhost/devicemonitor">'
+p101
+sS'IS_IN_DB'
+p102
+S"<class 'gluon.validators.IS_IN_DB'>"
+p103
+sS'db.assign.email_id.requires'
+p104
+S'<gluon.validators.IS_IN_DB object>'
+p105
+ssg70
+I263
+sg71
+(dp106
+I258
+S"    Field('device_id', 'reference device'),"
+p107
+sI259
+S"    Field('serial', 'string'),"
+p108
+sI260
+S"    Field('asset_number', 'string'))"
+p109
+sI261
+S''
+sI262
+S"db.assign.employee_id.requires = IS_IN_DB(db(db.employee.is_used == False and db.employee.is_active == True), db.employee.id, '%(name)s')"
+p110
+sI263
+S"db.assign.email_id.requires = IS_IN_DB(db(db.email.is_used == False and db.email.is_active == True), db.email.id, '%(name)s')"
+p111
+sI264
+S"db.assign.room_id.requires = IS_IN_DB(db(db.room.is_active == True), db.email.id, '%(name)s')"
+p112
+sI265
+S''
+sI266
+S''
+sI267
+S'## default user root'
+p113
+ssg83
+S'()'
+p114
+sg85
+S'<module>'
+p115
+sa(dp116
+g62
+S'/home/nyeinchan/web2py/gluon/packages/dal/pydal/base.py'
+p117
+sg64
+(dp118
+S'global BasicStorage'
+p119
+S"<class 'pydal.helpers.classes.BasicStorage'>"
+p120
+sS'self'
+p121
+S'<DAL uri="mysql:******@localhost/devicemonitor">'
+p122
+sS'BasicStorage.__getattribute__'
+p123
+S"<slot wrapper '__getattribute__' of 'object' objects>"
+p124
+sS'key'
+p125
+S"'email'"
+p126
+ssg70
+I921
+sg71
+(dp127
+I916
+S'    def __getattr__(self, key):'
+p128
+sI917
+S"        if object.__getattribute__(self, '_lazy_tables') and \\"
+p129
+sI918
+S"                key in object.__getattribute__(self, '_LAZY_TABLES'):"
+p130
+sI919
+S'            tablename, fields, args = self._LAZY_TABLES.pop(key)'
+p131
+sI920
+S'            return self.lazy_define_table(tablename, *fields, **args)'
+p132
+sI921
+S'        return BasicStorage.__getattribute__(self, key)'
+p133
+sI922
+S''
+sI923
+S'    def __setattr__(self, key, value):'
+p134
+sI924
+S"        if key[:1] != '_' and key in self:"
+p135
+sI925
+S'            raise SyntaxError('
+p136
+ssg83
+S'(self=<DAL uri="mysql:******@localhost/devicemonitor">, key=\'email\')'
+p137
+sg85
+S'__getattr__'
+p138
+sasS'pyver'
+p139
+S'Python 2.7.12: /usr/bin/python (prefix: /usr)'
+p140
+sS'session'
+p141
+g57
+(S's\xed\x08\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>f5b907a4-aec1-4a39-9567-4c2efe24b7d4</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2016, 10, 2, 0, 6, 55, 884052)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>nyeinchan@coca-cola.com.mm</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Nyein</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>2L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Chan</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">1</td><td style="vertical-align:top;">:</td><td><div>Admin</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp142
+sS'etype'
+p143
+S"<type 'exceptions.AttributeError'>"
+p144
+sS'date'
+p145
+S'Sun Oct  2 00:06:56 2016'
+p146
+sS'response'
+p147
+g57
+(S's{\x17\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7f4bf95167a0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_monitor</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_stacked</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/email_account/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/nyeinchan/web2py/applications/monitor/sessions/19c/1f5/127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc&#x27;, mode &#x27;rb+&#x27; at 0x7f4bce476c00&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/nyeinchan/web2py/applications/monitor/sessions/127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>8d430815c54382ee06b3c1eddd9d13ae</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-9580b262-3717-4b53-a7f3-c3dcdeba75dc</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/email_account.html</div></td></tr></table></div>'
+tRp148
+sS'locals'
+p149
+(dp150
+S'self'
+p151
+S'<DAL uri="mysql:******@localhost/devicemonitor">'
+p152
+sS'key'
+p153
+S"'email'"
+p154
+sssS'traceback'
+p155
+S'Traceback (most recent call last):\n  File "/home/nyeinchan/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/nyeinchan/web2py/applications/monitor/models/dbsetup.py", line 263, in <module>\n    db.assign.email_id.requires = IS_IN_DB(db(db.email.is_used == False and db.email.is_active == True), db.email.id, \'%(name)s\')\n  File "/home/nyeinchan/web2py/gluon/packages/dal/pydal/base.py", line 921, in __getattr__\n    return BasicStorage.__getattribute__(self, key)\nAttributeError: \'DAL\' object has no attribute \'email\'\n'
+p156
+s.

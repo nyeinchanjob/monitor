@@ -1,38 +1,37 @@
 {{extend 'mylayout.html'}}
-<link rel="stylesheet" href="{{=URL('static', 'css/custom.css')}}"/>
-<div class = "mdl-grid">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--4-col">
-        <div class="login-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">
-                    {{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
-                </h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                <div class="container">
-                    <div class="row">
-                        <div id="web2py_user_form" class="col-lg-6">
-                            {{
-                                if request.args(0)=='login':
-                                    if not 'register' in auth.settings.actions_disabled:
-                                        form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn btn-default')
-                                    pass
-                                    if not 'request_reset_password' in auth.settings.actions_disabled:
-                                        form.add_button(T('Forget'),URL(args='request_reset_password'),_class='btn btn-default')
-                                    pass
-                                pass
-                                =form
-                            }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="mdl-layout-spacer"></div>
+<div layout="row">
+<div flex>
+    &nbsp;
 </div>
-
+<div flex-xs flex-gt-xs="25" layout="column">
+     <md-card flex layout-align="center start" >
+       <img ng-src="{{=URL('static', 'images/coca-cola_strip_phone.png')}}" class="md-card-image" alt="Washed Out">
+       <md-card-title>
+         <md-card-title-text>
+           <span class="md-headline">{{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}</span>
+         </md-card-title-text>
+       </md-card-title>
+       <md-card-content flex style="width:100%;">
+           <div flex >
+               {{
+                   if request.args(0)=='login':
+                       if not 'register' in auth.settings.actions_disabled:
+                           form.add_button(T('Sign Up'),URL(args='register', vars={'_next': request.vars._next} if request.vars._next else None),_class='btn btn-default')
+                       pass
+                       if not 'request_reset_password' in auth.settings.actions_disabled:
+                           form.add_button(T('Forget'),URL(args='request_reset_password'),_class='btn btn-default')
+                       pass
+                   pass
+                   =form
+               }}
+           </div>
+       </md-card-content>
+     </md-card>
+</div>
+<div flex>
+    &nbsp;
+</div>
+</div>
 {{block page_js}}
 <script>
     jQuery("#web2py_user_form input:visible:enabled:first").focus();

@@ -22,7 +22,6 @@ if not request.env.web2py_runtime_gae:
     db = DAL(myconf.get('db.uri'),
              pool_size = myconf.get('db.pool_size'),
              migrate_enabled = myconf.get('db.migrate'),
-             fake_migrate_all = True,
              check_reserved = ['all'])
 else:
     pass
@@ -39,8 +38,8 @@ else:
 ## none otherwise. a pattern can be 'controller/function.extension'
 ## response.generic_patterns = ['*'] if request.is_local else []
 ## choose a style for forms
-## response.formstyle = myconf.get('forms.formstyle')  # or 'bootstrap3_stacked' or 'bootstrap2' or other
-## response.form_label_separator = myconf.get('forms.separator') or ''
+response.formstyle = myconf.get('forms.formstyle')  # or 'bootstrap3_stacked' or 'bootstrap2' or other
+response.form_label_separator = myconf.get('forms.separator') or ''
 
 
 ## (optional) optimize handling of static files
@@ -58,11 +57,12 @@ else:
 ## (more options discussed in gluon/tools.py)
 #########################################################################
 
-from gluon.tools import Auth, Service, PluginManager
+from gluon.tools import Auth, Service, Crud, PluginManager
 
 # host names must be a list of allowed host names (glob syntax allowed)
-auth = Auth(db, host_names=myconf.get('host.names'))
-service = Service()
+auth = Auth(db) #, host_names=myconf.get('host.names')
+service = Service(db)
+crud = Crud(db)
 plugins = PluginManager()
 
 ## create all tables needed by auth if not custom tables
@@ -100,3 +100,6 @@ auth.settings.reset_password_requires_verification = True
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+
+if request.uri_language:
+    T.force(request.uri_language)

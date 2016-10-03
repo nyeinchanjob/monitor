@@ -1,17 +1,21 @@
 {{extend 'mylayout.html'}}
-<main class="section--center mdl-grid">
-
-    <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-        <div class="mdl-card mdl-cell mdl-cell--12-col">
-
-          <div class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
-              <div class="mdl-card__title">
-                  <h2 class="mdl-card__title-text">{{=response.moduleTitle}}</h2>
-                </div>
-            <div class="section__circle-container mdl-cell mdl-cell--12-col mdl-cell--8-col-phone">
-                {{=form}}
-            </div>
-          </div>
-        </div>
-    </section>
-</main>
+<div flex>
+<md-content flex layout-fill  layout="column" ng-cloak="" class="body-color">
+    <div flex style="margin:10px;" layout="column">
+        <md-card name="productDetail">
+          <!-- <md-toolbar class="md-warn"> -->
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title" flex>{{=response.moduleTitle}}</span>
+              </md-card-title-text>
+            </md-card-title>
+          <!-- </md-toolbar> -->
+          <!-- <md-dialog-content> -->
+            <md-card-content class="md-dialog-content" layout="column" flex>
+                <div flex>{{=form}}</div>
+            </md-card-content>
+          <!-- </md-dialog-content> -->
+        </md-card>
+    </div>
+</md-content>
+</div>

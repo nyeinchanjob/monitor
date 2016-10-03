@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-        <title>{{=response.title or request.application}}</title>
+        <title>{{=T(response.title or request.application)}}</title>
         <meta name="application-name" content="{{=request.application}}">
         <meta name="google-site-verification" content="">
         <meta name="mobile-web-app-capable" content="yes">
@@ -40,49 +40,99 @@
 <!-- Masthead ===================================== -->
         {{block header}}
         <md-content flex layout="column" layout-fill ng-controller="AppCtrl">
-            <md-toolbar class="md-toolbar-tools shadow-z-1" layout="row" style="background-color:#F44336;">
+            <md-toolbar class="md-toolbar-tools md-whiteframe-4dp " layout="row" style="background-color:#F44336;">
                 <md-button class="md-icon-button" ng-show="true" aria-label="menu" ng-click="toggleLeft()">
                   <md-icon md-svg-icon="{{=URL('static', 'images/icons/menu_white_24px.svg')}}"></md-icon>
                 </md-button>
-                <label class="md-title" layout-padding>{{=response.title or request.application}}</label>
+                <label class="md-title" layout-padding>{{=T(response.title or request.application)}}</label>
                 <span flex>&nbsp;</span>
                 <div layout="row" layout-align="center center">
-                  <md-button class="md-icon-button" ng-show="true" aria-label="favrioute">
-                    <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                  </md-button>
-                  <md-button class="md-icon-button" ng-show="true" aria-label="edit">
-                    <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                  </md-button>
-                  <md-button class="md-icon-button" ng-show="true" aria-label="delete">
-                    <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                  </md-button>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            {{=auth.navbar(mode='dropdown') or ''}}
+                        </ul>
+                        {{if response.menu:}}
+                            {{=MENU(response.menu, _class='nav navbar-nav',li_class='dropdown',ul_class='dropdown-menu')}}
+                        {{pass}}
+                    </div>
+                    {{if hasattr(T,'get_possible_languages_info'):}}
+                    <md-input-container class="" style="background-color:#F44336;" >
+                        <select name="adminlanguage" onchange="var date = new       Date();cookieDate=date.setTime(date.getTime()+(100*24*60*60*1000));document.cookie='adminLanguage='+this.options[this.selectedIndex].id+'; expires='+cookieDate+'; path=/';window.location.pathname=this.options[this.selectedIndex].value;"
+                        class="btn btn-default">
+                            {{for langinfo in sorted([(code,info[1]) for code,info in T.get_possible_languages_info().iteritems() if (code != 'default') and (code in ['my-mm', 'en-us'])   ]):}}
+                                <option {{=T.accepted_language==langinfo[0] and 'selected' or ''}} {{='id='+langinfo[0]}} {{='value='+langinfo[0]}} >{{=langinfo[1]}}</option>
+                            {{pass}}
+                        </select>
+                    </md-input-container>
+                    {{pass}}
                 </div>
               </md-toolbar>
         {{end}}
         {{block center}}
         <md-content flex layout="row"  class="content-color">
             <md-sidenav flex="20" class="md-sidenav-left md-whiteframe-z2"
-                md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+                md-component-id="left">
                 <md-content flex layout="column" class="content-color">
                     <md-list>
-                        <md-list-item ng-click="show_layout='index'" class="md-actions content-color" ng-href="{{=URL('default', 'index')}}">
+                        <md-list-item  class="md-actions content-color" ng-href="{{=URL('default', 'index')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                            <p>Home</p>
+                            <p>{{=T("Home")}}</p>
                         </md-list-item>
-                        <md-subheader class="md-no-sticky body-color">Set Up</md-subheader>
-                            <md-list-item ng-click="show_layout='brand'" class="md-actions content-color" ng-href="{{=URL('default', 'brand')}}">
+                        <md-list-item   class="md-actions content-color" ng-href="{{=URL('default', 'register')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("Register")}}</p>
+                        </md-list-item>
+                        <md-list-item  class="md-actions content-color" ng-href="{{=URL('default', 'rent')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("Rent")}}</p>
+                        </md-list-item>
+                        <md-subheader class="md-no-sticky body-color">{{=T('Set up')}}</md-subheader>
+                            <md-list-item  class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
                                 <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                                <p>Brand</p>
+                                <p>{{=T("Device")}}</p>
                             </md-list-item>
-                            <md-list-item ng-click="show_layout='model'" class="md-actions" ng-href="{{=URL('default', 'model')}}">
+                            <md-list-item  class="md-actions content-color" ng-href="{{=URL('default', 'brand')}}">
                                 <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                                <p>Model</p>
+                                <p>{{=T("Brand")}}</p>
+                            </md-list-item>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'model')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("Model")}}</p>
                             </md-list-item>
                             <md-divider></md-divider>
-                        <md-subheader class="md-no-sticky body-color">List</md-subheader>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'employee')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("Employee")}}</p>
+                            </md-list-item>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'email_account')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("E-Mail")}}</p>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'apps')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("Application")}}</p>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'sim')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("SIM")}}</p>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'room')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("Room")}}</p>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                            <md-list-item  class="md-actions" ng-href="{{=URL('default', 'general_table')}}">
+                                <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                                <p>{{=T("General")}}</p>
+                            </md-list-item>
+                            <md-divider></md-divider>
+                        <md-subheader class="md-no-sticky body-color">{{=T('Information')}}</md-subheader>
                             <md-list-item ng-click="show_layout='deals_range_list'" class="md-actions" ng-href="{{=URL('default', 'about')}}">
                                 <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                                <p>About</p>
+                                <p>{{=T("About")}}</p>
                             </md-list-item>
                     </md-list>
                     <spand flex>&nbsp;</spand>
@@ -118,6 +168,15 @@
     </md-content>
     {{block footer}}
 <!-- this is default footer -->
+    <!-- <footer class="footer" >
+      <div class="container-fluid">
+        <div class="copyright pull-left">{{=T('Copyright')}} &#169; CCPBM {{=request.now.year}}</div>
+          <div id="poweredBy" class="pull-right">
+            {{=T('Powered by')}}
+            <a href="http://www.web2py.com/">web2py</a>
+          </div>
+      </div>
+    </footer> -->
     <div id="web2py-my-toast" class="mdl-js-snackbar mdl-snackbar">
         <div class="mdl-snackbar__text"></div>
         <button class="mdl-snackbar__action" type="button"></button>
@@ -126,14 +185,17 @@
     <!-- The javascript =============================== -->
     <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
     <script src="{{=URL('static','js/web2py-bootstrap3.js')}}"></script>
+    <script src="{{=URL('static','js/jquery.js')}}"></script>
+    <script src="{{=URL('static','js/jquery-2.1.4.min.js')}}"></script>
+    <script src="{{=URL('static','js/jquery.base64.js')}}"></script>
 
-        <script src="{{=URL('static', 'js/angular.js')}}"></script>
-        <script src="{{=URL('static', 'js/material.min.js')}}"></script>
-        <script src="{{=URL('static', 'js/angular-material.js')}}"></script>
-        <script src="{{=URL('static', 'js/angular-aria.js')}}"></script>
-        <script src="{{=URL('static', 'js/angular-animate.js')}}"></script>
-        <script src="{{=URL('static', 'js/angular-messages.js')}}"></script>
-        <script src="{{=URL('static', 'js/script.js')}}"></script>
+    <script src="{{=URL('static', 'js/angular.js')}}"></script>
+    <script src="{{=URL('static', 'js/material.min.js')}}"></script>
+    <script src="{{=URL('static', 'js/angular-material.js')}}"></script>
+    <script src="{{=URL('static', 'js/angular-aria.js')}}"></script>
+    <script src="{{=URL('static', 'js/angular-animate.js')}}"></script>
+    <script src="{{=URL('static', 'js/angular-messages.js')}}"></script>
+    <script src="{{=URL('static', 'js/script.js')}}"></script>
 
     {{block page_js}}{{end page_js}}
     <script>

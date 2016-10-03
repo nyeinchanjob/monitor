@@ -1,0 +1,42 @@
+{{extend 'mylayout.html'}}
+<div flex>
+<md-content flex layout-fill  layout="column" ng-cloak="" class="body-color">
+    <div flex style="margin:10px;" layout="column">
+        <md-card name="productDetail">
+          <!-- <md-toolbar class="md-warn"> -->
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title" flex>{{=response.moduleTitle}}</span>
+              </md-card-title-text>
+            </md-card-title>
+          <!-- </md-toolbar> -->
+          <!-- <md-dialog-content> -->
+            <md-card-content class="md-dialog-content" layout="column" flex>
+                <div flex>{{=form}}</div>
+            </md-card-content>
+          <!-- </md-dialog-content> -->
+        </md-card>
+
+    </div>
+</md-content>
+</div>
+
+
+<script type="text/javascript">
+    var lcode = {{=XML(lcode)}};
+    $('#room_config').change(function() {
+        var room = $('#room_name').val();
+        var room_arr = room.length > 0 ? room.split('-') : '';
+        var selected_loc = $('#room_config').val();
+        for (var i = 0; i < lcode.length; i++) {
+            if (selected_loc == lcode[i]['id']) {
+                if (room_arr.length > 1) {
+                    $('#room_name').val(lcode[i]['code'] + '-' + room_arr[1]);
+                } else {
+                    $('#room_name').val(lcode[i]['code'] + '-' + room);
+                }
+
+            }
+        }
+    });
+</script>

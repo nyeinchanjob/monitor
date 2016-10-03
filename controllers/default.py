@@ -7,6 +7,10 @@
 ## - user is required for authentication and authorization
 ## - download is for downloading files uploaded in the db (does streaming)
 #########################################################################
+from gluon.contrib.appconfig import AppConfig
+from gluon.serializers import json
+
+myconf = AppConfig(reload=True)
 
 @auth.requires_login()
 def index():
@@ -17,6 +21,14 @@ def index():
     if you need a simple wiki simply replace the two lines below with:
     return auth.wiki()
     """
+    # current_page = request.vars.page or None
+    # print request.vars
+    # response.title += ' | ' + T('Posts')
+    # if not current_page:
+    #     redirect(URL('index'))
+    # else:
+    #     page = int(current_page)
+
     response.flash = T("Welcome")
     return dict(message=T('Welcome to web2py!'))
 
@@ -25,25 +37,142 @@ def about():
     return dict(message="This is about")
 
 def brand():
-    # grid = SQLFORM.smartgrid(
-    #     db.brand,
-    #     paginate=10,
-    #     csv=False
-    # )
-
+    grid = SQLFORM.smartgrid(
+        db.brand,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby = db.brand.name,
+        linked_tables=False
+    )
     response.moduleTitle = 'Brand'
-    data = db().select(db.brand.ALL, orderby=~db.brand.id)
-    return dict(form=SQLFORM(db.brand).process(), data=data)
+    return dict(form=grid)
+    ##data = db().select(db.brand.ALL, orderby=~db.brand.id)
+    ##return dict(form=SQLFORM(db.brand).process(), data=data)
 
 def model():
-    db.model.brand.requires=IS_IN_DB(db, db.brand.id, '%(name)s')
     grid = SQLFORM.smartgrid(
         db.model,
         paginate=10,
-        csv=False
+        csv=False,
+        details=False,
+        orderby=[db.model.brand, db.model.name],
+        linked_tables=False
     )
+
     # grid=SQLFORM(db.model).process()
     response.moduleTitle = 'Model'
+    return dict(form=grid)
+
+def general_table():
+    grid = SQLFORM.smartgrid(
+        db.general_table,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.general_table.config_type, db.general_table.name],
+        linked_tables=False
+    )
+
+    response.moduleTitle = 'Genral Set up'
+    return dict(form=grid)
+
+def sim():
+    grid = SQLFORM.smartgrid(
+        db.sim,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.sim.brand_type, db.sim.plan_type, db.sim.sim_number],
+        linked_tables=False
+    )
+    response.moduleTitle = 'SIM Card'
+    return dict(form=grid)
+
+
+def room():
+    grid = SQLFORM.smartgrid(
+        db.room,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.room.config, db.sim.name],
+        linked_tables=False
+    )
+    response.moduleTitle = 'Room'
+    return dict(form=grid, lcode=json(l_code))
+
+def apps():
+    grid = SQLFORM.smartgrid(
+        db.apps,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.apps.app_type, db.apps.name],
+        linked_tables=False
+    )
+    response.moduleTitle = 'Application'
+    return dict(form=grid)
+
+def employee():
+    grid = SQLFORM.smartgrid(
+        db.employee,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.employee.department, db.employee.name],
+        linked_tables=False
+    )
+
+    response.moduleTitle = 'Brand'
+    return dict(form=grid)
+
+def email_account():
+    grid = SQLFORM.smartgrid(
+        db.email_account,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.email_account.user_type, db.email_account.username],
+        linked_tables=False
+    )
+
+    response.moduleTitle = 'Brand'
+    return dict(form=grid)
+
+def device():
+    grid = SQLFORM.smartgrid(
+        db.device,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=[db.device.device_type, db.device.name],
+        linked_tables=False
+    )
+    response.moduleTitle = 'Device'
+    return dict(form=grid, dcode=json(d_code))
+
+def register():
+    form=SQLFORM.factory(db.client,db.address)
+    if form.process().accepted:
+        id = db.client.insert(**db.client._filter_fields(form.vars))
+        form.vars.client=id
+        id = db.address.insert(**db.address._filter_fields(form.vars))
+        response.flash='Thanks for filling the form'
+    response.moduleTitle = 'Register'
+    return dict(form=form)
+
+def rent():
+    grid = SQLFORM.smartgrid(
+        db.rent,
+        paginate=10,
+        csv=False,
+        details=False,
+        orderby=~db.rent.rent_date|db.rent.employee_id,
+        linked_tables=False
+    )
+
+    response.moduleTitle = 'Rent'
     return dict(form=grid)
 
 def user():

@@ -1,0 +1,53 @@
+{{extend 'mylayout.html'}}
+<div flex>
+<md-content flex layout-fill  layout="column" ng-cloak="" class="body-color">
+    <div flex style="margin:10px;" layout="column">
+        <md-card name="productDetail">
+          <!-- <md-toolbar class="md-warn"> -->
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title" flex>{{=response.moduleTitle}}</span>
+              </md-card-title-text>
+            </md-card-title>
+          <!-- </md-toolbar> -->
+          <!-- <md-dialog-content> -->
+            <md-card-content class="md-dialog-content" layout="column" flex>
+                <div flex>{{=form}}</div>
+            </md-card-content>
+          <!-- </md-dialog-content> -->
+        </md-card>
+
+    </div>
+</md-content>
+</div>
+
+
+<script type="text/javascript">
+    var dcode = {{=XML(dcode)}};
+    $('#device_device_type').change(function() {
+        var device = $('#device_name').val();
+        var device_arr = device.length > 0 ? device.split('-') : '';
+        var selected_loc = $('#device_device_type').val();
+        for (var i = 0; i < dcode.length; i++) {
+            if (selected_loc == dcode[i]['id']) {
+                if (device_arr.length > 1) {
+                    $('#device_name').val(device + dcode[i]['code']);
+                } else {
+                    $('#device_name').val('-' + dcode[i]['code']);
+                }
+
+            }
+        }
+    });
+
+    $('#device_model_id').change(function() {
+        var device = $('#device_name').val();
+        var device_arr = device.length > 0 ? device.split('-') : '';
+        if (device_arr.length > 1) {
+            $('#device_name').val($('#device_model_id :selected').text() + '-' + device_arr[1]);
+        } else {
+            $('#device_name').val($('#device_model_id :selected').text() + '-');
+        }
+
+    });
+</script>

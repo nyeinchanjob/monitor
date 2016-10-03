@@ -8,8 +8,8 @@
 response.logo = A(B('web',SPAN(2),'py'),XML('&trade;&nbsp;'),
                   _class="navbar-brand",_href="http://www.web2py.com/",
                   _id="web2py-logo")
-response.title = 'Fixed Asset Devices Monitoring System'##request.application.replace('_',' ').title()
-response.subtitle = ''
+response.title = 'Devices Monitoring System'##request.application.replace('_',' ').title()
+response.subtitle = 'Coca-Cola Pinya Beverages Myanmar Ltd.'
 
 ## read more at http://dev.w3.org/html5/markup/meta.name.html
 response.meta.author = myconf.get('app.author')
@@ -28,7 +28,7 @@ response.menu = [
     (T('Home'), False, URL('default', 'index'), [])
 ]
 
-DEVELOPMENT_MENU = True
+DEVELOPMENT_MENU = False
 
 #########################################################################
 ## provide shortcuts for development. remove in production
