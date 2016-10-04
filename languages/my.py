@@ -162,6 +162,7 @@
 'License for': 'lesen untuk',
 'Live Chat': 'Live Chat',
 'loading...': 'sedang memuat...',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Masuk',
 'Logged out': 'Keluar',

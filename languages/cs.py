@@ -273,6 +273,7 @@
 'loading...': 'nahrávám...',
 'locals': 'locals',
 'Locals##debug': 'Lokální proměnné',
+'Location': 'Location',
 'Log In': 'Přihlásit se',
 'Logged in': 'Přihlášení proběhlo úspěšně',
 'Logged out': 'Odhlášení proběhlo úspěšně',

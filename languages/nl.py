@@ -228,6 +228,7 @@
 'License for': 'Licentie voor',
 'Live Chat': 'Live Chat',
 'loading...': 'laden...',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Ingelogd',
 'Logged out': 'Uitgelogd',

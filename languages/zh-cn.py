@@ -156,6 +156,7 @@
 'Layouts': 'Layouts',
 'License for': '软件授权',
 'Live Chat': 'Live Chat',
+'Location': 'Location',
 'Log In': 'Log In',
 'login': '登录',
 'Login': '登录',

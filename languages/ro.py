@@ -227,6 +227,7 @@
 'License for': 'Licență pentru',
 'Live Chat': 'Chat live',
 'loading...': 'încarc...',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Logat',
 'Logged out': 'Delogat',

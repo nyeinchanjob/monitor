@@ -156,6 +156,7 @@
 'Layouts': 'Layouts',
 'License for': '軟體版權為',
 'Live Chat': 'Live Chat',
+'Location': 'Location',
 'Log In': 'Log In',
 'login': '登入',
 'Login': '登入',

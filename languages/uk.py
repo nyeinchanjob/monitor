@@ -145,6 +145,7 @@
 'Layout Plugins': 'Втулки макетів',
 'Layouts': 'Макети',
 'Live Chat': 'Чат',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Вхід здійснено',
 'Logged out': 'Вихід здійснено',

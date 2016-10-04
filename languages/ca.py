@@ -268,6 +268,7 @@
 'License for': 'Llicència per a',
 'Live Chat': 'Xat en viu',
 'loading...': 'carregant...',
+'Location': 'Location',
 'Log In': 'Log In',
 'Log Out': 'Log Out',
 'Logged in': 'Sessió iniciada',

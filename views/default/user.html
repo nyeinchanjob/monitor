@@ -1,11 +1,9 @@
 {{extend 'mylayout.html'}}
 <div layout="row">
-<div flex>
-    &nbsp;
-</div>
-<div flex-xs flex-gt-xs="25" layout="column">
+
+<div flex-xs flex-gt-xs layout="column" layout-align="center center">
      <md-card flex layout-align="center start" >
-       <img ng-src="{{=URL('static', 'images/coca-cola_strip_phone.png')}}" class="md-card-image" alt="Washed Out">
+       <!-- <img ng-src="{{=URL('static', 'images/coca-cola_strip_phone.png')}}" class="md-card-image" alt="Washed Out"> -->
        <md-card-title>
          <md-card-title-text>
            <span class="md-headline">{{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}</span>
@@ -27,9 +25,6 @@
            </div>
        </md-card-content>
      </md-card>
-</div>
-<div flex>
-    &nbsp;
 </div>
 </div>
 {{block page_js}}

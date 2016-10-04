@@ -120,6 +120,7 @@
 'Layouts': 'layouts',
 'Live chat': 'Clavardage en direct',
 'Live Chat': 'Live Chat',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Connecté',
 'login': 'connectez-vous',

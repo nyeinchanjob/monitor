@@ -1,11 +1,13 @@
 from datetime import datetime
 from gluon.contrib.appconfig import AppConfig
+import os
 myconf = AppConfig(reload=True)
 
 
 ## brand
 db.define_table('brand',
 	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Brand"),
+	Field('photo', 'upload', uploadfolder=os.path.join(request.folder,'uploads'),  label="Photo"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -272,10 +274,10 @@ db.rent.device_id.requires = IS_IN_DB(db(db.device.is_active == True),
 
 
 db.define_table('assign',
-    Field('employee_id', 'reference employee', label="Employee"),
-    Field('assign_date', 'datetime', default=request.now, label="Assign Date"),
-	Field('email_id', 'reference email_account', label="E-Mail"),
-	Field('room_id', 'reference room', label="Room"),
+    Field('employee_id', 'reference employee', label="Employee", requires=IS_NOT_EMPTY()),
+    Field('assign_date', 'datetime', default=request.now, label="Assign Date", requires=IS_NOT_EMPTY()),
+	Field('email_id', 'reference email_account', label="E-Mail", requires=IS_NOT_EMPTY()),
+	Field('room_id', 'reference room', label="Room", requires=IS_NOT_EMPTY()),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -289,27 +291,67 @@ db.define_table('assign',
                                    db.employee(r.employee_id).name))
 
 
-db.assign.employee_id.requires = [IS_IN_DB(db(db.employee.is_active == True),
-									db.employee.id, '%(name)s'),
-								  IS_NOT_EMPTY()]
-db.assign.assign_date.requires = [IS_NOT_EMPTY()]
-db.assign.email_id.requires = [IS_IN_DB(db(db.email_account.is_used == False and
+db.assign.employee_id.requires = IS_IN_DB(db(db.employee.is_active == True),
+									db.employee.id, '%(name)s')
+db.assign.assign_date.requires = IS_NOT_EMPTY()
+db.assign.email_id.requires = IS_IN_DB(db(db.email_account.is_used == False and
 									db.email_account.is_active == True),
-									db.email_account.id, '%(username)s'),
-							   IS_NOT_EMPTY()]
-db.assign.room_id.requires = [IS_IN_DB(db(db.room.is_active == True),
-									db.room.id, '%(name)s'),
-							  IS_NOT_EMPTY()]
+									db.email_account.id, '%(username)s')
+db.assign.room_id.requires = IS_IN_DB(db(db.room.is_active == True),
+									db.room.id, '%(name)s')
 
 
-db.define_table('assign_detail',
-    Field('assign_id', 'reference assign'),
-    Field('device_id', 'reference device'),
-    Field('serial', 'string'),
-    Field('asset_number', 'string'),
-    Field('device_color', 'string')
-    )
+db.define_table('assign_device',
+    Field('assign_id', 'reference assign', label='Assign ID'),
+    Field('device_id', 'reference device', label='Device', requires=IS_NOT_EMPTY()),
+    Field('serial', 'string', unique=True, requires=IS_NOT_EMPTY(), label='S/N or Unique Number'),
+    Field('asset_number', 'string', label='Assets Number'),
+    Field('device_color', 'string', label='Color'),
+	Field('is_used', 'boolean', default=True, label="Used"),
+	Field('is_damaged', 'boolean', default=False, label="Damaged"),
+	Field('is_lost', 'boolean', default=False, label="Lost")
+)
 
+db.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
+
+used_serial =[id for id in db((db.assign_device.is_used == True) |
+	(db.assign_device.is_lost==True) | (db.assign_device.is_damaged==True)).select(db.assign_device.serial)]
+db.assign_device.serial.requires=IS_NOT_IN_DB(db(db.assign_device.serial == used_serial), 'assign_device.serial')
+
+db.define_table('assign_app',
+	Field('assign_id', 'reference assign', label='Assign ID'),
+	Field('app_id', 'reference apps', label='Application Name', requires=IS_NOT_EMPTY()),
+)
+
+db.assign_app.app_id.requires = IS_IN_DB(db(db.apps.is_active == True), db.apps.id, '%(name)s')
+
+db.define_table('assign_accessories',
+	Field('assign_id', 'reference assign', label='Assign ID'),
+	Field('accessories_id', 'reference general_table', label='Accessory', requires=IS_NOT_EMPTY()),
+	Field('serial', 'string', requires=IS_NOT_EMPTY(), label='S/N or Unique Number'),
+    Field('asset_number', 'string', label='Assets Number'),
+	Field('is_used', 'boolean', default=True, label="Used"),
+	Field('is_damaged', 'boolean', default=False, label="Damaged"),
+	Field('is_lost', 'boolean', default=False, label="Lost")
+)
+
+acs_id = ''
+for id in db(db.config_group.name==myconf.get('default_type.acs')).select(db.config_group.id):
+     acs_id = id
+db.assign_accessories.accessories_id.requires=IS_IN_DB(db(db.general_table.config_type == acs_id), db.general_table.id, '%(name)s', sort=True)
+
+
+db.define_table('assign_sim',
+	Field('assign_id', 'reference assign', label='Assign ID'),
+	Field('sim_id', 'reference general_table', label='SIM', requires=IS_NOT_EMPTY()),
+	Field('is_used', 'boolean', default=True, label="Used"),
+	Field('is_locked', 'boolean', default=False, label="Locked"),
+	Field('is_lost', 'boolean', default=False, label="Lost")
+)
+
+db.assign_sim.sim_id.requires=IS_IN_DB(db(db.sim.is_active==True), db.sim.id, '%(name)s')
+used_sim =[id for id in db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True)).select(db.assign_sim.sim_id)]
+db.assign_device.device_id.requires=IS_NOT_IN_DB(db(db.assign_sim.sim_id == used_sim), 'assign_sim.sim_id')
 
 ## default user root
 if db(db.auth_user).count() <1:

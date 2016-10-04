@@ -243,6 +243,7 @@
 'License for': 'Licencia para',
 'Live Chat': 'Chat en vivo',
 'loading...': 'cargando...',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Sesión iniciada',
 'Logged out': 'Sesión finalizada',

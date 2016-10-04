@@ -119,6 +119,7 @@
 'Layout Plugins': 'نسّق الإضافات',
 'Layouts': 'لأنساق',
 'Live Chat': 'المحادثة الحيّة',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'تم تسجيل الدخول',
 'Logged out': 'تم تسجيل الخروج',

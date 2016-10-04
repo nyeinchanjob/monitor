@@ -112,6 +112,7 @@
 'Layout Plugins': 'Layout Plugins',
 'Layouts': 'Layouts',
 'Live Chat': 'Live Chat',
+'Location': 'Location',
 'Log In': 'Log In',
 'login': 'belép',
 'logout': 'kilép',

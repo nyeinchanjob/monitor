@@ -115,6 +115,7 @@
 'Layouts': 'Layouts',
 'Live chat': 'Chat ao vivo',
 'Live Chat': 'Chat ao vivo',
+'Location': 'Location',
 'Log In': 'Log In',
 'login': 'Entrar',
 'Login': 'Autentique-se',

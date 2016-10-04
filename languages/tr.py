@@ -129,6 +129,7 @@
 'Layout Plugins': 'Şablon Eklentileri',
 'Layouts': 'Şablonlar',
 'Live Chat': 'Canlı Sohbet',
+'Location': 'Location',
 'Log In': 'Log In',
 'Logged in': 'Giriş yapıldı',
 'Logged out': 'Çıkış yapıldı',
