@@ -176,6 +176,7 @@
 'English': 'အင်္ဂလိပ်',
 'Enter a valid email address': 'Enter a valid email address',
 'Enter a value': 'Enter a value',
+'Enter an integer between %(min)g and %(max)g': 'Enter an integer between %(min)g and %(max)g',
 'enter an integer between %(min)g and %(max)g': 'enter an integer between %(min)g and %(max)g',
 'Errors': 'အမှားများ',
 'Errors in form, please check it out.': 'Errors in form, please check it out.',

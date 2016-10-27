@@ -57,13 +57,14 @@ response.form_label_separator = myconf.get('forms.separator') or ''
 ## (more options discussed in gluon/tools.py)
 #########################################################################
 
-from gluon.tools import Auth, Service, Crud, PluginManager
+from gluon.tools import Auth, Service, Crud, PluginManager, Mail
 
 # host names must be a list of allowed host names (glob syntax allowed)
 auth = Auth(db) #, host_names=myconf.get('host.names')
 service = Service(db)
 crud = Crud(db)
 plugins = PluginManager()
+mail = Mail()
 
 ## create all tables needed by auth if not custom tables
 auth.define_tables(username=False, signature=False)

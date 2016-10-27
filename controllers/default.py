@@ -205,38 +205,35 @@ def assign():
 	return dict(form=form)
 
 def assigndetail():
-	assign_id=request.vars.assign_id
-	if type(assign_id) == list:
-		assign_id=assign_id[-1]
-	db.assign_device.assign_id.default = assign_id
-	db.assign_app.assign_id.default = assign_id
-	db.assign_accessories.assign_id.default = assign_id
-	db.assign_sim.assign_id.default = assign_id
-	form_device = SQLFORM(db.assign_device)
-	form_app = SQLFORM(db.assign_app)
-	form_accessories = SQLFORM(db.assign_accessories)
-	form_sim = SQLFORM(db.assign_sim)
-	form_device.add_button('Back', URL('default', 'assign'))
-	form_device.add_button('Back', URL('default', 'assign'))
-	form_app.add_button('Back', URL('default', 'assign'))
-    form_accessories.add_button('Back', URL('default', 'assign'))
-    form_sim.add_button('Back', URL('default', 'assign'))
-
-	if form_device.process().accepted:
-		redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
-	if form_app.process().accepted:
-		redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
-	if form_accessories.process().accepted:
-		redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
-	if form_sim.process().accepted:
+    db.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active=='T'), db.device.id, '%(name)s')
+    assign_id=request.vars.assign_id
+    if type(assign_id) == list:
+        assign_id=assign_id[-1]
+    db.assign_device.assign_id.default = assign_id
+    db.assign_app.assign_id.default = assign_id
+    db.assign_accessories.assign_id.default = assign_id
+    db.assign_sim.assign_id.default = assign_id
+    form_device = SQLFORM(db.assign_device)
+    form_app = SQLFORM(db.assign_app)
+    form_accessories = SQLFORM(db.assign_accessories)
+    form_device.add_button('Back', URL('default', 'assign'))
+    form_device.add_button('Back', URL('default', 'assign'))
+    form_app.add_button('Back', URL('default', 'assign'))
+    if form_device.process().accepted:
+        redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
+    if form_app.process().accepted:
+        redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
+    if form_accessories.process().accepted:
         redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
 
-	response.moduleTitle = 'Assign Detail'
-	return dict(form_device=form_device, form_app=form_app, form_accessories=form_accessories, form_sim=form_sim, assign_id=assign_id)
+    response.moduleTitle = 'Assign Detail'
+    return dict(form_device=form_device, form_app=form_app, form_accessories=form_accessories, assign_id=assign_id)
 
 def assigndetaillist():
+    #db.assign_device.device_id.requires = IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
 	assign_id = request.vars.assign_id
 	device_where = (db.assign_device.assign_id == assign_id)
+
 	device_grid = SQLFORM.grid(device_where, fields=[db.assign_device.id,
             db.assign_device.device_id, db.assign_device.serial,
             db.assign_device.is_used, db.assign_device.is_damaged,
@@ -271,21 +268,6 @@ def assignaccessorieslist():
 	accessories_grid = SQLFORM.grid(accessories_where, fields=[db.assign_accessories.id, db.assign_accessories.accessories_id,
         db.assign_accessories.serial, db.assign_accessories.is_used,
         db.assign_accessories.is_damaged, db.assign_accessories.is_lost],
-		create=False,
-		searchable=False,
-		editable=False,
-		details=False,
-		csv=False,
-		paginate=5,
-		orderby=~db.assign_accessories.accessories_id
-		)
-	return dict(accessories_grid=accessories_grid)
-
-def assignsimlist():
-	assign_id = request.vars.assign_id
-	sim_where = (db.assign_sim.assign_id == assign_id)
-	sim_grid = SQLFORM.grid(sim_where, fields=[db.assign_sim.id, db.assign_sim.sim_id, db.assign_sim.is_used,
-    db.assign_sim.is_damaged, db.assign_sim.is_lost],
 		create=False,
 		searchable=False,
 		editable=False,
