@@ -1,0 +1,58 @@
+(dp1
+S'app_assign_id'
+p2
+(dp3
+S'length'
+p4
+I512
+sS'unique'
+p5
+I00
+sS'sortable'
+p6
+I2
+sS'sql'
+p7
+S'INT  , INDEX app_assign_id__idx (app_assign_id), FOREIGN KEY (app_assign_id) REFERENCES app_assign (id) ON DELETE CASCADE'
+p8
+sS'notnull'
+p9
+I00
+sS'type'
+p10
+S'reference app_assign'
+p11
+ssS'id'
+p12
+(dp13
+g4
+I512
+sg5
+I00
+sg6
+I1
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p14
+sg9
+I00
+sg10
+g12
+ssS'apps_id'
+p15
+(dp16
+g4
+I512
+sg5
+I00
+sg6
+I3
+sg7
+S'INT  , INDEX apps_id__idx (apps_id), FOREIGN KEY (apps_id) REFERENCES apps (id) ON DELETE CASCADE'
+p17
+sg9
+I00
+sg10
+S'reference apps'
+p18
+ss.

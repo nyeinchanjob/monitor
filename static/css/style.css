@@ -15,6 +15,10 @@ body {
   background-color: #E9EAED;
 }
 
+.dark-body-color {
+    background-color: #424242;
+}
+
 .full-heigh {
   height: 100%;
 }

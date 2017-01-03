@@ -48,11 +48,11 @@ I00
 sg6
 I3
 sg7
-S'INT  , INDEX app_id__idx (app_id), FOREIGN KEY (app_id) REFERENCES apps (id) ON DELETE CASCADE'
+S'VARCHAR(512)'
 p17
 sg9
 I00
 sg10
-S'reference apps'
+S'string'
 p18
 ss.

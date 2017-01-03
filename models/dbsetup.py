@@ -1,13 +1,13 @@
 from datetime import datetime
 from gluon.contrib.appconfig import AppConfig
 import os
-myconf = AppConfig(reload=True)
+
+# myconf = AppConfig(reload=True)
 
 
-## brand
-db.define_table('brand',
+# device_brand
+db.define_table('device_brand',
 	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Brand"),
-	Field('photo', 'upload', uploadfolder=os.path.join(request.folder,'uploads'),  label="Photo"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -19,10 +19,11 @@ db.define_table('brand',
 			readable=True, writable=False),
 	format='%(name)s'
 )
-## model
-db.define_table('model',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Model"),
-	Field('brand', 'reference brand', requires=[ IS_IN_DB(db, db.brand.id, '%(name)s'), IS_NOT_EMPTY() ], label="Brand"),
+# device_model
+db.define_table('device_model',
+	Field('name', 'string',requires=[IS_NOT_EMPTY()], label="Model"),
+	Field('brand_id', 'reference device_brand',
+		requires=[IS_NOT_EMPTY()], label="Brand"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -34,41 +35,13 @@ db.define_table('model',
 			readable=True, writable=False),
 	format = '%(name)s')
 
-db.model.brand.requires=IS_IN_DB(db, db.brand.id, '%(name)s')
+db.device_model.brand_id.requires=IS_IN_DB(db(db.device_brand.is_active == True), db.device_brand.id, '%(name)s')
 
 
-## config group
-db.define_table('config_group',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()]),
-	Field('is_active', 'boolean', default=True),
-	format='%(name)s'
-)
-
-## config
-db.define_table('general_table',
-	Field('code', 'string', requires=[IS_NOT_EMPTY()], label="Code"),
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
-	Field('config_type', 'reference config_group', requires=[IS_IN_DB(db, db.config_group.id, '%(name)s'), IS_NOT_EMPTY()], label="Type"),
-	Field('is_active', 'boolean', default=True, label="Active"),
-	Field('created_on', 'datetime', default=request.now,
-			readable=True, writable=False),
-	Field('created_by', 'reference auth_user', default=auth.user_id,
-			readable=True, writable=False),
-	Field('modified_on', 'datetime', update=request.now,
-			readable=True, writable=False),
-	Field('modified_by', 'reference auth_user', update=auth.user_id,
-			readable=True, writable=False),
-	format='%(name)s'
-)
-db.general_table.config_type.requires=IS_IN_DB(db, db.config_group.id, '%(name)s')
-
-## Room
-db.define_table('room',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Room"),
-	Field('config', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type ==db(db.config_group.name==myconf.get('default_type.loc')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
-	IS_NOT_EMPTY() ], label="Location"),
+# device_type
+db.define_table('device_type',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Device Type"),
+	Field('device_code', 'string', requires=[IS_NOT_EMPTY()], label="Prefix Code"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -81,21 +54,40 @@ db.define_table('room',
 	format='%(name)s'
 )
 
-location_id = ''
+# device_type
+db.define_table('os_type',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="OS Name"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
 
-for id in db(db.config_group.name==myconf.get('default_type.loc')).select(db.config_group.id):
-    location_id = id
-l_code = db(db.general_table.config_type == location_id).select(db.general_table.id, db.general_table.code)
-db.room.config.requires=IS_IN_DB(db(db.general_table.config_type == location_id), db.general_table.id, '%(name)s', sort=True)
+# apps_type
+db.define_table('apps_type',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="App Type"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
 
 
-## apps
+# apps
 db.define_table('apps',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
-	Field('app_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.app')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Type"),
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="App Name"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -108,20 +100,10 @@ db.define_table('apps',
 	format='%(name)s'
 )
 
-application_id=''
-for id in db(db.config_group.name==myconf.get('default_type.app')).select(db.config_group.id):
-    application_id = id
-db.apps.app_type.requires=IS_IN_DB(db(db.general_table.config_type == application_id), db.general_table.id, '%(name)s', sort=True)
 
-## employee
-db.define_table('employee',
-	Field('code', 'string', requires=[IS_NOT_EMPTY()], label="Code"),
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
-	Field('job_title', 'string', label="Job Title"),
-	Field('department', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.dpt')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Department"),
+# app_assign
+db.define_table('app_assign',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="App Name"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -131,24 +113,123 @@ db.define_table('employee',
 			readable=True, writable=False),
 	Field('modified_by', 'reference auth_user', update=auth.user_id,
 			readable=True, writable=False),
-	format='%(name)s')
+	Field('app_type_id', 'reference apps_type', label="Type"), # , requires=[IS_NOT_EMPTY()]
+	format='%(name)s'
+)
 
-department_id = ''
-for id in db(db.config_group.name==myconf.get('default_type.dpt')).select(db.config_group.id):
-    department_id = id
-db.employee.department.requires=IS_IN_DB(db(db.general_table.config_type == department_id), db.general_table.id, '%(name)s', sort=True)
+db.app_assign.app_type_id.requires=IS_IN_DB(db(db.apps_type.is_active == True), db.apps_type.id, '%(name)s')
+
+#app_assign_detail
+db.define_table('app_assign_detail',
+	Field('app_assign_id', 'reference app_assign', requires=[IS_NOT_EMPTY()], label="Assign ID"),
+	Field('apps_id', 'reference apps', requires=[IS_NOT_EMPTY()], label="Application Name")
+)
+
+db.app_assign_detail.apps_id.requires=IS_IN_DB(db(db.apps.is_active == True), db.apps.id, '%(name)s')
+# email_type
+db.define_table('email_type',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Email Type"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
+
+# license_type
+db.define_table('license_type',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="License Type"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
+
+
+# department
+db.define_table('department',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Department Name"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
+
+
+# location
+db.define_table('location_plant',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Location/Plant"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
+
+
+# sim_brand
+db.define_table('sim_brand',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="SIM Brand"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
+
+
+# sim_plan
+db.define_table('sim_plan',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="SIM Plan"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s'
+)
 
 ##sim
 db.define_table('sim',
 	Field('sim_number', 'string', requires=[IS_NOT_EMPTY()],label="Phone Number"),
-	Field('brand_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.opt')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
+	Field('brand_type_id', 'reference sim_brand', requires=[
+	IS_IN_DB(db(db.sim_brand.is_active == True).select(),
+	db.sim_brand.id, '%(name)s'),
 	IS_NOT_EMPTY()], label="Operator"),
-	Field('empty_col', 'string', requires=[IS_NOT_EMPTY()], label="Empty", default=None, readable=True, writable=False),
-	Field('plan_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.pln')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
+	Field('plan_type_id', 'reference sim_plan', requires=[
+	IS_IN_DB(db(db.sim_plan.is_active == True).select(),
+	db.sim_plan.id, '%(name)s'),
 	IS_NOT_EMPTY()], label="Plan"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
@@ -161,60 +242,22 @@ db.define_table('sim',
 			readable=True, writable=False),
 	format='%(name)s'
 )
-operator_id = ''
-plan_id = ''
-for id in db(db.config_group.name==myconf.get('default_type.opt')).select(db.config_group.id):
-	operator_id = id
-db.sim.brand_type.requires=IS_IN_DB(db(db.general_table.config_type == operator_id), db.general_table.id, '%(name)s', sort=True)
-for id in db(db.config_group.name==myconf.get('default_type.pln')).select(db.config_group.id):
-	operator_id = id
-db.sim.plan_type.requires=IS_IN_DB(db(db.general_table.config_type == plan_id), db.general_table.id, '%(name)s', sort=True)
 
-## email
-db.define_table('email_account',
-	Field('username', 'string', requires=[IS_NOT_EMPTY()], label="Email Address"),
-	Field('default_password', 'string', label="Default Password"),
-	Field('user_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.user')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="User Type"),
-	Field('empty_col', 'string', requires=[IS_NOT_EMPTY()], default=None, label="Empty", readable=True, writable=False),
-	Field('license_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.lns')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="License Type"),
-	Field('is_used', 'boolean', default=True, label="Used"),
-	Field('is_active', 'boolean', default=True, label="Active"),
-	Field('created_on', 'datetime', default=request.now,
-			readable=True, writable=False),
-	Field('created_by', 'reference auth_user', default=auth.user_id,
-			readable=True, writable=False),
-	Field('modified_on', 'datetime', update=request.now,
-			readable=True, writable=False),
-	Field('modified_by', 'reference auth_user', update=auth.user_id,
-			readable=True, writable=False),
-	format='%(name)s')
-
-user_id = ''
-license_id = ''
-for id in db(db.config_group.name==myconf.get('default_type.usr')).select(db.config_group.id):
-    user_id = id
-db.email_account.user_type.requires=IS_IN_DB(db(db.general_table.config_type == user_id), db.general_table.id, '%(name)s', sort=True)
-for id in db(db.config_group.name==myconf.get('default_type.lns')).select(db.config_group.id):
-    license_id = id
-db.email_account.license_type.requires=IS_IN_DB(db(db.general_table.config_type == license_id), db.general_table.id, '%(name)s', sort=True)
-
-## email
+## device
 db.define_table('device',
 	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
-	Field('device_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.dvc')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
+	Field('device_brand_id', 'reference device_brand', requires=[IS_NOT_EMPTY()], label="Brand"),
+	Field('device_model_id', 'reference device_model', requires=[
+	IS_IN_DB(db(db.device_model.is_active == True).select(db.device_model.id),
+	db.device_model.id, '%(name)s'),
+	IS_NOT_EMPTY()], label="Model"),
+	Field('device_type_id', 'reference device_type', requires=[
+	IS_IN_DB(db(db.device_type.is_active == True).select(db.device_type.id),
+	db.device_type.id, '%(name)s'),
 	IS_NOT_EMPTY()], label="Type"),
-	Field('model_id', 'reference model', requires=[ IS_IN_DB(db, db.model.id, '%(name)s'), IS_NOT_EMPTY() ], label="Model"),
-	Field('os_type', 'reference general_table', requires=[
-	IS_IN_DB(db(db.general_table.config_type == db(db.config_group.name==myconf.get('default_type.oss')).select(db.config_group.id)),
-	db.general_table.id, '%(name)s'),
+	Field('os_type_id', 'reference os_type', requires=[
+	IS_IN_DB(db(db.os_type.is_active == True).select(db.os_type.id),
+	db.os_type.id, '%(name)s'),
 	IS_NOT_EMPTY()], label="Operation System"),
 	Field('cpu', 'string', requires=[IS_NOT_EMPTY()], label="CPU"),
 	Field('ram', 'string', requires=[IS_NOT_EMPTY()], label="RAM"),
@@ -233,17 +276,57 @@ db.define_table('device',
 	format='%(name)s')
 
 
-device_id = ''
-os_id = ''
-db.device.model_id.requires=IS_IN_DB(db, db.model.id, '%(name)s')
-for id in db(db.config_group.name==myconf.get('default_type.dvc')).select(db.config_group.id):
-    device_id = id
-db.device.device_type.requires=IS_IN_DB(db(db.general_table.config_type == device_id), db.general_table.id, '%(name)s', sort=True)
-d_code = db(db.general_table.config_type == device_id).select(db.general_table.id, db.general_table.code)
-for id in db(db.config_group.name==myconf.get('default_type.oss')).select(db.config_group.id):
-    os_id = id
-db.device.os_type.requires=IS_IN_DB(db(db.general_table.config_type == os_id), db.general_table.id, '%(name)s', sort=True)
 db.device.name.readonly = True
+db.device.device_brand_id.requires = IS_IN_DB(db(db.device_brand.is_active == True),db.device_brand.id, '%(name)s')
+db.device.device_model_id.requires = IS_IN_DB(db(db.device_model.is_active == True),db.device_model.id, '%(name)s')
+db.device.device_type_id.requires = IS_IN_DB(db(db.device_type.is_active == True),db.device_type.id, '%(name)s')
+db.device.os_type_id.requires = IS_IN_DB(db(db.os_type.is_active == True),db.os_type.id, '%(name)s')
+d_code = db(db.device_type.is_active == True).select(db.device_type.id, db.device_type.device_code)
+
+## employee
+db.define_table('employee',
+	Field('code', 'string', requires=[IS_NOT_EMPTY()], label="Code"),
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
+	Field('job_title', 'string', label="Job Title"),
+	Field('department_id', 'reference department', requires=[
+	IS_IN_DB(db(db.department.is_active == True).select(),
+	db.department.id, '%(name)s'),
+	IS_NOT_EMPTY()], label="Department"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s')
+
+
+
+## email
+db.define_table('email_account',
+	Field('username', 'string', requires=[IS_NOT_EMPTY()], label="Email Address"),
+	Field('default_password', 'string', label="Default Password"),
+	Field('email_type_id', 'reference email_type', requires=[IS_IN_DB(db(db.email_type.is_active == True).select(), db.email_type.id, '%(name)s'),
+	IS_NOT_EMPTY()], label="User Type"),
+	Field('license_type_id', 'reference license_type', requires=[
+	IS_IN_DB(db(db.license_type.is_active == True).select(),
+	db.license_type.id, '%(name)s'),
+	IS_NOT_EMPTY()], label="License Type"),
+	Field('is_used', 'boolean', default=True, label="Used"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s')
+
 
 
 ## Rent Device
@@ -277,7 +360,7 @@ db.define_table('assign',
     Field('employee_id', 'reference employee', label="Employee", requires=IS_NOT_EMPTY()),
     Field('assign_date', 'datetime', default=request.now, label="Assign Date", requires=IS_NOT_EMPTY()),
 	Field('email_id', 'reference email_account', label="E-Mail", requires=IS_NOT_EMPTY()),
-	Field('room_id', 'reference room', label="Room", requires=IS_NOT_EMPTY()),
+
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -297,9 +380,6 @@ db.assign.assign_date.requires = IS_NOT_EMPTY()
 db.assign.email_id.requires = IS_IN_DB(db(db.email_account.is_used == False and
 									db.email_account.is_active == True),
 									db.email_account.id, '%(username)s')
-db.assign.room_id.requires = IS_IN_DB(db(db.room.is_active == True),
-									db.room.id, '%(name)s')
-
 
 db.define_table('assign_device',
     Field('assign_id', 'reference assign', label='Assign ID'),
@@ -320,14 +400,14 @@ db.assign_device.serial.requires=IS_NOT_IN_DB(db(db.assign_device.serial == used
 
 db.define_table('assign_app',
 	Field('assign_id', 'reference assign', label='Assign ID'),
-	Field('app_id', 'reference apps', label='Application Name', requires=IS_NOT_EMPTY()),
+	Field('app_id', 'string', label='Application Name', requires=IS_NOT_EMPTY()),
 )
 
 db.assign_app.app_id.requires = IS_IN_DB(db(db.apps.is_active == True), db.apps.id, '%(name)s')
 
 db.define_table('assign_accessories',
 	Field('assign_id', 'reference assign', label='Assign ID'),
-	Field('accessories_id', 'reference general_table', label='Accessory', requires=IS_NOT_EMPTY()),
+	# Field('accessories_id', 'reference general_table', label='Accessory', requires=IS_NOT_EMPTY()),
 	Field('serial', 'string', requires=IS_NOT_EMPTY(), label='S/N or Unique Number'),
     Field('asset_number', 'string', label='Assets Number'),
 	Field('is_used', 'boolean', default=True, label="Used"),
@@ -335,23 +415,23 @@ db.define_table('assign_accessories',
 	Field('is_lost', 'boolean', default=False, label="Lost")
 )
 
-acs_id = ''
-for id in db(db.config_group.name==myconf.get('default_type.acs')).select(db.config_group.id):
-     acs_id = id
-db.assign_accessories.accessories_id.requires=IS_IN_DB(db(db.general_table.config_type == acs_id), db.general_table.id, '%(name)s', sort=True)
+# acs_id = ''
+# for id in db(db.config_group.name==myconf.get('default_type.acs')).select(db.config_group.id):
+#      acs_id = id
+# db.assign_accessories.accessories_id.requires=IS_IN_DB(db(db.general_table.config_type == acs_id), db.general_table.id, '%(name)s', sort=True)
 
 
 db.define_table('assign_sim',
 	Field('assign_id', 'reference assign', label='Assign ID'),
-	Field('sim_id', 'reference general_table', label='SIM', requires=IS_NOT_EMPTY()),
+	# Field('sim_id', 'reference general_table', label='SIM', requires=IS_NOT_EMPTY()),
 	Field('is_used', 'boolean', default=True, label="Used"),
 	Field('is_locked', 'boolean', default=False, label="Locked"),
 	Field('is_lost', 'boolean', default=False, label="Lost")
 )
 
-db.assign_sim.sim_id.requires=IS_IN_DB(db(db.sim.is_active==True), db.sim.id, '%(name)s')
-used_sim =[id for id in db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True)).select(db.assign_sim.sim_id)]
-db.assign_device.device_id.requires=IS_NOT_IN_DB(db(db.assign_sim.sim_id == used_sim), 'assign_sim.sim_id')
+# db.assign_sim.sim_id.requires=IS_IN_DB(db(db.sim.is_active==True), db.sim.id, '%(name)s')
+# used_sim =[id for id in db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True)).select(db.assign_sim.sim_id)]
+# db.assign_device.device_id.requires=IS_NOT_IN_DB(db(db.assign_sim.sim_id == used_sim), 'assign_sim.sim_id')
 
 ## default user root
 if db(db.auth_user).count() <1:
@@ -379,19 +459,19 @@ if db(db.auth_user).count() <1:
 	auth.add_membership(user_id=1, group_id=1)
 	auth.add_membership(user_id=2, group_id=1)
 
-if db(db.config_group).count() < 1:
-	db.config_group.bulk_insert([
-		dict(name=myconf.get('default_type.acs')),
-		dict(name=myconf.get('default_type.app')),
-		dict(name=myconf.get('default_type.dpt')),
-		dict(name=myconf.get('default_type.dvc')),
-		dict(name=myconf.get('default_type.eml')),
-		dict(name=myconf.get('default_type.loc')),
-		dict(name=myconf.get('default_type.lnc')),
-		dict(name=myconf.get('default_type.opt')),
-		dict(name=myconf.get('default_type.pln')),
-		dict(name=myconf.get('default_type.usr'))
-	])
+# if db(db.config_group).count() < 1:
+# 	db.config_group.bulk_insert([
+# 		dict(name=myconf.get('default_type.acs')),
+# 		dict(name=myconf.get('default_type.app')),
+# 		dict(name=myconf.get('default_type.dpt')),
+# 		dict(name=myconf.get('default_type.dvc')),
+# 		dict(name=myconf.get('default_type.eml')),
+# 		dict(name=myconf.get('default_type.loc')),
+# 		dict(name=myconf.get('default_type.lnc')),
+# 		dict(name=myconf.get('default_type.opt')),
+# 		dict(name=myconf.get('default_type.pln')),
+# 		dict(name=myconf.get('default_type.usr'))
+# 	])
 
 # Insert into outlet(name, is_active) values
 # ('Computer Shop', 1)

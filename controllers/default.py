@@ -37,69 +37,181 @@ def index():
 def about():
     return dict(message="This is about")
 
-latitude = longitude = ''
-def getGPS():
-    form=SQLFORM.factory(Field('search'), _class='form-search')
-    form.custom.widget.search['_class'] = 'input-long search-query'
-    form.custom.submit['_value'] = 'Search'
-    form.custom.submit['_class'] = 'btn'
-    if form.accepts(request):
-        address=form.vars.search
-        (latitude, longitude) = geocode(address)
-    else:
-        (latitude, longitude) = ('','')
-    return dict(form=form, latitude=latitude, longitude=longitude)
-
-def brand():
-    grid = SQLFORM.smartgrid(
-        db.brand,
-        paginate=10,
+def device_brand():
+    brand_grid = SQLFORM.smartgrid(
+        db.device_brand,
+        paginate=25,
         csv=False,
         details=False,
-        orderby = db.brand.name,
+        orderby=~db.device_brand.id,
         linked_tables=False
     )
-    response.moduleTitle = 'Brand'
-    return dict(form=grid)
-    ##data = db().select(db.brand.ALL, orderby=~db.brand.id)
-    ##return dict(form=SQLFORM(db.brand).process(), data=data)
+    response.moduleTitle = "Brand"
+    return dict(form_device_brand= brand_grid)
 
-def model():
-    grid = SQLFORM.smartgrid(
-        db.model,
-        paginate=10,
+def device_model():
+    model_grid = SQLFORM.smartgrid(
+        db.device_model,
+        paginate=25,
         csv=False,
         details=False,
-        orderby=[db.model.brand, db.model.name],
+        orderby=~db.device_model.id,
         linked_tables=False
     )
+    response.moduleTitle = "Model"
+    return dict(form_device_model= model_grid)
 
-    # grid=SQLFORM(db.model).process()
-    response.moduleTitle = 'Model'
-    return dict(form=grid)
-
-def general_table():
-    grid = SQLFORM.smartgrid(
-        db.general_table,
-        paginate=10,
+def device_os():
+    os_grid = SQLFORM.smartgrid(
+        db.os_type,
+        paginate=25,
         csv=False,
         details=False,
-        orderby=[db.general_table.config_type, db.general_table.name],
+        orderby=~db.os_type.id,
+        linked_tables=False
+    )
+    response.moduleTitle = "Device OS"
+    return dict(form_os_type= os_grid)
+
+def device_type():
+    type_grid = SQLFORM.smartgrid(
+        db.device_type,
+        paginate=25,
+        csv=False,
+        details=False,
+        orderby=~db.device_type.id,
+        linked_tables=False
+    )
+    response.moduleTitle = "Device Type"
+    return dict(form_device_type= type_grid)
+
+def device():
+    # brand_grid = SQLFORM.smartgrid(
+    #     db.device_brand,
+    #     paginate=25,
+    #     csv=False,
+    #     details=False,
+    #     orderby = ~db.device_brand.id,
+    #     linked_tables=False
+    # )
+    #
+    # model_grid = SQLFORM.smartgrid(
+    #     db.device_model,
+    #     paginate=25,
+    #     csv=False,
+    #     details=False,
+    #     orderby=~db.device_model.id,
+    #     linked_tables=False
+    # )
+    #
+    # type_grid = SQLFORM.smartgrid(
+    #     db.device_type,
+    #     paginate=25,
+    #     csv=False,
+    #     details=False,
+    #     orderby=~db.device_type.id,
+    #     linked_tables=False
+    # )
+    #
+    # os_grid = SQLFORM.smartgrid(
+    #     db.os_type,
+    #     paginate=25,
+    #     csv=False,
+    #     details=False,
+    #     orderby=~db.os_type.id,
+    #     linked_tables=False
+    # )
+    grid = SQLFORM.smartgrid(
+        db.device,
+        paginate=25,
+        csv=False,
+        details=False,
+        orderby=[db.device.device_type_id, db.device.name],
         linked_tables=False
     )
 
-    response.moduleTitle = 'Genral Set up'
-    return dict(form=grid)
+    response.moduleTitle = "Device"
+    return dict(form_device=grid, dcode=json(d_code))
+    # return dict(form_device=grid, form_device_brand=brand_grid, form_device_model=model_grid,
+    #     form_device_type=type_grid,
+    #     form_os_type=os_grid)
+
+def apps_type():
+    type_grid = SQLFORM.smartgrid(
+        db.apps_type,
+        paginate=25,
+        csv=False,
+        details=False,
+        orderby=~db.apps_type.id,
+        linked_tables=False
+    )
+    response.moduleTitle = "Application Type"
+    return dict(form_app_type= type_grid)
+
+def apps():
+    apps_grid = SQLFORM.smartgrid(
+        db.apps,
+        paginate=25,
+        csv=False,
+        details=False,
+        orderby=~db.apps.id,
+        linked_tables=False
+    )
+    response.moduleTitle = "Applications"
+    return dict(form_apps = apps_grid)
+
+def app_assign():
+
+    def redirectToAppDetail(form):
+        app_assign_id = form.vars.id
+        redirect(URL('app_assign_detail', vars=dict(app_assign_id=app_assign_id)))
+    form=SQLFORM.grid(db.app_assign,
+                        oncreate=redirectToAppDetail,
+                        onupdate=redirectToAppDetail,
+                        details=False,
+                        paginate=25,
+                        orderby=~db.app_assign.id|db.app_assign.app_type_id
+                        )
+    response.moduleTitle = 'Application Assign'
+    return dict(form=form)
+
+def app_assign_detail():
+    app_assign_id=request.vars.app_assign_id
+    if type(app_assign_id) == list:
+        app_assign_id=app_assign_id[-1]
+    db.app_assign_detail.app_assign_id.default = app_assign_id
+    form_app_assign_detail = SQLFORM(db.app_assign_detail)
+    form_app_assign_detail.add_button('Back', URL('default', 'app_assign'))
+    if form_app_assign_detail.process().accepted:
+        redirect(URL('app_assign_detail', vars=dict(app_assign_id=app_assign_id)))
+
+    response.moduleTitle = 'Applications Assign Detail'
+    return dict(form_app_assign_detail=form_app_assign_detail, app_assign_id=app_assign_id)
+
+def app_assign_detail_list():
+    #db.assign_device.device_id.requires = IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
+    app_assign_id = request.vars.app_assign_id
+    app_assign_detail_where = (db.app_assign_detail.app_assign_id == app_assign_id)
+    app_assign_detail_grid = SQLFORM.grid(app_assign_detail_where, fields=[db.app_assign_detail.id,
+                db.app_assign_detail.apps_id],
+        		create=False,
+        		searchable=False,
+        		editable=False,
+        		details=False,
+        		csv=False,
+        		paginate=5,
+        		orderby=~db.app_assign_detail.app_assign_id
+    		)
+    return dict(app_assign_detail_grid=app_assign_detail_grid)
 
 def sim():
-    grid = SQLFORM.smartgrid(
-        db.sim,
-        paginate=10,
-        csv=False,
-        details=False,
-        orderby=[db.sim.brand_type, db.sim.plan_type, db.sim.sim_number],
-        linked_tables=False
-    )
+    grid = SQLFORM.smartgrid(db.sim,
+                                paginate=10,
+                                csv=False,
+                                details=False,
+                                orderby=[db.sim.brand_type, db.sim.plan_type, db.sim.sim_number],
+                                linked_tables=False
+                                )
     response.moduleTitle = 'SIM Card'
     return dict(form=grid)
 
@@ -115,18 +227,6 @@ def room():
     )
     response.moduleTitle = 'Room'
     return dict(form=grid, lcode=json(l_code))
-
-def apps():
-    grid = SQLFORM.smartgrid(
-        db.apps,
-        paginate=10,
-        csv=False,
-        details=False,
-        orderby=[db.apps.app_type, db.apps.name],
-        linked_tables=False
-    )
-    response.moduleTitle = 'Application'
-    return dict(form=grid)
 
 def employee():
     grid = SQLFORM.smartgrid(
@@ -154,17 +254,6 @@ def email_account():
     response.moduleTitle = 'Brand'
     return dict(form=grid)
 
-def device():
-    grid = SQLFORM.smartgrid(
-        db.device,
-        paginate=10,
-        csv=False,
-        details=False,
-        orderby=[db.device.device_type, db.device.name],
-        linked_tables=False
-    )
-    response.moduleTitle = 'Device'
-    return dict(form=grid, dcode=json(d_code))
 
 def register():
     form=SQLFORM.factory(db.client,db.address)

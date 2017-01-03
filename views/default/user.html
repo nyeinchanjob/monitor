@@ -1,7 +1,5 @@
 {{extend 'mylayout.html'}}
-<div layout="row">
-
-<div flex-xs flex-gt-xs layout="column" layout-align="center center">
+<div flex layout="column" layout-align="center center">
      <md-card flex layout-align="center start" >
        <!-- <img ng-src="{{=URL('static', 'images/coca-cola_strip_phone.png')}}" class="md-card-image" alt="Washed Out"> -->
        <md-card-title>
@@ -10,7 +8,7 @@
          </md-card-title-text>
        </md-card-title>
        <md-card-content flex style="width:100%;">
-           <div flex >
+           <!-- <div flex > -->
                {{
                    if request.args(0)=='login':
 
@@ -20,10 +18,9 @@
                    pass
                    =form
                }}
-           </div>
+           <!-- </div> -->
        </md-card-content>
      </md-card>
-</div>
 </div>
 {{block page_js}}
 <script>

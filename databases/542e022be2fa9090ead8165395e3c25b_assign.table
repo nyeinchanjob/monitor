@@ -30,7 +30,7 @@ I512
 sg5
 I00
 sg6
-I10
+I9
 sg7
 S'INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE'
 p14
@@ -64,7 +64,7 @@ I512
 sg5
 I00
 sg6
-I6
+I5
 sg7
 S'CHAR(1)'
 p22
@@ -81,7 +81,7 @@ I512
 sg5
 I00
 sg6
-I8
+I7
 sg7
 S'INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE'
 p26
@@ -114,7 +114,7 @@ I512
 sg5
 I00
 sg6
-I7
+I6
 sg7
 S'DATETIME'
 p33
@@ -122,7 +122,7 @@ sg9
 I00
 sg10
 g30
-ssS'room_id'
+ssS'modified_on'
 p34
 (dp35
 g4
@@ -130,34 +130,17 @@ I512
 sg5
 I00
 sg6
-I5
-sg7
-S'INT  , INDEX room_id__idx (room_id), FOREIGN KEY (room_id) REFERENCES room (id) ON DELETE CASCADE'
-p36
-sg9
-I00
-sg10
-S'reference room'
-p37
-ssS'modified_on'
-p38
-(dp39
-g4
-I512
-sg5
-I00
-sg6
-I9
+I8
 sg7
 S'DATETIME'
-p40
+p36
 sg9
 I00
 sg10
 g30
 ssS'id'
-p41
-(dp42
+p37
+(dp38
 g4
 I512
 sg5
@@ -166,9 +149,9 @@ sg6
 I1
 sg7
 S'INT AUTO_INCREMENT NOT NULL'
-p43
+p39
 sg9
 I00
 sg10
-g41
+g37
 ss.
