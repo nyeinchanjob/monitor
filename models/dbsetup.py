@@ -126,9 +126,10 @@ db.define_table('app_assign_detail',
 )
 
 db.app_assign_detail.apps_id.requires=IS_IN_DB(db(db.apps.is_active == True), db.apps.id, '%(name)s')
+
 # email_type
 db.define_table('email_type',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Email Type"),
+	Field('email_name', 'string', requires=[IS_NOT_EMPTY()], label="Email Type"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -138,12 +139,11 @@ db.define_table('email_type',
 			readable=True, writable=False),
 	Field('modified_by', 'reference auth_user', update=auth.user_id,
 			readable=True, writable=False),
-	format='%(name)s'
-)
+	format='%(email_name)s')
 
 # license_type
 db.define_table('license_type',
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="License Type"),
+	Field('license_name', 'string', requires=[IS_NOT_EMPTY()], label="License Type"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -153,9 +153,29 @@ db.define_table('license_type',
 			readable=True, writable=False),
 	Field('modified_by', 'reference auth_user', update=auth.user_id,
 			readable=True, writable=False),
-	format='%(name)s'
+	format='%(license_name)s')
+
+## email
+db.define_table('email_account',
+	Field('username', 'string', requires=[IS_NOT_EMPTY()], label="Email Address"),
+	Field('default_password', 'string', label="Default Password"),
+	Field('email_type_id', 'reference email_type', requires=[IS_NOT_EMPTY()], label="User Type"),
+	Field('license_type_id', 'reference license_type', requires=[IS_NOT_EMPTY()], label="License Type"),
+	Field('is_used', 'boolean', default=False, label="Used"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(username)s'
 )
 
+db.email_account.email_type_id.requires=IS_IN_DB(db(db.email_type.is_active == True), db.email_type.id, '%(email_name)s')
+db.email_account.license_type_id.requires=IS_IN_DB(db(db.license_type.is_active == True), db.license_type.id, '%(license_name)s')
 
 # department
 db.define_table('department',
@@ -172,9 +192,29 @@ db.define_table('department',
 	format='%(name)s'
 )
 
+## employee
+db.define_table('employee',
+	Field('code', 'string', requires=[IS_NOT_EMPTY()], label="Code"),
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
+	Field('job_title', 'string', label="Job Title"),
+	Field('department_id', 'reference department', requires=[IS_NOT_EMPTY()], label="Department"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(name)s')
+
+db.employee.department_id.requires=IS_IN_DB(db(db.department.is_active == True),db.department.id, '%(name)s')
+
 
 # location
 db.define_table('location_plant',
+	Field('prefix_plant', 'string', requires=[IS_NOT_EMPTY()], label="Prefix Code"),
 	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Location/Plant"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
@@ -223,14 +263,8 @@ db.define_table('sim_plan',
 ##sim
 db.define_table('sim',
 	Field('sim_number', 'string', requires=[IS_NOT_EMPTY()],label="Phone Number"),
-	Field('brand_type_id', 'reference sim_brand', requires=[
-	IS_IN_DB(db(db.sim_brand.is_active == True).select(),
-	db.sim_brand.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Operator"),
-	Field('plan_type_id', 'reference sim_plan', requires=[
-	IS_IN_DB(db(db.sim_plan.is_active == True).select(),
-	db.sim_plan.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Plan"),
+	Field('brand_type_id', 'reference sim_brand', requires=[IS_NOT_EMPTY()], label="Operator"),
+	Field('plan_type_id', 'reference sim_plan', requires=[IS_NOT_EMPTY()], label="Plan"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -242,6 +276,9 @@ db.define_table('sim',
 			readable=True, writable=False),
 	format='%(name)s'
 )
+
+db.sim.brand_type_id.requires=IS_IN_DB(db(db.sim_brand.is_active == True),db.sim_brand.id, '%(name)s')
+db.sim.plan_type_id.requires=IS_IN_DB(db(db.sim_plan.is_active == True),db.sim_plan.id, '%(name)s')
 
 ## device
 db.define_table('device',
@@ -283,15 +320,11 @@ db.device.device_type_id.requires = IS_IN_DB(db(db.device_type.is_active == True
 db.device.os_type_id.requires = IS_IN_DB(db(db.os_type.is_active == True),db.os_type.id, '%(name)s')
 d_code = db(db.device_type.is_active == True).select(db.device_type.id, db.device_type.device_code)
 
-## employee
-db.define_table('employee',
-	Field('code', 'string', requires=[IS_NOT_EMPTY()], label="Code"),
-	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
-	Field('job_title', 'string', label="Job Title"),
-	Field('department_id', 'reference department', requires=[
-	IS_IN_DB(db(db.department.is_active == True).select(),
-	db.department.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Department"),
+
+# sim_plan
+db.define_table('device_accessories',
+	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Accessories Name"),
+	Field('other_info', 'string', requires=[IS_NOT_EMPTY()], label="Others Information"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -301,33 +334,8 @@ db.define_table('employee',
 			readable=True, writable=False),
 	Field('modified_by', 'reference auth_user', update=auth.user_id,
 			readable=True, writable=False),
-	format='%(name)s')
-
-
-
-## email
-db.define_table('email_account',
-	Field('username', 'string', requires=[IS_NOT_EMPTY()], label="Email Address"),
-	Field('default_password', 'string', label="Default Password"),
-	Field('email_type_id', 'reference email_type', requires=[IS_IN_DB(db(db.email_type.is_active == True).select(), db.email_type.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="User Type"),
-	Field('license_type_id', 'reference license_type', requires=[
-	IS_IN_DB(db(db.license_type.is_active == True).select(),
-	db.license_type.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="License Type"),
-	Field('is_used', 'boolean', default=True, label="Used"),
-	Field('is_active', 'boolean', default=True, label="Active"),
-	Field('created_on', 'datetime', default=request.now,
-			readable=True, writable=False),
-	Field('created_by', 'reference auth_user', default=auth.user_id,
-			readable=True, writable=False),
-	Field('modified_on', 'datetime', update=request.now,
-			readable=True, writable=False),
-	Field('modified_by', 'reference auth_user', update=auth.user_id,
-			readable=True, writable=False),
-	format='%(name)s')
-
-
+	format='%(name)s'
+)
 
 ## Rent Device
 db.define_table('rent',

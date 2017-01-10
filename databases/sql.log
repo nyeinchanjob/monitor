@@ -467,3 +467,32 @@ timestamp: 2017-01-03T13:05:00.787253
 ALTER TABLE device_type ADD device_code VARCHAR(512);
 success!
 success!
+timestamp: 2017-01-10T12:02:25.437226
+ALTER TABLE location_plant ADD prefix_plant VARCHAR(512);
+success!
+success!
+timestamp: 2017-01-10T12:42:31.698779
+ALTER TABLE email_type ADD email_name VARCHAR(512);
+success!
+timestamp: 2017-01-10T12:42:31.930190
+ALTER TABLE email_type DROP COLUMN name;
+success!
+timestamp: 2017-01-10T12:42:32.153302
+ALTER TABLE license_type ADD license_name VARCHAR(512);
+success!
+timestamp: 2017-01-10T12:42:32.356073
+ALTER TABLE license_type DROP COLUMN name;
+success!
+timestamp: 2017-01-10T15:53:20.377972
+CREATE TABLE device_accessories(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(512),
+    other_info VARCHAR(512),
+    is_active CHAR(1),
+    created_on DATETIME,
+    created_by INT  , INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    modified_by INT  , INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!

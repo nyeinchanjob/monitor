@@ -83,10 +83,6 @@
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
                             <p>{{=T("Home")}}</p>
                         </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'getGPS')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                            <p>{{=T("Location")}}</p>
-                        </md-list-item>
                         <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'assign')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
                             <p>{{=T("Register")}}</p>
@@ -121,6 +117,10 @@
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
                             <p>{{=T("Type")}}</p>
                         </md-list-item>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_accessories')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("Accessories")}}</p>
+                        </md-list-item>
                     </md-list>
                 </section>
                 <md-divider></md-divider>
@@ -143,11 +143,23 @@
                 </section>
                 <md-divider></md-divider>
                 <section>
-                    <md-subheader class="md-primary body-color">{{=T('Employee')}}</md-subheader>
+                    <md-subheader class="md-primary body-color">{{=T('Employee Information')}}</md-subheader>
                     <md-list>
                         <md-list-item class="md-actions" ng-href="{{=URL('default', 'employee')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
                             <p>{{=T("Employee")}}</p>
+                        </md-list-item>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'department')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("Department")}}</p>
+                        </md-list-item>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'email_type')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("EMail Type")}}</p>
+                        </md-list-item>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'license_type')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("License Type")}}</p>
                         </md-list-item>
                         <md-list-item class="md-actions" ng-href="{{=URL('default', 'email_account')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
@@ -157,20 +169,28 @@
                 </section>
                 <md-divider></md-divider>
                 <section>
+                    <md-subheader class="md-primary body-color">{{=T('SIM Information')}}</md-subheader>
                     <md-list>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'apps')}}">
+                        <md-list-item class = "md-actions" ng-href="{{=URL('default', 'sim_brand')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                            <p>{{=T("Application")}}</p>
+                            <p>{{=T("SIM Brand")}}</p>
                         </md-list-item>
-                        <md-divider></md-divider>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim_plan')}}">
+                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
+                            <p>{{=T("SIM Plan")}}</p>
+                        </md-list-item>
                         <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
                             <p>{{=T("SIM")}}</p>
                         </md-list-item>
-                        <md-divider></md-divider>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'room')}}">
+                    </md-list>
+                </section>
+                <section>
+                    <md-subheader class="md-primary body-color">{{=T('Others')}}</md-subheader>
+                    <md-list>
+                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'location_plant')}}">
                             <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_white_24px.svg')}}"></md-icon>
-                            <p>{{=T("Room")}}</p>
+                            <p>{{=T("Plant")}}</p>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="md-actions" ng-href="{{=URL('default', 'general_table')}}">
