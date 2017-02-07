@@ -1,0 +1,5 @@
+device_model.id,device_model.name,device_model.brand_id,device_model.is_active,device_model.created_on,device_model.created_by,device_model.modified_on,device_model.modified_by
+4,Stream 8,HP,True,2016-12-20 09:52:49,Nyein Chan (2),2016-12-20 09:52:49,Nyein Chan (2)
+3,Tab 4,SAMSUNG,True,2016-12-20 09:52:35,Nyein Chan (2),2016-12-20 09:52:35,Nyein Chan (2)
+2,Grand Duo,SAMSUNG,True,2016-12-20 09:52:24,Nyein Chan (2),2016-12-20 09:52:24,Nyein Chan (2)
+1,T450s,Lenovo,True,2016-12-20 09:49:25,Nyein Chan (2),2016-12-20 09:49:25,Nyein Chan (2)

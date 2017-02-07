@@ -1,0 +1,4 @@
+location_plant.id,location_plant.prefix_plant,location_plant.name,location_plant.is_active,location_plant.created_on,location_plant.created_by,location_plant.modified_on,location_plant.modified_by
+3,TKT,Tha Kay Ta,True,2017-01-10 12:03:30,Nyein Chan (2),2017-01-10 12:03:30,Nyein Chan (2)
+2,HKT,Htouk Kyant,True,2017-01-10 12:03:08,Nyein Chan (2),2017-01-10 12:03:08,Nyein Chan (2)
+1,HTY,Hlaing Tha Yar,True,2017-01-10 12:02:35,Nyein Chan (2),2017-01-10 12:02:35,Nyein Chan (2)

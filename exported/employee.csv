@@ -1,0 +1,2 @@
+employee.id,employee.code,employee.name,employee.job_title,employee.department_id,employee.is_active,employee.created_on,employee.created_by,employee.modified_on,employee.modified_by
+1,55982,Nyein Chan,Business Application Specialist,I.T,True,2017-01-10 12:26:42,Nyein Chan (2),2017-01-10 12:26:42,Nyein Chan (2)

@@ -1,0 +1,4 @@
+device_accessories.id,device_accessories.name,device_accessories.other_info,device_accessories.is_active,device_accessories.created_on,device_accessories.created_by,device_accessories.modified_on,device_accessories.modified_by
+3,Power Bank,Mi 2000mAh White,True,2017-01-10 15:55:38,Nyein Chan (2),2017-01-10 15:55:47,Nyein Chan (2)
+2,Tablet Bag,HP Tablet Bag Black,True,2017-01-10 15:55:03,Nyein Chan (2),2017-01-10 15:55:03,Nyein Chan (2)
+1,Cover,HP Tablet Cover Red,True,2017-01-10 15:54:38,Nyein Chan (2),2017-01-10 15:54:38,Nyein Chan (2)

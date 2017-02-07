@@ -1,0 +1,2 @@
+device.id,device.name,device.device_brand_id,device.device_model_id,device.device_type_id,device.os_type_id,device.cpu,device.ram,device.hard_disk,device.drive,device.screen_size,device.is_active,device.created_on,device.created_by,device.modified_on,device.modified_by
+1,L-Lenovo-T450s,Lenovo,T450s,Laptop,Windows 7 Enterprise Edition,2GHz,8GH,256G,NO,14 inches,True,2017-01-03 14:45:12,Nyein Chan (2),2017-01-11 09:16:29,Nyein Chan (2)

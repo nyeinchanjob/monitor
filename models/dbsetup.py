@@ -155,10 +155,26 @@ db.define_table('license_type',
 			readable=True, writable=False),
 	format='%(license_name)s')
 
+# account_type
+db.define_table('account_type',
+	Field('account_name', 'string', requires=[IS_NOT_EMPTY()], label="Type Name"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(license_name)s')
+
 ## email
 db.define_table('email_account',
 	Field('username', 'string', requires=[IS_NOT_EMPTY()], label="Email Address"),
 	Field('default_password', 'string', label="Default Password"),
+	Field('recovery_email', 'string', label="Recovery Email"),
+	Field('recovery_phone', 'string', label="Recovery Phone"),
 	Field('email_type_id', 'reference email_type', requires=[IS_NOT_EMPTY()], label="User Type"),
 	Field('license_type_id', 'reference license_type', requires=[IS_NOT_EMPTY()], label="License Type"),
 	Field('is_used', 'boolean', default=False, label="Used"),
@@ -198,6 +214,7 @@ db.define_table('employee',
 	Field('name', 'string', requires=[IS_NOT_EMPTY()], label="Name"),
 	Field('job_title', 'string', label="Job Title"),
 	Field('department_id', 'reference department', requires=[IS_NOT_EMPTY()], label="Department"),
+	Field('phone',  requires=[IS_NOT_EMPTY()], label="Phone"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -265,6 +282,7 @@ db.define_table('sim',
 	Field('sim_number', 'string', requires=[IS_NOT_EMPTY()],label="Phone Number"),
 	Field('brand_type_id', 'reference sim_brand', requires=[IS_NOT_EMPTY()], label="Operator"),
 	Field('plan_type_id', 'reference sim_plan', requires=[IS_NOT_EMPTY()], label="Plan"),
+	Field('is_used', 'boolean', default=False, label="Used"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
 			readable=True, writable=False),
@@ -274,11 +292,13 @@ db.define_table('sim',
 			readable=True, writable=False),
 	Field('modified_by', 'reference auth_user', update=auth.user_id,
 			readable=True, writable=False),
-	format='%(name)s'
+	format='%(sim_number)s'
 )
 
 db.sim.brand_type_id.requires=IS_IN_DB(db(db.sim_brand.is_active == True),db.sim_brand.id, '%(name)s')
 db.sim.plan_type_id.requires=IS_IN_DB(db(db.sim_plan.is_active == True),db.sim_plan.id, '%(name)s')
+
+
 
 ## device
 db.define_table('device',
@@ -294,11 +314,10 @@ db.define_table('device',
 	IS_NOT_EMPTY()], label="Type"),
 	Field('os_type_id', 'reference os_type', requires=[
 	IS_IN_DB(db(db.os_type.is_active == True).select(db.os_type.id),
-	db.os_type.id, '%(name)s'),
-	IS_NOT_EMPTY()], label="Operation System"),
-	Field('cpu', 'string', requires=[IS_NOT_EMPTY()], label="CPU"),
-	Field('ram', 'string', requires=[IS_NOT_EMPTY()], label="RAM"),
-	Field('hard_disk', 'string', requires=[IS_NOT_EMPTY()], label="HDD"),
+	db.os_type.id, '%(name)s')], label="Operation System"),
+	Field('cpu', 'string',  label="CPU"),
+	Field('ram', 'string',  label="RAM"),
+	Field('hard_disk', 'string',  label="HDD"),
 	Field('drive', 'string', label="CD/DVD"),
 	Field('screen_size', 'string', label="Display"),
 	Field('is_active', 'boolean', default=True, label="Active"),
@@ -336,6 +355,30 @@ db.define_table('device_accessories',
 			readable=True, writable=False),
 	format='%(name)s'
 )
+
+##printer_location
+db.define_table('printer_location',
+	Field('printer_name', 'string', requires=[IS_NOT_EMPTY()],label="Printer Name"),
+	Field('location_plant_id', 'reference location_plant', requires=[IS_NOT_EMPTY()], label="Location"),
+	Field('department_id', 'reference department', requires=[IS_NOT_EMPTY()], label="Department"),
+	Field('printer_id', 'reference device', requires=[IS_NOT_EMPTY()], label="Printer"),
+	Field('Serial', 'string', requires=[IS_NOT_EMPTY()], label="Serial Number"),
+	Field('ip_address', 'string', default='0.0.0.0', label="Network IP"),
+	Field('is_active', 'boolean', default=True, label="Active"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False),
+	format='%(printer_name)s'
+)
+
+db.printer_location.location_plant_id.requires=IS_IN_DB(db(db.location_plant.is_active == True),db.location_plant.id, '%(name)s')
+db.printer_location.department_id.requires=IS_IN_DB(db(db.department.is_active == True),db.department.id, '%(name)s')
+db.printer_location.printer_id.requires=IS_IN_DB(db(db.device.is_active == True and db.device.device_type_id == 6),db.device.id, '%(name)s')
 
 ## Rent Device
 db.define_table('rent',

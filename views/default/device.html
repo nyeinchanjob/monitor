@@ -20,32 +20,28 @@
 
 <script type="text/javascript">
     var dcode = {{=XML(dcode)}};
+    var dName = [null, null, null];
     $('#device_device_type_id').change(function() {
-        var device = $('#device_name').val();
-        var device_arr = device.length > 0 ? device.split('-') : '';
         var selected_loc = $('#device_device_type_id').val();
         for (var i = 0; i < dcode.length; i++) {
             if (selected_loc == dcode[i]['id']) {
-                if (device_arr.length > 1) {
-                    $('#device_name').val(dcode[i]['device_code'] + '-' + device_arr[1] + '-' + device_arr[2]);
-                } else {
-                    if (device.length > 0) {
-                        $('#device_name').val(dcode[i]['device_code'] + '-' + device);
-                    } else {
-                        $('#device_name').val(dcode[i]['device_code'] + '-');
-                    }
-
-                }
+                dName[0] = dcode[i]['device_code'];
+                setDeviceName(dName);
             }
         }
     });
-    $('#device_device_model_id').change(function() {
-        var device = $('#device_name').val();
-        var device_arr = device.length > 0 ? device.split('-') : '';
-        if (device_arr.length > 1) {
-            $('#device_name').val($('#device_device_model_id :selected').text() + '-' + device_arr[1]);
-        } else {
-            $('#device_name').val($('#device_device_model_id :selected').text() + '-');
-        }
+
+    $('#device_device_brand_id').change(function() {
+        dName[1] = $('#device_device_brand_id :selected').text();
+        setDeviceName(dName);
     });
+
+    $('#device_device_model_id').change(function() {
+        dName[2] = $('#device_device_model_id :selected').text();
+        setDeviceName(dName);
+    });
+
+    function setDeviceName(devicename) {
+        $('#device_name').val(devicename.join('-'));
+    }
 </script>

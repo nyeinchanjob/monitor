@@ -1,0 +1,3 @@
+apps_type.id,apps_type.name,apps_type.is_active,apps_type.created_on,apps_type.created_by,apps_type.modified_on,apps_type.modified_by
+2,Third Party,True,2016-12-20 11:04:17,Nyein Chan (2),2017-01-09 15:27:44,Nyein Chan (2)
+1,Essential,True,2016-12-20 11:03:57,Nyein Chan (2),2017-01-09 15:27:39,Nyein Chan (2)

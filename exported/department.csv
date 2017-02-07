@@ -1,0 +1,5 @@
+department.id,department.name,department.is_active,department.created_on,department.created_by,department.modified_on,department.modified_by
+4,Commercial,True,2017-01-10 12:11:21,Nyein Chan (2),2017-01-10 12:11:21,Nyein Chan (2)
+3,Sales,True,2017-01-10 12:11:13,Nyein Chan (2),2017-01-10 12:11:13,Nyein Chan (2)
+2,H.R,True,2017-01-10 12:11:06,Nyein Chan (2),2017-01-10 12:11:06,Nyein Chan (2)
+1,I.T,True,2017-01-10 12:10:21,Nyein Chan (2),2017-01-10 12:10:21,Nyein Chan (2)

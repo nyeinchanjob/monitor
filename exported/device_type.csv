@@ -1,0 +1,7 @@
+device_type.id,device_type.name,device_type.device_code,device_type.is_active,device_type.created_on,device_type.created_by,device_type.modified_on,device_type.modified_by
+6,Printer,PNT,True,2016-12-20 09:51:10,Nyein Chan (2),2017-01-03 13:05:39,Nyein Chan (2)
+5,Tablet,TBL,True,2016-12-20 09:51:04,Nyein Chan (2),2017-01-03 13:05:49,Nyein Chan (2)
+4,Phone,PHN,True,2016-12-20 09:50:58,Nyein Chan (2),2017-01-03 13:05:57,Nyein Chan (2)
+3,Ooredoo MiFi,MFi,True,2016-12-20 09:50:47,Nyein Chan (2),2017-01-03 13:06:07,Nyein Chan (2)
+2,Desktop,D,True,2016-12-20 09:50:32,Nyein Chan (2),2017-01-03 13:06:13,Nyein Chan (2)
+1,Laptop,L,True,2016-12-20 09:50:25,Nyein Chan (2),2017-01-03 13:06:18,Nyein Chan (2)

@@ -41,7 +41,7 @@ def device_brand():
     brand_grid = SQLFORM.smartgrid(
         db.device_brand,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.device_brand.id,
         linked_tables=False
@@ -53,7 +53,7 @@ def device_model():
     model_grid = SQLFORM.smartgrid(
         db.device_model,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.device_model.id,
         linked_tables=False
@@ -65,7 +65,7 @@ def device_os():
     os_grid = SQLFORM.smartgrid(
         db.os_type,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.os_type.id,
         linked_tables=False
@@ -77,7 +77,7 @@ def device_type():
     type_grid = SQLFORM.smartgrid(
         db.device_type,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.device_type.id,
         linked_tables=False
@@ -89,7 +89,7 @@ def device():
     grid = SQLFORM.smartgrid(
         db.device,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=[db.device.device_type_id, db.device.name],
         linked_tables=False
@@ -102,7 +102,7 @@ def apps_type():
     type_grid = SQLFORM.smartgrid(
         db.apps_type,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.apps_type.id,
         linked_tables=False
@@ -114,7 +114,7 @@ def apps():
     apps_grid = SQLFORM.smartgrid(
         db.apps,
         paginate=25,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.apps.id,
         linked_tables=False
@@ -160,7 +160,7 @@ def app_assign_detail_list():
         		searchable=False,
         		editable=False,
         		details=False,
-        		csv=False,
+        		csv=True,
         		paginate=5,
         		orderby=~db.app_assign_detail.app_assign_id
     		)
@@ -222,11 +222,23 @@ def location_plant():
     response.moduleTitle='Plant'
     return dict(form=grid)
 
+def printer_location():
+    grid = SQLFORM.smartgrid(db.printer_location,
+        paginate=20,
+        csv=True,
+        details=False,
+        orderby=~db.printer_location.id,
+        linked_tables=False)
+
+    response.moduleTitle='Printer Location'
+    return dict(form=grid)
+
+
 def employee():
     grid = SQLFORM.smartgrid(
         db.employee,
         paginate=20,
-        csv=False,
+        csv=True,
         details=False,
         orderby=[db.employee.department_id, db.employee.name],
         linked_tables=False
@@ -235,11 +247,24 @@ def employee():
     response.moduleTitle = 'Employee'
     return dict(form=grid)
 
+def account_type():
+    grid = SQLFORM.smartgrid(
+        db.account_type,
+        paginate=20,
+        csv=True,
+        details=False,
+        orderby=~db.account_type.id,
+        linked_tables=False
+    )
+
+    response.moduleTitle = 'EMail Type'
+    return dict(form=grid)
+
 def email_type():
     grid = SQLFORM.smartgrid(
         db.email_type,
         paginate=20,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.email_type.id,
         linked_tables=False
@@ -252,7 +277,7 @@ def license_type():
     grid = SQLFORM.smartgrid(
         db.license_type,
         paginate=20,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.license_type.id,
         linked_tables=False
@@ -266,7 +291,7 @@ def email_account():
     grid = SQLFORM.smartgrid(
         db.email_account,
         paginate=20,
-        csv=False,
+        csv=True,
         details=False,
         orderby=[db.email_account.email_type_id, db.email_account.username],
         linked_tables=False)
@@ -277,7 +302,7 @@ def device_accessories():
     grid = SQLFORM.smartgrid(
         db.device_accessories,
         paginate=20,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.device_accessories.id,
         linked_tables=False)
@@ -299,7 +324,7 @@ def rent():
     grid = SQLFORM.smartgrid(
         db.rent,
         paginate=10,
-        csv=False,
+        csv=True,
         details=False,
         orderby=~db.rent.rent_date|db.rent.employee_id,
         linked_tables=False
@@ -361,7 +386,7 @@ def assigndetaillist():
 		searchable=False,
 		editable=False,
 		details=False,
-		csv=False,
+		csv=True,
 		paginate=5,
 		orderby=~db.assign_device.device_id
 		)
@@ -375,7 +400,7 @@ def assignapplist():
 		searchable=False,
 		editable=False,
 		details=False,
-		csv=False,
+		csv=True,
 		paginate=5,
 		orderby=~db.assign_app.app_id
 		)
@@ -391,7 +416,7 @@ def assignaccessorieslist():
 		searchable=False,
 		editable=False,
 		details=False,
-		csv=False,
+		csv=True,
 		paginate=5,
 		orderby=~db.assign_accessories.accessories_id
 		)

@@ -1,0 +1,8 @@
+device_brand.id,device_brand.name,device_brand.is_active,device_brand.created_on,device_brand.created_by,device_brand.modified_on,device_brand.modified_by
+7,HP,True,2016-12-20 09:51:49,Nyein Chan (2),2016-12-20 09:51:49,Nyein Chan (2)
+6,ASUS,True,2016-12-20 09:51:44,Nyein Chan (2),2016-12-20 09:51:44,Nyein Chan (2)
+5,SAMSUNG,True,2016-12-20 09:51:38,Nyein Chan (2),2016-12-20 09:51:38,Nyein Chan (2)
+4,Intermac,True,2016-12-20 09:51:31,Nyein Chan (2),2016-12-20 09:51:31,Nyein Chan (2)
+3,Canon,True,2016-12-20 09:51:24,Nyein Chan (2),2016-12-20 09:51:24,Nyein Chan (2)
+2,Dell,True,2016-12-20 09:51:17,Nyein Chan (2),2016-12-20 09:51:17,Nyein Chan (2)
+1,Lenovo,True,2016-12-15 16:21:20,Nyein Chan (2),2016-12-15 16:21:20,Nyein Chan (2)

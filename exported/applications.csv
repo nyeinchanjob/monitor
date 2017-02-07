@@ -1,0 +1,5 @@
+apps.id,apps.name,apps.is_active,apps.created_on,apps.created_by,apps.modified_on,apps.modified_by
+4,SAP,True,2016-12-20 12:28:08,Nyein Chan (2),2016-12-20 12:28:08,Nyein Chan (2)
+3,Forticlient,True,2016-12-20 12:27:37,Nyein Chan (2),2016-12-20 12:27:37,Nyein Chan (2)
+2,Teamviewer,True,2016-12-20 12:27:20,Nyein Chan (2),2016-12-20 12:27:20,Nyein Chan (2)
+1,Microsoft Office 2010,True,2016-12-20 12:27:04,Nyein Chan (2),2016-12-20 12:27:04,Nyein Chan (2)

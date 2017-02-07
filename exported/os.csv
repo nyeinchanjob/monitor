@@ -1,0 +1,5 @@
+os_type.id,os_type.name,os_type.is_active,os_type.created_on,os_type.created_by,os_type.modified_on,os_type.modified_by
+4,Android 4.2.2,True,2016-12-20 09:53:25,Nyein Chan (2),2016-12-20 09:53:25,Nyein Chan (2)
+3,Windows 8.1,True,2016-12-20 09:53:11,Nyein Chan (2),2016-12-20 09:53:11,Nyein Chan (2)
+2,Windows 10 Enterprise Edition,True,2016-12-20 09:50:01,Nyein Chan (2),2016-12-20 09:50:01,Nyein Chan (2)
+1,Windows 7 Enterprise Edition,True,2016-12-20 09:49:43,Nyein Chan (2),2016-12-20 09:50:14,Nyein Chan (2)

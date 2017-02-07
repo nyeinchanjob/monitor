@@ -1,0 +1,2 @@
+sim.id,sim.sim_number,sim.brand_type_id,sim.plan_type_id,sim.is_used,sim.is_active,sim.created_on,sim.created_by,sim.modified_on,sim.modified_by
+1,0996992307,Ooredoo,2 GB,False,True,2017-01-10 11:33:36,Nyein Chan (2),2017-01-10 11:33:36,Nyein Chan (2)
