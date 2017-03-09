@@ -12,7 +12,7 @@
           <!-- </md-toolbar> -->
           <!-- <md-dialog-content> -->
             <md-card-content class="md-dialog-content" layout="column" flex>
-					<div layout="row" flex>
+					<div layout="column" flex>
 						<div flex>{{=form_app_assign_detail}}</div>
                 		<div flex>{{=LOAD('default', 'app_assign_detail_list.load', vars=dict(app_assign_id=app_assign_id), ajax=True)}}</div>
 					</div>

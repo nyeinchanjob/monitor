@@ -1,273 +1,269 @@
 <!DOCTYPE html>
 <html lang="{{=T.accepted_language or 'en'}}">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <title>{{=T(response.title or request.application)}}</title>
-    <meta name="application-name" content="{{=request.application}}">
-    <meta name="google-site-verification" content="">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="{{=URL('static','images/android-desktop.png')}}">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <title>{{=T(response.title or request.application)}}</title>
+  <meta name="application-name" content="{{=request.application}}">
+  <meta name="google-site-verification" content="">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="{{=URL('static','images/android-desktop.png')}}">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="{{=URL('static','images/ios-desktop.png')}}">
-    <!-- include stylesheets -->
-    <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/custom.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/mdl-style.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/style.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/myansanspro.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/material.min.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/material.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/angular-material.css')}}" />
-    <link rel="stylesheet" href="{{=URL('static', 'css/materialicons.css')}}" />
-    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}" />
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="{{=URL('static','images/ios-desktop.png')}}">
+  <!-- include stylesheets -->
+  <link rel="stylesheet" href="{{=URL('static','css/bootstrap.min.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static','css/web2py-bootstrap3.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/custom.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/mdl-style.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/style.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/myansanspro.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/material.min.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/material.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/angular-material.css')}}" />
+  <link rel="stylesheet" href="{{=URL('static', 'css/materialicons.css')}}" />
+  <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="{{=URL('static','images/favicon.png')}}" />
 
-    <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
-    {{include 'web2py_ajax.html'}}
+  <script src="{{=URL('static','js/modernizr-2.8.3.min.js')}}"></script>
+  {{include 'web2py_ajax.html'}}
 </head>
+
 <body ng-app="MyApp" ng-cloak="" class="dark-body-color" ng-controller="AppCtrl">
-    <md-content flex layout-fill layout="column">
+  <md-content flex layout-fill layout="column">
     <!-- Always shows a header, even in smaller screens. -->
     <!-- Masthead ===================================== -->
     {{block header}}
     <md-toolbar class="md-toolbar-tools md-whiteframe-4dp" layout="row" style="background-color:#F44336;">
-        <md-button class="md-icon-button" ng-show="true" aria-label="menu" ng-click="showSideContent();">
-            <md-icon md-svg-icon="{{=URL('static', 'images/icons/menu_white_24px.svg')}}"></md-icon>
-        </md-button>
-        <h2>
-            <span flex>{{=T(response.title or request.application)}}</span>
-        </h2>
-        <span flex>&nbsp;</span>
-        <div layout="row" layout-align="center center">
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    {{=auth.navbar(mode='dropdown') or ''}}
-                </ul>
-                {{if response.menu:}}
-                    {{=MENU(response.menu, _class='nav navbar-nav',li_class='dropdown',ul_class='dropdown-menu')}}
-                {{pass}}
-            </div>
-            {{if hasattr(T,'get_possible_languages_info'):}}
-            <md-input-container class="" style="background-color:#F44336;">
-                <select name="adminlanguage" onchange="var date = new       Date();cookieDate=date.setTime(date.getTime()+(100*24*60*60*1000));document.cookie='adminLanguage='+this.options[this.selectedIndex].id+'; expires='+cookieDate+'; path=/';window.location.pathname='{{=request.application}}/'+this.options[this.selectedIndex].value;"
-                    class="btn btn-default">
-                    {{for langinfo in sorted([(code,info[1]) for code,info in T.get_possible_languages_info().iteritems() if (code != 'default') and (code in ['my-mm', 'en-us'])   ]):}}
-                        <option {{=T.accepted_language==langinfo[0] and 'selected' or ''}} {{='id='+langinfo[0]}} {{='value='+langinfo[0]}}>
-                            {{=langinfo[1]}}
-                        </option>
-                    {{pass}}
-                        </select>
-            </md-input-container>
-            {{pass}}
+      <md-button class="md-icon-button" ng-show="true" aria-label="menu" ng-click="showSideContent();">
+        <md-icon md-svg-icon="{{=URL('static', 'images/icons/menu_white_24px.svg')}}"></md-icon>
+      </md-button>
+      <h2>
+        <span flex>{{=T(response.title or request.application)}}</span>
+      </h2>
+      <span flex>&nbsp;</span>
+      <div layout="row" layout-align="center center">
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            {{=auth.navbar(mode='dropdown') or ''}}
+          </ul>
+          {{if response.menu:}} {{=MENU(response.menu, _class='nav navbar-nav',li_class='dropdown',ul_class='dropdown-menu')}} {{pass}}
         </div>
+        {{if hasattr(T,'get_possible_languages_info'):}}
+        <md-input-container class="" style="background-color:#F44336;">
+          <select name="adminlanguage" onchange="var date = new       Date();cookieDate=date.setTime(date.getTime()+(100*24*60*60*1000));document.cookie='adminLanguage='+this.options[this.selectedIndex].id+'; expires='+cookieDate+'; path=/';window.location.pathname='{{=request.application}}/'+this.options[this.selectedIndex].value;"
+            class="btn btn-default">
+            {{for langinfo in sorted([(code,info[1]) for code,info in T.get_possible_languages_info().iteritems() if (code != 'default') and (code in ['my-mm', 'en-us']) ]):}}
+            <option {{=T.accepted_language==langinfo[0] and 'selected' or ''}} {{='id=' +langinfo[0]}} {{='value=' +langinfo[0]}}>
+              {{=langinfo[1]}}
+            </option>
+            {{pass}}
+            </select>
+        </md-input-container>
+        {{pass}}
+      </div>
     </md-toolbar>
-    {{end}}
-    {{block center}}
+    {{end}} {{block center}}
     <md-content flex md-scroll-y layout="row" class="body-color">
 
-        <!-- <md-sidenav class="md-sidenav-left" md-component-id="left"> -->
-            <md-content flex="20" ng-show="showSide" class="md-whiteframe-4dp" layout="column">
-                <section>
-                    <md-subheader class="md-primary body-color">Home</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'index')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Home")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'assign')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Register")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'printer_location')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Printer Location")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'rent')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Rent")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <md-divider></md-divider>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('Reports')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("List")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Stock")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('Device')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Device")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device_brand')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Brand")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_model')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Model")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_os')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("OS")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_type')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Type")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_accessories')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Accessories")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <md-divider></md-divider>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('Software')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'apps_type')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Application Type")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'apps')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Applications")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'app_assign')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Software")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <md-divider></md-divider>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('Employee Information')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'employee')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Employee")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'department')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Department")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'email_type')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("EMail Type")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'license_type')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("License Type")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'account_type')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Account Type")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'email_account')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("E-Mail")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <md-divider></md-divider>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('SIM Information')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class = "md-actions" ng-href="{{=URL('default', 'sim_brand')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("SIM Brand")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim_plan')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("SIM Plan")}}</p>
-                        </md-list-item>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("SIM")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
-                <section>
-                    <md-subheader class="md-primary body-color">{{=T('Others')}}</md-subheader>
-                    <md-list>
-                        <md-list-item class="md-actions" ng-href="{{=URL('default', 'location_plant')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("Plant")}}</p>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                        <md-list-item ng-click="show_layout='deals_range_list'" class="md-actions" ng-href="{{=URL('default', 'about')}}">
-                            <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
-                            <p>{{=T("About")}}</p>
-                        </md-list-item>
-                    </md-list>
-                </section>
+      <!-- <md-sidenav class="md-sidenav-left" md-component-id="left"> -->
+      <md-content flex="20" ng-show="showSide" class="md-whiteframe-4dp" layout="column">
+        <section>
+          <md-subheader class="md-primary body-color">Home</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'index')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_home_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Home")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'assign')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_playlist_add_check_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Register")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'printer_location')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_print_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Printer Location")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'rent')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_people_outline_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Rent")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <md-divider></md-divider>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Reports')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("List")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Stock")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Device')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_devices_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Device")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions content-color" ng-href="{{=URL('default', 'device_brand')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Brand")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_model')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_label_balck_24px.svg')}}"></md-icon>
+              <p>{{=T("Model")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_os')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("OS")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_type')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Type")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'device_accessories')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Accessories")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <md-divider></md-divider>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Software')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'apps_type')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Application Type")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'apps')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Applications")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'app_assign')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Software")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <md-divider></md-divider>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Employee Information')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'employee')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_account_box_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Employee")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'department')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("Department")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'location_plant')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_place_black_24px.svg')}}"></md-icon>
+              <p>{{=T("Plant")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <md-divider></md-divider>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Email Setup')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'email_type')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("EMail Type")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'license_type')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("License Type")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'account_type')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("User Type")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <md-divider></md-divider>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('SIM Information')}}</md-subheader>
+          <md-list>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim_brand')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_wifi_balck_24px.svg')}}"></md-icon>
+              <p>{{=T("SIM Brand")}}</p>
+            </md-list-item>
+            <md-list-item class="md-actions" ng-href="{{=URL('default', 'sim_plan')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/ic_sim_card_black_24px.svg')}}"></md-icon>
+              <p>{{=T("SIM Plan")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
+        <section>
+          <md-subheader class="md-primary body-color">{{=T('Others')}}</md-subheader>
+          <md-list>
+            <md-list-item ng-click="show_layout='deals_range_list'" class="md-actions" ng-href="{{=URL('default', 'about')}}">
+              <md-icon md-svg-icon="{{=URL('static', 'images/icons/bottle_24px.svg')}}"></md-icon>
+              <p>{{=T("About")}}</p>
+            </md-list-item>
+          </md-list>
+        </section>
 
-                <spand flex>&nbsp;</spand>
-            </md-content>
-        <!-- </md-sidenav> -->
-        <div flex class="body-color">
-            {{include}}
-        </div>
-        {{end}}
+        <spand flex>&nbsp;</spand>
+      </md-content>
+      <!-- </md-sidenav> -->
+      <div flex class="body-color">
+        {{include}}
+      </div>
+      {{end}}
     </md-content>
     {{block footer}}
     <div id="web2py-my-toast" class="mdl-js-snackbar mdl-snackbar">
-        <div class="mdl-snackbar__text"></div>
-        <button class="mdl-snackbar__action" type="button"></button>
+      <div class="mdl-snackbar__text"></div>
+      <button class="mdl-snackbar__action" type="button"></button>
     </div>
     {{end}}
-</md-content>
-    <!-- The javascript =============================== -->
-    <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
-    <script src="{{=URL('static','js/web2py-bootstrap3.js')}}"></script>
-    <script src="{{=URL('static','js/jquery.js')}}"></script>
-    <script src="{{=URL('static','js/jquery-2.1.4.min.js')}}"></script>
-    <script src="{{=URL('static','js/jquery.base64.js')}}"></script>
+  </md-content>
+  <!-- The javascript =============================== -->
+  <script src="{{=URL('static','js/bootstrap.min.js')}}"></script>
+  <script src="{{=URL('static','js/web2py-bootstrap3.js')}}"></script>
+  <script src="{{=URL('static','js/jquery.js')}}"></script>
+  <script src="{{=URL('static','js/jquery-2.1.4.min.js')}}"></script>
+  <script src="{{=URL('static','js/jquery.base64.js')}}"></script>
 
-    <script src="{{=URL('static', 'js/angular.js')}}"></script>
-    <script src="{{=URL('static', 'js/material.min.js')}}"></script>
-    <script src="{{=URL('static', 'js/angular-material.js')}}"></script>
-    <script src="{{=URL('static', 'js/angular-aria.js')}}"></script>
-    <script src="{{=URL('static', 'js/angular-animate.js')}}"></script>
-    <script src="{{=URL('static', 'js/angular-messages.js')}}"></script>
-    <script src="{{=URL('static', 'js/script.js')}}"></script>
+  <script src="{{=URL('static', 'js/angular.js')}}"></script>
+  <script src="{{=URL('static', 'js/material.min.js')}}"></script>
+  <script src="{{=URL('static', 'js/angular-material.js')}}"></script>
+  <script src="{{=URL('static', 'js/angular-aria.js')}}"></script>
+  <script src="{{=URL('static', 'js/angular-animate.js')}}"></script>
+  <script src="{{=URL('static', 'js/angular-messages.js')}}"></script>
+  <script src="{{=URL('static', 'js/script.js')}}"></script>
 
-    {{block page_js}}{{end page_js}}
-    <script>
-        // var MyApp = angular.module('MyApp', ['ngMaterial', 'ngMessages']);
-        // MyApp.controller('AppCtrl', ['$scope', '$mdDialog', '$http', function($scope, $mdDialog, $http) {
-        //
-        // }]);
-        (function() {
-            'use strict';
-            var snackbarContainer = document.querySelector('#web2py-my-toast');
-            var data = {
-                message: "{{=response.flash or ''}}"
-            };
-            var timeout_id = setTimeout(function() {
-                snackbarContainer.MaterialSnackbar.showSnackbar(data);
-            }, 1000);
-        }());
-    </script>
+  {{block page_js}}{{end page_js}}
+  <script>
+    // var MyApp = angular.module('MyApp', ['ngMaterial', 'ngMessages']);
+    // MyApp.controller('AppCtrl', ['$scope', '$mdDialog', '$http', function($scope, $mdDialog, $http) {
+    //
+    // }]);
+    (function() {
+      'use strict';
+      var snackbarContainer = document.querySelector('#web2py-my-toast');
+      var data = {
+        message: "{{=response.flash or ''}}"
+      };
+      var timeout_id = setTimeout(function() {
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
+      }, 1000);
+    }());
+  </script>
 
 </body>
 

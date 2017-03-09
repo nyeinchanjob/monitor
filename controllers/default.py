@@ -161,7 +161,7 @@ def app_assign_detail_list():
         		editable=False,
         		details=False,
         		csv=True,
-        		paginate=5,
+        		paginate=15,
         		orderby=~db.app_assign_detail.app_assign_id
     		)
     return dict(app_assign_detail_grid=app_assign_detail_grid)
@@ -257,7 +257,7 @@ def account_type():
         linked_tables=False
     )
 
-    response.moduleTitle = 'EMail Type'
+    response.moduleTitle = 'User Type'
     return dict(form=grid)
 
 def email_type():
@@ -357,21 +357,30 @@ def assigndetail():
     db.assign_app.assign_id.default = assign_id
     db.assign_accessories.assign_id.default = assign_id
     db.assign_sim.assign_id.default = assign_id
+    db.assign_email.assign_id.default = assign_id
     form_device = SQLFORM(db.assign_device)
     form_app = SQLFORM(db.assign_app)
     form_accessories = SQLFORM(db.assign_accessories)
+    form_sim = SQLFORM(db.assign_sim)
+    form_email = SQLFORM(db.assign_email)
     form_device.add_button('Back', URL('default', 'assign'))
     form_device.add_button('Back', URL('default', 'assign'))
     form_app.add_button('Back', URL('default', 'assign'))
+    form_sim.add_button('Back', URL('default', 'assign'))
+    form_email.add_button('Back', URL('default', 'assign'))
     if form_device.process().accepted:
         redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
     if form_app.process().accepted:
         redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
     if form_accessories.process().accepted:
         redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
+    if form_sim.process().accepted:
+        redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
+    if form_email.process().accepted:
+        redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
 
     response.moduleTitle = 'Assign Detail'
-    return dict(form_device=form_device, form_app=form_app, form_accessories=form_accessories, assign_id=assign_id)
+    return dict(form_device=form_device, form_app=form_app, form_email=form_email, form_accessories=form_accessories, form_sim=form_sim, assign_id=assign_id)
 
 def assigndetaillist():
     #db.assign_device.device_id.requires = IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
@@ -414,13 +423,46 @@ def assignaccessorieslist():
         db.assign_accessories.is_damaged, db.assign_accessories.is_lost],
 		create=False,
 		searchable=False,
-		editable=False,
+		editable=True,
 		details=False,
 		csv=True,
 		paginate=5,
 		orderby=~db.assign_accessories.accessories_id
 		)
 	return dict(accessories_grid=accessories_grid)
+
+def assignsimlist():
+	assign_id = request.vars.assign_id
+	sim_where = (db.assign_sim.assign_id == assign_id)
+	sim_grid = SQLFORM.grid(sim_where, fields=[db.assign_sim.id, db.assign_sim.phone_number,
+        db.assign_sim.sim_brand_id, db.assign_sim.sim_plan_id, db.assign_sim.is_used,
+        db.assign_sim.is_locked, db.assign_sim.is_lost],
+		create=False,
+		searchable=False,
+		editable=True,
+		details=False,
+		csv=True,
+		paginate=5,
+		orderby=~db.assign_sim.id
+		)
+	return dict(sim_grid=sim_grid)
+
+def assignemaillist():
+	assign_id = request.vars.assign_id
+	email_where = (db.assign_email.assign_id == assign_id)
+	email_grid = SQLFORM.grid(email_where, fields=[db.assign_email.id, db.assign_email.username,
+        db.assign_email.default_password, db.assign_email.recovery_email,
+        db.assign_email.recovery_phone, db.assign_email.email_type_id,
+        db.assign_email.account_type_id, db.assign_email.is_active],
+		create=False,
+		searchable=False,
+		editable=True,
+		details=False,
+		csv=True,
+		paginate=5,
+		orderby=~db.assign_email.id
+		)
+	return dict(email_grid=email_grid)
 
 
 def user():
