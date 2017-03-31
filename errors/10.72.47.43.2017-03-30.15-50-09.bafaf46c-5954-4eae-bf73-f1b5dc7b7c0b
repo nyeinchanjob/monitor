@@ -1,0 +1,831 @@
+(dp1
+S'output'
+p2
+S"<type 'exceptions.AttributeError'> 'Table' object has no attribute 'usename'"
+p3
+sS'layer'
+p4
+S'/home/peace/web2py/applications/monitor/models/dbsetup.py'
+p5
+sS'code'
+p6
+S'from datetime import datetime\nfrom gluon.contrib.appconfig import AppConfig\nimport os\n\n# myconf = AppConfig(reload=True)\n\n\n# device_brand\ndb.define_table(\'device_brand\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Brand"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n# device_model\ndb.define_table(\'device_model\',\n\tField(\'name\', \'string\',requires=[IS_NOT_EMPTY()], label="Model"),\n\tField(\'brand_id\', \'reference device_brand\',\n\t\trequires=[IS_NOT_EMPTY()], label="Brand"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat = \'%(name)s\')\n\ndb.device_model.brand_id.requires=IS_IN_DB(db(db.device_brand.is_active == True), db.device_brand.id, \'%(name)s\')\n\n\n# device_type\ndb.define_table(\'device_type\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Device Type"),\n\tField(\'device_code\', \'string\', requires=[IS_NOT_EMPTY()], label="Prefix Code"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n# device_type\ndb.define_table(\'os_type\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="OS Name"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n# apps_type\ndb.define_table(\'apps_type\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="App Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n\n# apps\ndb.define_table(\'apps\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="App Name"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n\n# app_assign\ndb.define_table(\'app_assign\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="App Name"),\n\tField(\'app_type_id\', \'reference apps_type\', label="Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\n\tformat=\'%(name)s\'\n)\n\ndb.app_assign.app_type_id.requires=IS_IN_DB(db(db.apps_type.is_active == True), db.apps_type.id, \'%(name)s\')\n\n#app_assign_detail\ndb.define_table(\'app_assign_detail\',\n\tField(\'app_assign_id\', \'reference app_assign\', requires=[IS_NOT_EMPTY()], label="Assign ID"),\n\tField(\'apps_id\', \'reference apps\', requires=[IS_NOT_EMPTY()], label="Application Name")\n)\n\ndb.app_assign_detail.apps_id.requires=IS_IN_DB(db(db.apps.is_active == True), db.apps.id, \'%(name)s\')\n\n# email_type\ndb.define_table(\'email_type\',\n\tField(\'email_name\', \'string\', requires=[IS_NOT_EMPTY()], label="Email Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(email_name)s\')\n\n# license_type\ndb.define_table(\'license_type\',\n\tField(\'license_name\', \'string\', requires=[IS_NOT_EMPTY()], label="License Type"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(license_name)s\')\n\n# account_type\ndb.define_table(\'account_type\',\n\tField(\'account_name\', \'string\', requires=[IS_NOT_EMPTY()], label="Type Name"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(account_name)s\')\n\n## email\ndb.define_table(\'email_account\',\n\tField(\'username\', \'string\', requires=[IS_NOT_EMPTY()], label="Email Address"),\n\tField(\'default_password\', \'string\', label="Default Password"),\n\tField(\'recovery_email\', \'string\', label="Recovery Email"),\n\tField(\'recovery_phone\', \'string\', label="Recovery Phone"),\n\tField(\'email_type_id\', \'reference email_type\', requires=[IS_NOT_EMPTY()], label="Email Type"),\n\tField(\'account_type_id\', \'reference account_type\', requires=[IS_NOT_EMPTY()], label="User Type"),\n\tField(\'license_type_id\', \'reference license_type\', requires=[IS_NOT_EMPTY()], label="License Type"),\n\tField(\'is_used\', \'boolean\', default=False, label="Used"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(username)s\'\n)\n\ndb.email_account.email_type_id.requires=IS_IN_DB(db(db.email_type.is_active == True), db.email_type.id, \'%(email_name)s\')\ndb.email_account.account_type_id.requires=IS_IN_DB(db(db.account_type.is_active == True), db.account_type.id, \'%(account_name)s\')\ndb.email_account.license_type_id.requires=IS_IN_DB(db(db.license_type.is_active == True), db.license_type.id, \'%(license_name)s\')\n\n# department\ndb.define_table(\'department\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Department Name"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n## employee\ndb.define_table(\'employee\',\n\tField(\'code\', \'string\', requires=[IS_NOT_EMPTY()], label="Code"),\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'job_title\', \'string\', label="Job Title"),\n\tField(\'department_id\', \'reference department\', requires=[IS_NOT_EMPTY()], label="Department"),\n\tField(\'phone\',  requires=[IS_NOT_EMPTY()], label="Phone"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\')\n\ndb.employee.department_id.requires=IS_IN_DB(db(db.department.is_active == True),db.department.id, \'%(name)s\')\n\n\n# location\ndb.define_table(\'location_plant\',\n\tField(\'prefix_plant\', \'string\', requires=[IS_NOT_EMPTY()], label="Prefix Code"),\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Location/Plant"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n\n# sim_brand\ndb.define_table(\'sim_brand\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="SIM Brand"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n\n# sim_plan\ndb.define_table(\'sim_plan\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="SIM Plan"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n##sim\ndb.define_table(\'sim\',\n\tField(\'sim_number\', \'string\', requires=[IS_NOT_EMPTY()],label="Phone Number"),\n\tField(\'brand_type_id\', \'reference sim_brand\', requires=[IS_NOT_EMPTY()], label="Operator"),\n\tField(\'plan_type_id\', \'reference sim_plan\', requires=[IS_NOT_EMPTY()], label="Plan"),\n\tField(\'is_used\', \'boolean\', default=False, label="Used"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(sim_number)s\'\n)\n\ndb.sim.brand_type_id.requires=IS_IN_DB(db(db.sim_brand.is_active == True),db.sim_brand.id, \'%(name)s\')\ndb.sim.plan_type_id.requires=IS_IN_DB(db(db.sim_plan.is_active == True),db.sim_plan.id, \'%(name)s\')\n\n\n\n## device\ndb.define_table(\'device\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Name"),\n\tField(\'device_brand_id\', \'reference device_brand\', requires=[IS_NOT_EMPTY()], label="Brand"),\n\tField(\'device_model_id\', \'reference device_model\', requires=[\n\tIS_IN_DB(db(db.device_model.is_active == True).select(db.device_model.id),\n\tdb.device_model.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Model"),\n\tField(\'device_type_id\', \'reference device_type\', requires=[\n\tIS_IN_DB(db(db.device_type.is_active == True).select(db.device_type.id),\n\tdb.device_type.id, \'%(name)s\'),\n\tIS_NOT_EMPTY()], label="Type"),\n\tField(\'os_type_id\', \'reference os_type\', requires=[\n\tIS_IN_DB(db(db.os_type.is_active == True).select(db.os_type.id),\n\tdb.os_type.id, \'%(name)s\')], label="Operation System"),\n\tField(\'cpu\', \'string\',  label="CPU"),\n\tField(\'ram\', \'string\',  label="RAM"),\n\tField(\'hard_disk\', \'string\',  label="HDD"),\n\tField(\'drive\', \'string\', label="CD/DVD"),\n\tField(\'screen_size\', \'string\', label="Display"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\')\n\n\ndb.device.name.readonly = True\ndb.device.device_brand_id.requires = IS_IN_DB(db(db.device_brand.is_active == True),db.device_brand.id, \'%(name)s\')\ndb.device.device_model_id.requires = IS_IN_DB(db(db.device_model.is_active == True),db.device_model.id, \'%(name)s\')\ndb.device.device_type_id.requires = IS_IN_DB(db(db.device_type.is_active == True),db.device_type.id, \'%(name)s\')\ndb.device.os_type_id.requires = IS_IN_DB(db(db.os_type.is_active == True),db.os_type.id, \'%(name)s\')\nd_code = db(db.device_type.is_active == True).select(db.device_type.id, db.device_type.device_code)\n\n\n# sim_plan\ndb.define_table(\'device_accessories\',\n\tField(\'name\', \'string\', requires=[IS_NOT_EMPTY()], label="Accessories Name"),\n\tField(\'other_info\', \'string\', requires=[IS_NOT_EMPTY()], label="Others Information"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(name)s\'\n)\n\n##printer_location\ndb.define_table(\'printer_location\',\n\tField(\'printer_name\', \'string\', requires=[IS_NOT_EMPTY()],label="Printer Name"),\n\tField(\'location_plant_id\', \'reference location_plant\', requires=[IS_NOT_EMPTY()], label="Location"),\n\tField(\'department_id\', \'reference department\', requires=[IS_NOT_EMPTY()], label="Department"),\n\tField(\'printer_id\', \'reference device\', requires=[IS_NOT_EMPTY()], label="Printer"),\n\tField(\'Serial\', \'string\', requires=[IS_NOT_EMPTY()], label="Serial Number"),\n\tField(\'ip_address\', \'string\', default=\'0.0.0.0\', label="Network IP"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tformat=\'%(printer_name)s\'\n)\n\ndb.printer_location.location_plant_id.requires=IS_IN_DB(db(db.location_plant.is_active == True),db.location_plant.id, \'%(name)s\')\ndb.printer_location.department_id.requires=IS_IN_DB(db(db.department.is_active == True),db.department.id, \'%(name)s\')\nprinter_id = 1\nfor i in db(db.device_type.name == \'Printer\').select(db.device_type.id):\n\tprinter_id = i.id\ndb.printer_location.printer_id.requires=IS_IN_DB(db(db.device.is_active == True and db.device.device_type_id == printer_id),db.device.id, \'%(name)s\')\n\n## Rent Device\ndb.define_table(\'rent\',\n\tField(\'employee_id\', \'reference employee\', requires=IS_NOT_EMPTY(), label="Employee"),\n\tField(\'rent_date\', \'datetime\', requires=IS_NOT_EMPTY(),  default=request.now, label="Rent Date"),\n\tField(\'device_id\', \'reference device\', requires=IS_NOT_EMPTY(), label="Device"),\n\tField(\'serial_number\', \'string\', requires=IS_NOT_EMPTY(), label="S/N or Assets Number"),\n\tField(\'rent_desc\', \'string\', label="Rent Description"),\n\tField(\'is_received\', \'boolean\', default=False, label="Received"),\n\tField(\'receive_date\', \'datetime\', label="Receive Date"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n\n)\ndb.rent.rent_date.represent= lambda x, row: x.strftime("%B %d, %Y")\ndb.rent.receive_date.show_if = (db.rent.is_received == True)\ndb.rent.employee_id.requires = IS_IN_DB(db(db.employee.is_active == True),\n\t\t\t\t\t\t\t\t\tdb.employee.id, \'%(name)s\', sort=True)\ndb.rent.device_id.requires = IS_IN_DB(db(db.device.is_active == True),\n\t\t\t\t\t\t\t\t\t\t  db.device.id, \'%(name)s\', sort=True)\n\n\ndb.define_table(\'assign\',\n    Field(\'employee_id\', \'reference employee\', label="Employee", requires=IS_NOT_EMPTY()),\n    Field(\'assign_date\', \'datetime\', default=request.now, label="Assign Date", requires=IS_NOT_EMPTY()),\n\t# Field(\'email_id\', \'reference email_account\', label="E-Mail", requires=IS_NOT_EMPTY()),\n\tField(\'location_plant_id\', \'reference location_plant\', requires=[IS_NOT_EMPTY()], label="Location"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tField(\'created_on\', \'datetime\', default=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'created_by\', \'reference auth_user\', default=auth.user_id,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_on\', \'datetime\', update=request.now,\n\t\t\treadable=True, writable=False),\n\tField(\'modified_by\', \'reference auth_user\', update=auth.user_id,\n\t\t\treadable=True, writable=False),\n    format=lambda r: "%s_%s" % (r.assign_date.strftime("%Y%m%d"),\n                                   db.employee(r.employee_id).name))\n\n\ndb.assign.employee_id.requires = IS_IN_DB(db(db.employee.is_active == True),\n\t\t\t\t\t\t\t\t\tdb.employee.id, \'%(name)s\')\ndb.assign.assign_date.requires = IS_NOT_EMPTY()\n# email_id = 0\n# for email in db(db.email_type.is_active == True and db.email_type.email_name == \'Domain\').select(db.email_type.id):\n# \temail_id = email.id\n# db.assign.email_id.requires = IS_IN_DB(db(db.email_account.is_used == False and\n# \t\t\t\t\t\t\t\t\tdb.email_account.is_active == True and db.email_account.email_type_id == email_id),\n# \t\t\t\t\t\t\t\t\tdb.email_account.id, \'%(username)s\')\ndb.assign.location_plant_id.requires=IS_IN_DB(db(db.location_plant.is_active == True),db.location_plant.id, \'%(name)s\')\n\ndb.define_table(\'assign_device\',\n    Field(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n    Field(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n    Field(\'device_id\', \'reference device\', label=\'Device\', requires=IS_NOT_EMPTY()),\n    Field(\'serial\', \'string\', requires=IS_NOT_EMPTY(), label=\'S/N or Unique Number\'),\n    Field(\'asset_number\', \'string\', label=\'Assets Number\'),\n    Field(\'device_color\', \'string\', label=\'Color\'),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_damaged\', \'boolean\', default=False, label="Damaged"),\n\tField(\'is_lost\', \'boolean\', default=False, label="Lost")\n)\n\ndb.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active==True), db.device.id, \'%(name)s\')\n\nused_serial =db((db.assign_device.is_used == True) | (db.assign_device.is_lost==True) | (db.assign_device.is_damaged==True))\ndb.assign_device.serial.requires=IS_NOT_IN_DB(used_serial, \'assign_device.serial\', error_message=\'This Serail Number is currently used.\')\n\ndb.define_table(\'assign_app\',\n\tField(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n\tField(\'app_id\', \'reference app_assign\', label=\'Application Name\', requires=IS_NOT_EMPTY()),\n)\n\ndb.assign_app.app_id.requires = IS_IN_DB(db(db.app_assign.is_active == True), db.app_assign.id, \'%(name)s\')\n\ndb.define_table(\'assign_accessories\',\n\tField(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n\tField(\'accessories_id\', \'reference device_accessories\', label=\'Accessory\', requires=IS_NOT_EMPTY()),\n\tField(\'serial\', \'string\', requires=IS_NOT_EMPTY(), label=\'S/N or Unique Number\'),\n    Field(\'asset_number\', \'string\', label=\'Assets Number\'),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_damaged\', \'boolean\', default=False, label="Damaged"),\n\tField(\'is_lost\', \'boolean\', default=False, label="Lost")\n)\n\ndb.assign_accessories.accessories_id.requires=IS_IN_DB(db(db.device_accessories.is_active == True),db.device_accessories.id, \'%(name)s\')\n\ndb.define_table(\'assign_sim\',\n\tField(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n\tField(\'phone_number\', \'string\', label=\'Phone Number\'),\n\tField(\'sim_brand_id\', \'reference sim_brand\', label=\'Operator\'),\n\tField(\'sim_plan_id\', \'reference sim_plan\', label=\'Plan\'),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_locked\', \'boolean\', default=False, label="Locked"),\n\tField(\'is_lost\', \'boolean\', default=False, label="Lost")\n)\n\n\ndb.assign_sim.sim_brand_id.requires = IS_IN_DB(db(db.sim_brand.is_active == True), db.sim_brand.id, \'%(name)s\')\ndb.assign_sim.sim_plan_id.requires = IS_IN_DB(db(db.sim_plan.is_active == True), db.sim_plan.id, \'%(name)s\')\nused_sim =db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True))\ndb.assign_sim.phone_number.requires=IS_NOT_IN_DB(used_sim, \'assign_sim.phone_number\', error_message=\'This Sim Number is currently used.\')\n\n## email\ndb.define_table(\'assign_email\',\n\tField(\'assign_id\', \'reference assign\', label=\'Assign ID\'),\n\tField(\'username\', \'string\', requires=[IS_NOT_EMPTY()], label="Email Address"),\n\tField(\'default_password\', \'string\', label="Default Password"),\n\tField(\'recovery_email\', \'string\', label="Recovery Email"),\n\tField(\'recovery_phone\', \'string\', label="Recovery Phone"),\n\tField(\'email_type_id\', \'reference email_type\', requires=[IS_NOT_EMPTY()], label="Email Type"),\n\tField(\'account_type_id\', \'reference account_type\', requires=[IS_NOT_EMPTY()], label="User Type"),\n\tField(\'is_used\', \'boolean\', default=True, label="Used"),\n\tField(\'is_active\', \'boolean\', default=True, label="Active"),\n\tformat=\'%(username)s\'\n)\n\ndb.assign_email.email_type_id.requires=IS_IN_DB(db(db.email_type.is_active == True), db.email_type.id, \'%(email_name)s\')\ndb.assign_email.account_type_id.requires=IS_IN_DB(db(db.account_type.is_active == True), db.account_type.id, \'%(account_name)s\')\nused_email =db(db.assign_email.is_used == True)\ndb.assign_email.usename.requires=IS_NOT_IN_DB(used_email, \'assign_email.username\', error_message=\'This Username is currently used.\')\n\n\n## default user root\nif db(db.auth_user).count() <1:\n\tdb.auth_group.bulk_insert([\n\t\tdict(role=\'Admin\', description=\'System user\'),\n\t\tdict(role=\'Manager\', description=\'Manager\'),\n\t\tdict(role=\'User\', description=\'User\')\n\t])\n\n\tdb.auth_user.bulk_insert([\n\t\tdict(\n\t\t\tfirst_name=\'System\',\n\t\t\tlast_name=\'Admin\',\n\t\t\temail=\'root@coca-cola.com.mm\',\n\t\t\tpassword=db.auth_user.password.validate(\'C0ke@12345\')[0]\n\t\t),\n\t\tdict(\n\t\t\tfirst_name=\'Nyein\',\n\t\t\tlast_name=\'Chan\',\n\t\t\temail=\'nyeinchan@coca-cola.com.mm\',\n\t\t\tpassword=db.auth_user.password.validate(\'Basn4@C01\')[0]\n\t\t)\n\t])\n\n\tauth.add_membership(user_id=1, group_id=1)\n\tauth.add_membership(user_id=2, group_id=1)\n\n# if db(db.config_group).count() < 1:\n# \tdb.config_group.bulk_insert([\n# \t\tdict(name=myconf.get(\'default_type.acs\')),\n# \t\tdict(name=myconf.get(\'default_type.app\')),\n# \t\tdict(name=myconf.get(\'default_type.dpt\')),\n# \t\tdict(name=myconf.get(\'default_type.dvc\')),\n# \t\tdict(name=myconf.get(\'default_type.eml\')),\n# \t\tdict(name=myconf.get(\'default_type.loc\')),\n# \t\tdict(name=myconf.get(\'default_type.lnc\')),\n# \t\tdict(name=myconf.get(\'default_type.opt\')),\n# \t\tdict(name=myconf.get(\'default_type.pln\')),\n# \t\tdict(name=myconf.get(\'default_type.usr\'))\n# \t])\n\n# Insert into outlet(name, is_active) values\n# (\'Computer Shop\', 1)\n# ,(\'Caf\xc3\xa9\', 1)\n# ,(\'Caf\xc3\xa9 Pub\', 1)\n# ,(\'Clinic with Pharmacy\', 1)\n# ,(\'Cold Drink\', 1)\n# ,(\'Computer Shop\', 1)\n# ,(\'Convenience Store _ Cigarette Specialized\', 1)\n# ,(\'Convenience Store _ Liquor Specialized\', 1)\n# ,(\'Convenience Store _ Miscellaneous/ Sundry\', 1)\n# ,(\'Convenience Store _ Modern Trade\', 1)\n# ,(\'Convenience Store _ Petro Station\', 1)\n# ,(\'Convenience Store _ Specialized\', 1)\n# ,(\'Convenience Store _ Traditional\', 1)\n# ,(\'Department Store\', 1)\n# ,(\'Diner Outlet\', 1)\n# ,(\'Family Stall\', 1)\n# ,(\'Food Stall/Traditional Food\', 1)\n# ,(\'Game Center\', 1)\n# ,(\'General Store\', 1)\n# ,(\'Grocery Store\', 1)\n# ,(\'Guest House/Inn/Motel\', 1)\n# ,(\'Home Appliance\', 1)\n# ,(\'Hotel (International Standard)\', 1)\n# ,(\'Hotel (Local Standard)\', 1)\n# ,(\'Internet Cafe\', 1)\n# ,(\'Kiosks/Hawker\', 1)\n# ,(\'KTV\', 1)\n# ,(\'Mini Mart\', 1)\n# ,(\'Mobile Shop\', 1)\n# ,(\'Night Club\', 1)\n# ,(\'Pharmacy Store\', 1)\n# ,(\'Restaurant with indoor/outdoor Sports\', 1)\n# ,(\'Restaurant with Live Entertainment\', 1)\n# ,(\'Semi Whole Sale\', 1)\n# ,(\'Super Market/Hyper Market\', 1)\n# ,(\'Tea Shop\', 1)\n# ,(\'Whole Sale\', 1)\n# ,(\'Others\', 1);\n#\n# Insert into question (name, is_active) values\n# (\'Cooler Coke\', 1)\n# ,(\'Cooler Pepsi\', 1)\n# ,(\'Cooler Blue Mountain\', 1)\n# ,(\'Cooler Asia\', 1)\n# ,(\'Cooler Own\', 1)\n# ,(\'Refrigerator Own\', 1)\n# ,(\'Freezer Own\', 1)\n# ,(\'Self Service/Outlet Service\', 1)\n# ,(\'Coke RGB\', 1)\n# ,(\'Pepsi RGB\', 1)\n# ,(\'CSD (Non-Alcohol)\', 1)\n# ,(\'Soda (Non-Alcohol)\', 1)\n# ,(\'FF Drink (Non-Alcohol)\', 1)\n# ,(\'FF Powder (Non-Alcohol)\', 1)\n# ,(\'ASD (Non-Alcohol)\', 1)\n# ,(\'Isotonic Drink (Non-Alcohol)\', 1)\n# ,(\'Energy Drink (Non-Alcohol)\', 1)\n# ,(\'Carbonated Energy Drink (Non-Alcohol)\', 1)\n# ,(\'Drinking Water (Non-Alcohol)\', 1)\n# ,(\'Instant Coffee (Non-Alcohol)\', 1)\n# ,(\'Tea Mix (Non-Alcohol)\', 1)\n# ,(\'Coffee Canned (Non-Alcohol)\', 1)\n# ,(\'Import Snack (Foods)\', 1)\n# ,(\'Confectionary (Foods)\', 1)\n# ,(\'Ice Cream/Lollies (Foods)\', 1);\n#\n'
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__hash__'
+p12
+S"<method-wrapper '__hash__' of exceptions.AttributeError object>"
+p13
+sS'__setattr__'
+p14
+S"<method-wrapper '__setattr__' of exceptions.AttributeError object>"
+p15
+sS'__reduce_ex__'
+p16
+S'<built-in method __reduce_ex__ of exceptions.AttributeError object>'
+p17
+sS'__getslice__'
+p18
+S"<method-wrapper '__getslice__' of exceptions.AttributeError object>"
+p19
+sS'__getitem__'
+p20
+S"<method-wrapper '__getitem__' of exceptions.AttributeError object>"
+p21
+sS'__setstate__'
+p22
+S'<built-in method __setstate__ of exceptions.AttributeError object>'
+p23
+sS'args'
+p24
+S'("\'Table\' object has no attribute \'usename\'",)'
+p25
+sS'__reduce__'
+p26
+S'<built-in method __reduce__ of exceptions.AttributeError object>'
+p27
+sS'__str__'
+p28
+S"<method-wrapper '__str__' of exceptions.AttributeError object>"
+p29
+sS'__format__'
+p30
+S'<built-in method __format__ of exceptions.AttributeError object>'
+p31
+sS'__getattribute__'
+p32
+S"<method-wrapper '__getattribute__' of exceptions.AttributeError object>"
+p33
+sS'__class__'
+p34
+S"<type 'exceptions.AttributeError'>"
+p35
+sS'__unicode__'
+p36
+S'<built-in method __unicode__ of exceptions.AttributeError object>'
+p37
+sS'__delattr__'
+p38
+S"<method-wrapper '__delattr__' of exceptions.AttributeError object>"
+p39
+sS'__subclasshook__'
+p40
+S'<built-in method __subclasshook__ of type object>'
+p41
+sS'__repr__'
+p42
+S"<method-wrapper '__repr__' of exceptions.AttributeError object>"
+p43
+sS'__dict__'
+p44
+S'{}'
+p45
+sS'__sizeof__'
+p46
+S'<built-in method __sizeof__ of exceptions.AttributeError object>'
+p47
+sS'__doc__'
+p48
+S"'Attribute not found.'"
+p49
+sS'__init__'
+p50
+S"<method-wrapper '__init__' of exceptions.AttributeError object>"
+p51
+sS'__new__'
+p52
+S'<built-in method __new__ of type object>'
+p53
+ssS'evalue'
+p54
+S"'Table' object has no attribute 'usename'"
+p55
+sS'request'
+p56
+cgluon.html
+XML_unpickle
+p57
+(S's\x0f_\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>default</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43-65f9ab06-4bbb-4e79-911d-620c437c2516<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_monitor</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43-044a680d-5094-4331-a58d-078507209f71<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43-f66336b1-03c8-49d0-afdb-cc3fcaf07a0a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTPS</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=10.72.47.43-f66336b1-03c8-49d0-afdb-cc3fcaf07a0a; session_id_admin=10.72.47.43-65f9ab06-4bbb-4e79-911d-620c437c2516; session_id_monitor=10.72.47.43-044a680d-5094-4331-a58d-078507209f71</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43:8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>https://10.72.47.43:8080/monitor/default/assigndetail?assign_id=1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_UPGRADE_INSECURE_REQUESTS</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/monitor/default/assigndetail</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div>assign_id=1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>55118</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SSL_CLIENT_RAW_CERT</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/peace/web2py/applications/admin/&#x27;, &#x27;/home/peace/web2py/applications/monitor/&#x27;, &#x27;/home/peace/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7fab9a246ef0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;0.0.0.0&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;HTY-L-PC09DD2CU&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8080, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/peace/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;server.key&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;server.crt&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip, deflate, sdch, br</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>session_id_welcome=10.72.47.43-f66336b1-03c8-49d0-afdb-cc3fcaf07a0a; session_id_admin=10.72.47.43-65f9ab06-4bbb-4e79-911d-620c437c2516; session_id_monitor=10.72.47.43-044a680d-5094-4331-a58d-078507209f71</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43:8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>https://10.72.47.43:8080/monitor/default/assigndetail?assign_id=1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_upgrade_insecure_requests</td><td style="vertical-align:top;">:</td><td><div>1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">https</td><td style="vertical-align:top;">:</td><td><div>on</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/monitor/default/assigndetail</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div>assign_id=1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>55118</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/monitor/default/assigndetail?assign_id=1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8080</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">ssl_client_raw_cert</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.3-stable+timestamp.2016.03.26.23.02.02</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7fab9f4781e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7fab9a27c738&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7fab66dcaad0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x7fab9f4781e0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x7fab9a27c738&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x7fab66dcaad0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>https</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py/applications/monitor/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>assigndetail</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;/home/peace/web2py/applications/admin/&#x27;, &#x27;/home/peace/web2py/applications/monitor/&#x27;, &#x27;/home/peace/web2py/applications/welcome/&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x7fab9a246ef0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;0.0.0.0&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;HTY-L-PC09DD2CU&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;port&#x27;: 8080, &#x27;print_errors&#x27;: False, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;/home/peace/web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;server.key&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;******&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;server.crt&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>HTY-L-PC09DD2CU</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>127.0.1.1</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.14.3-stable+timestamp.2016.03.26.23.02.02</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_scheduler</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 30, 15, 50, 9, 5264)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/monitor/default/assigndetail</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 30, 9, 20, 9, 5280)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x7fab66da6810&gt;</div></td></tr></table></div>'
+tRp58
+sS'frames'
+p59
+(lp60
+(dp61
+S'file'
+p62
+S'/home/peace/web2py/gluon/restricted.py'
+p63
+sS'dump'
+p64
+(dp65
+S'environment'
+p66
+S"{'A': <class 'gluon.html.A'>, 'ANY_OF': <class 'gluon.validators.ANY_OF'>, 'ASSIGNJS': <function ASSIGNJS>, 'AppConfig': <function AppConfig>, 'Auth': <class 'gluon.tools.Auth'>, 'B': <class 'gluon.html.B'>, 'BEAUTIFY': <class 'gluon.html.BEAUTIFY'>, 'BODY': <class 'gluon.html.BODY'>, 'BR': <class 'gluon.html.BR'>, 'BUTTON': <class 'gluon.html.BUTTON'>, ...}"
+p67
+sS'ccode'
+p68
+S'<code object <module> at 0x7fab66f2c430, file "/.../applications/monitor/models/dbsetup.py", line 1>'
+p69
+ssS'lnum'
+p70
+I227
+sS'lines'
+p71
+(dp72
+I224
+S'            ccode = code'
+p73
+sI225
+S'        else:'
+p74
+sI226
+S'            ccode = compile2(code, layer)'
+p75
+sI227
+S'        exec ccode in environment'
+p76
+sI228
+S'    except HTTP:'
+p77
+sI229
+S'        raise'
+p78
+sI230
+S'    except RestrictedError:'
+p79
+sI231
+S'        # do not encapsulate (obfuscate) the original RestrictedError'
+p80
+sI222
+S'    try:'
+p81
+sI223
+S'        if isinstance(code, types.CodeType):'
+p82
+ssS'call'
+p83
+S'(code="from datetime import datetime\\nfrom gluon.contrib...ods)\', 1)\\n# ,(\'Ice Cream/Lollies (Foods)\', 1);\\n#\\n", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'AppConfig\': <function AppConfig>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, ...}, layer=\'/home/peace/web2py/applications/monitor/models/dbsetup.py\')'
+p84
+sS'func'
+p85
+S'restricted'
+p86
+sa(dp87
+g62
+S'/home/peace/web2py/applications/monitor/models/dbsetup.py'
+p88
+sg64
+(dp89
+S'used_email'
+p90
+S"<Set (assign_email.is_used = 'T')>"
+p91
+sS'error_message'
+p92
+S'undefined'
+p93
+sS'db'
+p94
+S'<DAL uri="mysql:******@localhost/devicemonitor">'
+p95
+sS'IS_NOT_IN_DB'
+p96
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p97
+sS'db.assign_email.usename'
+p98
+g93
+sS'db.assign_email'
+p99
+S'<Table assign_email (id, assign_id, username, de...il_type_id, account_type_id, is_used, is_active)>'
+p100
+ssg70
+I514
+sg71
+(dp101
+I512
+S"db.assign_email.account_type_id.requires=IS_IN_DB(db(db.account_type.is_active == True), db.account_type.id, '%(account_name)s')"
+p102
+sI513
+S'used_email =db(db.assign_email.is_used == True)'
+p103
+sI514
+S"db.assign_email.usename.requires=IS_NOT_IN_DB(used_email, 'assign_email.username', error_message='This Username is currently used.')"
+p104
+sI515
+S''
+sI516
+S''
+sI517
+S'## default user root'
+p105
+sI518
+S'if db(db.auth_user).count() <1:'
+p106
+sI509
+S')'
+sI510
+S''
+sI511
+S"db.assign_email.email_type_id.requires=IS_IN_DB(db(db.email_type.is_active == True), db.email_type.id, '%(email_name)s')"
+p107
+ssg83
+S'()'
+p108
+sg85
+S'<module>'
+p109
+sasS'pyver'
+p110
+S'Python 2.7.12: /usr/bin/python (prefix: /usr)'
+p111
+sS'session'
+p112
+g57
+(S's\xef\x08\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">auth</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">expiration</td><td style="vertical-align:top;">:</td><td><div>3600</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">hmac_key</td><td style="vertical-align:top;">:</td><td><div>a0d0c031-0ec1-4344-a57b-33561ed34174</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_visit</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2017, 3, 30, 15, 45, 13, 425734)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remember_me</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">email</td><td style="vertical-align:top;">:</td><td><div>nyeinchan@coca-cola.com.mm</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">first_name</td><td style="vertical-align:top;">:</td><td><div>Nyein</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">id</td><td style="vertical-align:top;">:</td><td><div>2L</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_name</td><td style="vertical-align:top;">:</td><td><div>Chan</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_id</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">registration_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">reset_password_key</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">user_groups</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">1</td><td style="vertical-align:top;">:</td><td><div>Admin</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr></table></div>'
+tRp113
+sS'etype'
+p114
+S"<type 'exceptions.AttributeError'>"
+p115
+sS'date'
+p116
+S'Thu Mar 30 15:50:09 2017'
+p117
+sS'response'
+p118
+g57
+(S's{\x17\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x7fab884f66f8&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_monitor</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43-044a680d-5094-4331-a58d-078507209f71<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>bootstrap3_stacked</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^default/\\w+\\.py$</div></td></tr><tr><td><div>^default/assigndetail/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;/home/peace/web2py/applications/monitor/sessions/0cf/159/10.72.47.43-044a680d-5094-4331-a58d-078507209f71&#x27;, mode &#x27;rb+&#x27; at 0x7fab66536390&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>/home/peace/web2py/applications/monitor/sessions/10.72.47.43-044a680d-5094-4331-a58d-078507209f71</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>3ee58d151027d3af37ba54234f075e5e</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>10.72.47.43-044a680d-5094-4331-a58d-078507209f71</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>monitor</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>default/assigndetail.html</div></td></tr></table></div>'
+tRp119
+sS'locals'
+p120
+(dp121
+S'Service'
+p122
+S"<class 'gluon.tools.Service'>"
+p123
+sS'OBJECT'
+p124
+S"<class 'gluon.html.OBJECT'>"
+p125
+sS'SQLDB'
+p126
+S"<class 'pydal.base.DAL'>"
+p127
+sg112
+S"<Storage {'_auth_next': None, 'flash': None, '_f...47b9e', 'a973076c-4f3e-45b3-8be9-bc502c3fb5b5']}>"
+p128
+sS'LINK'
+p129
+S"<class 'gluon.html.LINK'>"
+p130
+sS'BR'
+p131
+S"<class 'gluon.html.BR'>"
+p132
+sS'local_import'
+p133
+S'<function <lambda>>'
+p134
+sS'OPTGROUP'
+p135
+S"<class 'gluon.html.OPTGROUP'>"
+p136
+sS'LI'
+p137
+S"<class 'gluon.html.LI'>"
+p138
+sS'PRE'
+p139
+S"<class 'gluon.html.PRE'>"
+p140
+sS'IS_INT_IN_RANGE'
+p141
+S"<class 'gluon.validators.IS_INT_IN_RANGE'>"
+p142
+sS'IS_LOWER'
+p143
+S"<class 'gluon.validators.IS_LOWER'>"
+p144
+sS'IS_STRONG'
+p145
+S"<class 'gluon.validators.IS_STRONG'>"
+p146
+sS'cache'
+p147
+S'<gluon.cache.Cache object>'
+p148
+sS'IS_IN_DB'
+p149
+S"<class 'gluon.validators.IS_IN_DB'>"
+p150
+sS'TAG'
+p151
+S'<gluon.html.__TAG__ object>'
+p152
+sS'SQLField'
+p153
+S"<class 'pydal.objects.Field'>"
+p154
+sS'mail'
+p155
+S'<gluon.tools.Mail object>'
+p156
+sS'BODY'
+p157
+S"<class 'gluon.html.BODY'>"
+p158
+sS'IS_DATE_IN_RANGE'
+p159
+S"<class 'gluon.validators.IS_DATE_IN_RANGE'>"
+p160
+sS'TH'
+p161
+S"<class 'gluon.html.TH'>"
+p162
+sS'URL'
+p163
+S'<function URL>'
+p164
+sS'__file__'
+p165
+S"'/home/peace/web2py/applications/monitor/models/dbsetup.py'"
+p166
+sS'db'
+p167
+S'<DAL uri="mysql:******@localhost/devicemonitor">'
+p168
+sS'auth'
+p169
+S'<gluon.tools.Auth object>'
+p170
+sS'P'
+S"<class 'gluon.html.P'>"
+p171
+sS'TFOOT'
+p172
+S"<class 'gluon.html.TFOOT'>"
+p173
+sS'XHTML'
+p174
+S"<class 'gluon.html.XHTML'>"
+p175
+sS'datetime'
+p176
+S"<type 'datetime.datetime'>"
+p177
+sS'ON'
+p178
+S'True'
+p179
+sS'OL'
+p180
+S"<class 'gluon.html.OL'>"
+p181
+sS'TEXTAREA'
+p182
+S"<class 'gluon.html.TEXTAREA'>"
+p183
+sS'MENU'
+p184
+S"<class 'gluon.html.MENU'>"
+p185
+sS'LOAD'
+p186
+S'<function LOAD>'
+p187
+sS'CODE'
+p188
+S"<class 'gluon.html.CODE'>"
+p189
+sS'HTTP'
+p190
+S"<class 'gluon.http.HTTP'>"
+p191
+sS'HR'
+p192
+S"<class 'gluon.html.HR'>"
+p193
+sS'IS_DATETIME'
+p194
+S"<class 'gluon.validators.IS_DATETIME'>"
+p195
+sS'HEAD'
+p196
+S"<class 'gluon.html.HEAD'>"
+p197
+sS'LABEL'
+p198
+S"<class 'gluon.html.LABEL'>"
+p199
+sS'CLEANUP'
+p200
+S"<class 'gluon.validators.CLEANUP'>"
+p201
+sS'plugins'
+p202
+S'<gluon.tools.PluginManager object>'
+p203
+sS'FIELDSET'
+p204
+S"<class 'gluon.html.FIELDSET'>"
+p205
+sS'SELECT'
+p206
+S"<class 'gluon.html.SELECT'>"
+p207
+sS'CENTER'
+p208
+S"<class 'gluon.html.CENTER'>"
+p209
+sS'Crud'
+p210
+S"<class 'gluon.tools.Crud'>"
+p211
+sS'Auth'
+p212
+S"<class 'gluon.tools.Auth'>"
+p213
+sS'__builtins__'
+p214
+S"{'ArithmeticError': <type 'exceptions.ArithmeticError'>, 'AssertionError': <type 'exceptions.AssertionError'>, 'AttributeError': <type 'exceptions.AttributeError'>, 'BaseException': <type 'exceptions.BaseException'>, 'BufferError': <type 'exceptions.BufferError'>, 'BytesWarning': <type 'exceptions.BytesWarning'>, 'DeprecationWarning': <type 'exceptions.DeprecationWarning'>, 'EOFError': <type 'exceptions.EOFError'>, 'Ellipsis': Ellipsis, 'EnvironmentError': <type 'exceptions.EnvironmentError'>, ...}"
+p215
+sS'HTML'
+p216
+S"<class 'gluon.html.HTML'>"
+p217
+sS'SQLFORM'
+p218
+S"<class 'gluon.sqlhtml.SQLFORM'>"
+p219
+sS'EM'
+p220
+S"<class 'gluon.html.EM'>"
+p221
+sS'redirect'
+p222
+S'<function redirect>'
+p223
+sS'used_email'
+p224
+S"<Set (assign_email.is_used = 'T')>"
+p225
+sS'IS_EQUAL_TO'
+p226
+S"<class 'gluon.validators.IS_EQUAL_TO'>"
+p227
+sS'embed64'
+p228
+S'<function embed64>'
+p229
+sS'IS_LIST_OF'
+p230
+S"<class 'gluon.validators.IS_LIST_OF'>"
+p231
+sS'__name__'
+p232
+S"'__restricted__'"
+p233
+sS'EMBED'
+p234
+S"<class 'gluon.html.EMBED'>"
+p235
+sS'FORM'
+p236
+S"<class 'gluon.html.FORM'>"
+p237
+sS'myconf'
+p238
+S"{'forms': {'formstyle': 'bootstrap3_stacked', 's...nse', 'pln': 'Plan', 'oss': 'OS', 'usr': 'User'}}"
+p239
+sS'H2'
+p240
+S"<class 'gluon.html.H2'>"
+p241
+sS'H3'
+p242
+S"<class 'gluon.html.H3'>"
+p243
+sS'AppConfig'
+p244
+S'<function AppConfig>'
+p245
+sS'H1'
+p246
+S"<class 'gluon.html.H1'>"
+p247
+sS'H6'
+p248
+S"<class 'gluon.html.H6'>"
+p249
+sS'H4'
+p250
+S"<class 'gluon.html.H4'>"
+p251
+sS'used_sim'
+p252
+S"<Set (((assign_sim.is_used = 'T') OR (assign_sim.is_locked = 'T')) OR (assign_sim.is_lost = 'T'))>"
+p253
+sS'UL'
+p254
+S"<class 'gluon.html.UL'>"
+p255
+sS'IS_UPPER'
+p256
+S"<class 'gluon.validators.IS_UPPER'>"
+p257
+sS'xmlescape'
+p258
+S'<function xmlescape>'
+p259
+sS'IS_TIME'
+p260
+S"<class 'gluon.validators.IS_TIME'>"
+p261
+sS'os'
+p262
+S"<module 'os' from '/usr/lib/python2.7/os.pyc'>"
+p263
+sS'used_serial'
+p264
+S"<Set (((assign_device.is_used = 'T') OR (assign_...ost = 'T')) OR (assign_device.is_damaged = 'T'))>"
+p265
+sS'OPTION'
+p266
+S"<class 'gluon.html.OPTION'>"
+p267
+sS'TITLE'
+p268
+S"<class 'gluon.html.TITLE'>"
+p269
+sS'CRYPT'
+p270
+S"<class 'gluon.validators.CRYPT'>"
+p271
+sS'IS_EMPTY_OR'
+p272
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p273
+sS'MARKMIN'
+p274
+S"<class 'gluon.html.MARKMIN'>"
+p275
+sS'INPUT'
+p276
+S"<class 'gluon.html.INPUT'>"
+p277
+sS'STRONG'
+p278
+S"<class 'gluon.html.STRONG'>"
+p279
+sS'COL'
+p280
+S"<class 'gluon.html.COL'>"
+p281
+sS'service'
+p282
+S'<gluon.tools.Service object>'
+p283
+sS'SCRIPT'
+p284
+S"<class 'gluon.html.SCRIPT'>"
+p285
+sS'TABLE'
+p286
+S"<class 'gluon.html.TABLE'>"
+p287
+sS'IS_IPV4'
+p288
+S"<class 'gluon.validators.IS_IPV4'>"
+p289
+sS'IS_LENGTH'
+p290
+S"<class 'gluon.validators.IS_LENGTH'>"
+p291
+sS'IS_IPV6'
+p292
+S"<class 'gluon.validators.IS_IPV6'>"
+p293
+sS'XML'
+p294
+S"<class 'gluon.html.XML'>"
+p295
+sS'B'
+S"<class 'gluon.html.B'>"
+p296
+sS'IMG'
+p297
+S"<class 'gluon.html.IMG'>"
+p298
+sS'SQLTABLE'
+p299
+S"<class 'gluon.sqlhtml.SQLTABLE'>"
+p300
+sS'IS_MATCH'
+p301
+S"<class 'gluon.validators.IS_MATCH'>"
+p302
+sS'IS_ALPHANUMERIC'
+p303
+S"<class 'gluon.validators.IS_ALPHANUMERIC'>"
+p304
+sS'SPAN'
+p305
+S"<class 'gluon.html.SPAN'>"
+p306
+sS'IS_JSON'
+p307
+S"<class 'gluon.validators.IS_JSON'>"
+p308
+sS'IS_IPADDRESS'
+p309
+S"<class 'gluon.validators.IS_IPADDRESS'>"
+p310
+sS'IS_SLUG'
+p311
+S"<class 'gluon.validators.IS_SLUG'>"
+p312
+sS'BEAUTIFY'
+p313
+S"<class 'gluon.html.BEAUTIFY'>"
+p314
+sS'META'
+p315
+S"<class 'gluon.html.META'>"
+p316
+sS'BUTTON'
+p317
+S"<class 'gluon.html.BUTTON'>"
+p318
+sS'IS_DATE'
+p319
+S"<class 'gluon.validators.IS_DATE'>"
+p320
+sS'IS_EMAIL'
+p321
+S"<class 'gluon.validators.IS_EMAIL'>"
+p322
+sS'IS_NOT_EMPTY'
+p323
+S"<class 'gluon.validators.IS_NOT_EMPTY'>"
+p324
+sS'IS_FLOAT_IN_RANGE'
+p325
+S"<class 'gluon.validators.IS_FLOAT_IN_RANGE'>"
+p326
+sS'TBODY'
+p327
+S"<class 'gluon.html.TBODY'>"
+p328
+sS'CAT'
+p329
+S"<class 'gluon.html.CAT'>"
+p330
+sS'Field'
+p331
+S"<class 'pydal.objects.Field'>"
+p332
+sS'IS_LIST_OF_EMAILS'
+p333
+S"<class 'gluon.validators.IS_LIST_OF_EMAILS'>"
+p334
+sS'Mail'
+p335
+S"<class 'gluon.tools.Mail'>"
+p336
+sS'DIV'
+p337
+S"<class 'gluon.html.DIV'>"
+p338
+sS'H5'
+p339
+S"<class 'gluon.html.H5'>"
+p340
+sS'LEGEND'
+p341
+S"<class 'gluon.html.LEGEND'>"
+p342
+sS'COLGROUP'
+p343
+S"<class 'gluon.html.COLGROUP'>"
+p344
+sS'DAL'
+p345
+S"<class 'pydal.base.DAL'>"
+p346
+sS'ASSIGNJS'
+p347
+S'<function ASSIGNJS>'
+p348
+sS'TR'
+p349
+S"<class 'gluon.html.TR'>"
+p350
+sS'__package__'
+p351
+S'None'
+p352
+sS'IFRAME'
+p353
+S"<class 'gluon.html.IFRAME'>"
+p354
+sS'TD'
+p355
+S"<class 'gluon.html.TD'>"
+p356
+sS'PluginManager'
+p357
+S"<class 'gluon.tools.PluginManager'>"
+p358
+sS'IS_URL'
+p359
+S"<class 'gluon.validators.IS_URL'>"
+p360
+sS'A'
+S"<class 'gluon.html.A'>"
+p361
+sS'STYLE'
+p362
+S"<class 'gluon.html.STYLE'>"
+p363
+sS'IS_DATETIME_IN_RANGE'
+p364
+S"<class 'gluon.validators.IS_DATETIME_IN_RANGE'>"
+p365
+sS'IS_IMAGE'
+p366
+S"<class 'gluon.validators.IS_IMAGE'>"
+p367
+sS'I'
+S"<class 'gluon.html.I'>"
+p368
+sS'crud'
+p369
+S'<gluon.tools.Crud object>'
+p370
+sS'IS_NOT_IN_DB'
+p371
+S"<class 'gluon.validators.IS_NOT_IN_DB'>"
+p372
+sS'd_code'
+p373
+S'<Rows (6)>'
+p374
+sg118
+S"<Storage {'body': <cStringIO.StringO object at 0...b88148320>, 'view': 'default/assigndetail.html'}>"
+p375
+sS'printer_id'
+p376
+S'6L'
+p377
+sS'THEAD'
+p378
+S"<class 'gluon.html.THEAD'>"
+p379
+sS'ANY_OF'
+p380
+S"<class 'gluon.validators.ANY_OF'>"
+p381
+sS'IS_NULL_OR'
+p382
+S"<class 'gluon.validators.IS_EMPTY_OR'>"
+p383
+sS'i'
+S"<Row {'device': <Set (device.device_type_id = 6)>, 'id': 6L}>"
+p384
+sg56
+S"<Storage {'_vars': None, 'function': 'assigndeta...er': '/home/peace/web2py/applications/monitor/'}>"
+p385
+sS'IS_EXPR'
+p386
+S"<class 'gluon.validators.IS_EXPR'>"
+p387
+sS'IS_IN_SET'
+p388
+S"<class 'gluon.validators.IS_IN_SET'>"
+p389
+sS'IS_UPLOAD_FILENAME'
+p390
+S"<class 'gluon.validators.IS_UPLOAD_FILENAME'>"
+p391
+sS'IS_DECIMAL_IN_RANGE'
+p392
+S"<class 'gluon.validators.IS_DECIMAL_IN_RANGE'>"
+p393
+sS'TT'
+p394
+S"<class 'gluon.html.TT'>"
+p395
+sS'T'
+S'<gluon.languages.translator object>'
+p396
+sssS'traceback'
+p397
+S'Traceback (most recent call last):\n  File "/home/peace/web2py/gluon/restricted.py", line 227, in restricted\n    exec ccode in environment\n  File "/home/peace/web2py/applications/monitor/models/dbsetup.py", line 514, in <module>\n    db.assign_email.usename.requires=IS_NOT_IN_DB(used_email, \'assign_email.username\', error_message=\'This Username is currently used.\')\nAttributeError: \'Table\' object has no attribute \'usename\'\n'
+p398
+s.

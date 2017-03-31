@@ -416,7 +416,7 @@ db.rent.device_id.requires = IS_IN_DB(db(db.device.is_active == True),
 db.define_table('assign',
     Field('employee_id', 'reference employee', label="Employee", requires=IS_NOT_EMPTY()),
     Field('assign_date', 'datetime', default=request.now, label="Assign Date", requires=IS_NOT_EMPTY()),
-	Field('email_id', 'reference email_account', label="E-Mail", requires=IS_NOT_EMPTY()),
+	# Field('email_id', 'reference email_account', label="E-Mail", requires=IS_NOT_EMPTY()),
 	Field('location_plant_id', 'reference location_plant', requires=[IS_NOT_EMPTY()], label="Location"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	Field('created_on', 'datetime', default=request.now,
@@ -434,19 +434,19 @@ db.define_table('assign',
 db.assign.employee_id.requires = IS_IN_DB(db(db.employee.is_active == True),
 									db.employee.id, '%(name)s')
 db.assign.assign_date.requires = IS_NOT_EMPTY()
-email_id = 0
-for email in db(db.email_type.is_active == True and db.email_type.email_name == 'Domain').select(db.email_type.id):
-	email_id = email.id
-db.assign.email_id.requires = IS_IN_DB(db(db.email_account.is_used == False and
-									db.email_account.is_active == True and db.email_account.email_type_id == email_id),
-									db.email_account.id, '%(username)s')
+# email_id = 0
+# for email in db(db.email_type.is_active == True and db.email_type.email_name == 'Domain').select(db.email_type.id):
+# 	email_id = email.id
+# db.assign.email_id.requires = IS_IN_DB(db(db.email_account.is_used == False and
+# 									db.email_account.is_active == True and db.email_account.email_type_id == email_id),
+# 									db.email_account.id, '%(username)s')
 db.assign.location_plant_id.requires=IS_IN_DB(db(db.location_plant.is_active == True),db.location_plant.id, '%(name)s')
 
 db.define_table('assign_device',
     Field('assign_id', 'reference assign', label='Assign ID'),
     Field('assign_id', 'reference assign', label='Assign ID'),
     Field('device_id', 'reference device', label='Device', requires=IS_NOT_EMPTY()),
-    Field('serial', 'string', unique=True, requires=IS_NOT_EMPTY(), label='S/N or Unique Number'),
+    Field('serial', 'string', requires=IS_NOT_EMPTY(), label='S/N or Unique Number'),
     Field('asset_number', 'string', label='Assets Number'),
     Field('device_color', 'string', label='Color'),
 	Field('is_used', 'boolean', default=True, label="Used"),
@@ -456,9 +456,8 @@ db.define_table('assign_device',
 
 db.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
 
-used_serial =[id for id in db((db.assign_device.is_used == True) |
-	(db.assign_device.is_lost==True) | (db.assign_device.is_damaged==True)).select(db.assign_device.serial)]
-db.assign_device.serial.requires=IS_NOT_IN_DB(db(db.assign_device.serial == used_serial), 'assign_device.serial')
+used_serial =db((db.assign_device.is_used == True) | (db.assign_device.is_lost==True) | (db.assign_device.is_damaged==True))
+db.assign_device.serial.requires=IS_NOT_IN_DB(used_serial, 'assign_device.serial', error_message='This Serail Number is currently used.')
 
 db.define_table('assign_app',
 	Field('assign_id', 'reference assign', label='Assign ID'),
@@ -492,8 +491,8 @@ db.define_table('assign_sim',
 
 db.assign_sim.sim_brand_id.requires = IS_IN_DB(db(db.sim_brand.is_active == True), db.sim_brand.id, '%(name)s')
 db.assign_sim.sim_plan_id.requires = IS_IN_DB(db(db.sim_plan.is_active == True), db.sim_plan.id, '%(name)s')
-used_sim =[id for id in db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True)).select(db.assign_sim.phone_number)]
-db.assign_sim.phone_number.requires=IS_NOT_IN_DB(db(db.assign_sim.phone_number == used_sim), 'assign_sim.phone_number')
+used_sim =db((db.assign_sim.is_used == True) | (db.assign_sim.is_locked == True) | (db.assign_sim.is_lost == True))
+db.assign_sim.phone_number.requires=IS_NOT_IN_DB(used_sim, 'assign_sim.phone_number', error_message='This Sim Number is currently used.')
 
 ## email
 db.define_table('assign_email',
@@ -504,13 +503,17 @@ db.define_table('assign_email',
 	Field('recovery_phone', 'string', label="Recovery Phone"),
 	Field('email_type_id', 'reference email_type', requires=[IS_NOT_EMPTY()], label="Email Type"),
 	Field('account_type_id', 'reference account_type', requires=[IS_NOT_EMPTY()], label="User Type"),
-	Field('is_used', 'boolean', default=False, label="Used"),
+	Field('license_type_id', 'reference license_type', requires=[IS_NOT_EMPTY()], label="License Type"),
+	Field('is_used', 'boolean', default=True, label="Used"),
 	Field('is_active', 'boolean', default=True, label="Active"),
 	format='%(username)s'
 )
 
 db.assign_email.email_type_id.requires=IS_IN_DB(db(db.email_type.is_active == True), db.email_type.id, '%(email_name)s')
 db.assign_email.account_type_id.requires=IS_IN_DB(db(db.account_type.is_active == True), db.account_type.id, '%(account_name)s')
+db.assign_email.license_type_id.requires=IS_IN_DB(db(db.license_type.is_active == True), db.license_type.id, '%(license_name)s')
+used_email =db(db.assign_email.is_used == True)
+db.assign_email.username.requires=IS_NOT_IN_DB(used_email, 'assign_email.username', error_message='This Username is currently used.')
 
 
 ## default user root

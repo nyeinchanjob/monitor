@@ -364,8 +364,8 @@ def assigndetail():
     form_sim = SQLFORM(db.assign_sim)
     form_email = SQLFORM(db.assign_email)
     form_device.add_button('Back', URL('default', 'assign'))
-    form_device.add_button('Back', URL('default', 'assign'))
     form_app.add_button('Back', URL('default', 'assign'))
+    form_accessories.add_button('Back', URL('default', 'assign'))
     form_sim.add_button('Back', URL('default', 'assign'))
     form_email.add_button('Back', URL('default', 'assign'))
     if form_device.process().accepted:
@@ -393,7 +393,7 @@ def assigndetaillist():
             db.assign_device.is_lost],
 		create=False,
 		searchable=False,
-		editable=False,
+		editable=True,
 		details=False,
 		csv=True,
 		paginate=5,
@@ -408,7 +408,6 @@ def assignapplist():
 		create=False,
 		searchable=False,
 		editable=False,
-		details=False,
 		csv=True,
 		paginate=5,
 		orderby=~db.assign_app.app_id
@@ -453,7 +452,7 @@ def assignemaillist():
 	email_grid = SQLFORM.grid(email_where, fields=[db.assign_email.id, db.assign_email.username,
         db.assign_email.default_password, db.assign_email.recovery_email,
         db.assign_email.recovery_phone, db.assign_email.email_type_id,
-        db.assign_email.account_type_id, db.assign_email.is_active],
+        db.assign_email.account_type_id, db.assign_email.is_used, db.assign_email.is_active],
 		create=False,
 		searchable=False,
 		editable=True,

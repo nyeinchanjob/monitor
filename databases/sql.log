@@ -450,3 +450,28 @@ CREATE TABLE assign_email(
     PRIMARY KEY (id)
 ) ENGINE=InnoDB CHARACTER SET utf8;
 success!
+timestamp: 2017-03-29T16:22:39.579776
+ALTER TABLE assign_device ADD serial__tmp VARCHAR(512);
+success!
+UPDATE assign_device SET serial__tmp=serial;
+success!
+ALTER TABLE assign_device DROP COLUMN serial;
+success!
+ALTER TABLE assign_device ADD serial VARCHAR(512);
+success!
+UPDATE assign_device SET serial=serial__tmp;
+success!
+ALTER TABLE assign_device DROP COLUMN serial__tmp;
+success!
+success!
+timestamp: 2017-03-30T15:23:39.110642
+ALTER TABLE assign DROP COLUMN email_id;
+timestamp: 2017-03-30T15:24:35.632108
+ALTER TABLE assign DROP COLUMN email_id;
+timestamp: 2017-03-30T15:45:13.464659
+ALTER TABLE assign DROP COLUMN email_id;
+success!
+timestamp: 2017-03-30T16:37:39.608342
+ALTER TABLE assign_email ADD license_type_id INT  , ADD INDEX license_type_id__idx (license_type_id), ADD FOREIGN KEY (license_type_id) REFERENCES license_type (id) ON DELETE CASCADE;
+success!
+success!
