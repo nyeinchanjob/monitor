@@ -451,7 +451,15 @@ db.define_table('assign_device',
     Field('device_color', 'string', label='Color'),
 	Field('is_used', 'boolean', default=True, label="Used"),
 	Field('is_damaged', 'boolean', default=False, label="Damaged"),
-	Field('is_lost', 'boolean', default=False, label="Lost")
+	Field('is_lost', 'boolean', default=False, label="Lost"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False)
 )
 
 db.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active==True), db.device.id, '%(name)s')
@@ -473,7 +481,15 @@ db.define_table('assign_accessories',
     Field('asset_number', 'string', label='Assets Number'),
 	Field('is_used', 'boolean', default=True, label="Used"),
 	Field('is_damaged', 'boolean', default=False, label="Damaged"),
-	Field('is_lost', 'boolean', default=False, label="Lost")
+	Field('is_lost', 'boolean', default=False, label="Lost"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False)
 )
 
 db.assign_accessories.accessories_id.requires=IS_IN_DB(db(db.device_accessories.is_active == True),db.device_accessories.id, '%(name)s')
@@ -485,7 +501,15 @@ db.define_table('assign_sim',
 	Field('sim_plan_id', 'reference sim_plan', label='Plan'),
 	Field('is_used', 'boolean', default=True, label="Used"),
 	Field('is_locked', 'boolean', default=False, label="Locked"),
-	Field('is_lost', 'boolean', default=False, label="Lost")
+	Field('is_lost', 'boolean', default=False, label="Lost"),
+	Field('created_on', 'datetime', default=request.now,
+			readable=True, writable=False),
+	Field('created_by', 'reference auth_user', default=auth.user_id,
+			readable=True, writable=False),
+	Field('modified_on', 'datetime', update=request.now,
+			readable=True, writable=False),
+	Field('modified_by', 'reference auth_user', update=auth.user_id,
+			readable=True, writable=False)
 )
 
 

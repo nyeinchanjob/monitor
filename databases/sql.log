@@ -475,3 +475,67 @@ timestamp: 2017-03-30T16:37:39.608342
 ALTER TABLE assign_email ADD license_type_id INT  , ADD INDEX license_type_id__idx (license_type_id), ADD FOREIGN KEY (license_type_id) REFERENCES license_type (id) ON DELETE CASCADE;
 success!
 success!
+timestamp: 2017-03-31T11:15:08.724105
+ALTER TABLE assign_device ADD created_on DATETIME;
+success!
+timestamp: 2017-03-31T11:15:08.877683
+ALTER TABLE assign_device ADD created_by INT  , ADD INDEX created_by__idx (created_by), ADD FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+timestamp: 2017-03-31T11:15:09.024985
+ALTER TABLE assign_device ADD modified_on DATETIME;
+success!
+timestamp: 2017-03-31T11:15:09.182728
+ALTER TABLE assign_device ADD modified_by INT  , ADD INDEX modified_by__idx (modified_by), ADD FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+success!
+timestamp: 2017-03-31T11:15:09.355257
+ALTER TABLE assign_accessories ADD modified_by INT  , ADD INDEX modified_by__idx (modified_by), ADD FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+timestamp: 2017-03-31T11:15:09.532543
+ALTER TABLE assign_accessories ADD created_on DATETIME;
+success!
+timestamp: 2017-03-31T11:15:09.717341
+ALTER TABLE assign_accessories ADD created_by INT  , ADD INDEX created_by__idx (created_by), ADD FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+timestamp: 2017-03-31T11:15:09.876974
+ALTER TABLE assign_accessories ADD modified_on DATETIME;
+success!
+success!
+timestamp: 2017-03-31T11:15:10.064732
+ALTER TABLE assign_sim ADD created_on DATETIME;
+success!
+timestamp: 2017-03-31T11:15:10.242304
+ALTER TABLE assign_sim ADD created_by INT  , ADD INDEX created_by__idx (created_by), ADD FOREIGN KEY (created_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+timestamp: 2017-03-31T11:15:10.415447
+ALTER TABLE assign_sim ADD modified_on DATETIME;
+success!
+timestamp: 2017-03-31T11:15:10.611353
+ALTER TABLE assign_sim ADD modified_by INT  , ADD INDEX modified_by__idx (modified_by), ADD FOREIGN KEY (modified_by) REFERENCES auth_user (id) ON DELETE CASCADE;
+success!
+success!
+timestamp: 2017-03-31T11:32:33.445075
+ALTER TABLE auth_user ADD username VARCHAR(128);
+success!
+success!
+timestamp: 2017-03-31T14:47:37.590606
+ALTER TABLE auth_user DROP COLUMN username;
+success!
+timestamp: 2017-03-31T14:51:51.199257
+ALTER TABLE auth_user ADD username VARCHAR(128);
+success!
+success!
+timestamp: 2017-03-31T14:58:32.568302
+ALTER TABLE auth_user DROP COLUMN username;
+success!
+timestamp: 2017-03-31T15:00:27.808772
+ALTER TABLE auth_user ADD username VARCHAR(128);
+success!
+success!
+timestamp: 2017-03-31T15:01:43.970701
+ALTER TABLE auth_user DROP COLUMN username;
+success!
+timestamp: 2017-03-31T15:16:33.624627
+ALTER TABLE auth_user ADD username VARCHAR(128);
+success!
+success!

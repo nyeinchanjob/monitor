@@ -334,19 +334,19 @@ def rent():
     return dict(form=grid)
 
 def assign():
-
-	def redirectToDetail(form):
+    def redirectToDetail(form):
 		assign_id = form.vars.id
 		redirect(URL('assigndetail', vars=dict(assign_id=assign_id)))
-	form=SQLFORM.grid(db.assign,
-		oncreate=redirectToDetail,
+
+    form=SQLFORM.grid(db.assign,
+        oncreate=redirectToDetail,
 		onupdate=redirectToDetail,
 		details=False,
 		paginate=15,
 		orderby=~db.assign.id|db.assign.employee_id
         )
-	response.moduleTitle = 'Assign'
-	return dict(form=form)
+    response.moduleTitle = 'Assign'
+    return dict(form=form)
 
 def assigndetail():
     db.assign_device.device_id.requires=IS_IN_DB(db(db.device.is_active=='T'), db.device.id, '%(name)s')
