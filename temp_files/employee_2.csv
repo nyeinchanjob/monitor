@@ -1,0 +1,1612 @@
+id,code,name,job_title,department_id,phone,is_active,created_on,created_by,modified_on,modified_by
+772,50770,"Khin Zaw Lay",NULL,34,"09 420 0371 09,  09 799 9132 81",T,"2004-03-17 00:00:00",2,NULL,NULL
+340,50770,"Nay Chi Khaing","HRBP Manager - Supply Chain",12,"09 507 9188,  09 972 1152 05",T,"2004-03-17 00:00:00",2,NULL,NULL
+382,50771,"Phone Myat Moe Han","OD Executive",12,"09 420 0365 43",T,"2004-03-17 00:00:00",2,NULL,NULL
+774,50772,"Khine Win",NULL,34,"09 798 4729 32",T,"2004-03-17 00:00:00",2,NULL,NULL
+1772,50772,"Win Ko Latt","Office Driver",40,,1,NULL,2,NULL,NULL
+775,50773,Kyaw,NULL,34,"09 500 1829",T,"2004-03-17 00:00:00",2,NULL,NULL
+1716,50773,"Tin Tin Aye",Cleaner,37,,1,NULL,2,NULL,NULL
+98,50774,"Ei Ei Aung","Forklift Driver",12,"09 450 0539 76",T,"2004-03-17 00:00:00",2,NULL,NULL
+710,50775,"Aung Win Tun","Facility Technican",34,"09 454 3079 19",T,"2004-03-17 00:00:00",2,NULL,NULL
+1503,50776,"San Hlaing","Office Driver",40,,1,NULL,2,NULL,NULL
+1338,50778,Muasia,"Admin Helper",37,,1,NULL,2,NULL,NULL
+782,50780,"Kyaw Myo Paing",NULL,34,"09 420 1783 60",T,"2004-03-17 00:00:00",2,NULL,NULL
+1149,50780,"Khin Khin San",Cleaner,37,,1,NULL,2,NULL,NULL
+784,50782,"Kyaw San Tun",NULL,34,"09 202 4037",T,"2004-03-17 00:00:00",2,NULL,NULL
+345,50782,"Nay Lin Thu","Admin Clerk",1,"09 254 1896 50,  09 975 6219 71,  09 775 5467 22",T,"2004-03-17 00:00:00",2,NULL,NULL
+785,50783,"Kyaw Swar Shin",NULL,34,"09 250 4174 43,  09 960 7929 62",T,"2004-03-17 00:00:00",2,NULL,NULL
+1720,50783,"Tin Zaw Oo","Admin Helper",37,,1,NULL,2,NULL,NULL
+786,50784,"Kyaw Win Maung",NULL,34,"09 458 0406 95",T,"2004-03-17 00:00:00",2,NULL,NULL
+60,50784,"Aye Myint Myat Aung","C&B Clerk",16,"09 450 0234 98",T,"2004-03-17 00:00:00",2,NULL,NULL
+787,50785,"Kyaw Win Maung",NULL,34,"09 428 0406 95",T,"2004-03-17 00:00:00",2,NULL,NULL
+208,50785,"Kyaw Min Tun","Office Driver",28,"09 4200 41672",T,"2004-03-17 00:00:00",2,NULL,NULL
+885,50786,"Win Win",Cleaner,34,"09 254 1395 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+790,50788,"Lan Doan",NULL,34,"09 782 5136 89",T,"2004-03-17 00:00:00",2,NULL,NULL
+778,50789,"Kyaw Kyaw Naing","Admin Helper",34,"09 253 5393 80",T,"2004-03-17 00:00:00",2,NULL,NULL
+791,50789,"Lin Thet Naing Oo",NULL,34,"09 421 1638 34",T,"2004-03-17 00:00:00",2,NULL,NULL
+792,50790,"Lin Thuzar Nwe",NULL,34,"09 420 1704 49",T,"2004-03-17 00:00:00",2,NULL,NULL
+875,50790,"Tun Tun Win","Office Driver",34,"09 313 5433 1",T,"2004-03-17 00:00:00",2,NULL,NULL
+1109,50791,"Htet Lin","Office Driver",40,,1,NULL,2,NULL,NULL
+795,50793,Mandalay,NULL,34,"09 951 0548 8",T,"2004-03-17 00:00:00",2,NULL,NULL
+652,50793,"Yu Yu Maw","HRBP - Sales & Commercial",12,"09 420 0115 32",T,"2004-03-17 00:00:00",2,NULL,NULL
+796,50794,Marlar,NULL,34,"09 259 1881 84,  09 974 9360 00",T,"2004-03-17 00:00:00",2,NULL,NULL
+1361,50794,"Myint Than",Security,28,,1,NULL,2,NULL,NULL
+798,50796,"Maw La  Myine",NULL,34,"09 572 7633",T,"2004-03-17 00:00:00",2,NULL,NULL
+799,50797,"Maw Maw Lwin Taungo",NULL,34,"09 542 5567,  09 535 1133",T,"2004-03-17 00:00:00",2,NULL,NULL
+1643,50797,"Thaung Sein",Security,28,,1,NULL,2,NULL,NULL
+800,50798,"Maw Maw Naing",NULL,34,"09 975 7602 16",T,"2004-03-17 00:00:00",2,NULL,NULL
+1181,50798,"Ko Gyi",Security,28,,1,NULL,2,NULL,NULL
+801,50799,"MAWKYUN (Kyaw Myat Thu )",NULL,34,"09 423 6764 53",T,"2004-03-17 00:00:00",2,NULL,NULL
+1192,50799,"Kyaw Hla",Security,28,,1,NULL,2,NULL,NULL
+803,50801,"May Thet",NULL,34,"09 421 1410 25",T,"2004-03-17 00:00:00",2,NULL,NULL
+1016,50801,"Aye Win",Security,28,,1,NULL,2,NULL,NULL
+1294,50803,"Maung Maung Shwe",Security,28,,1,NULL,2,NULL,NULL
+1247,50804,"Kyaw Thu Shein",Security,28,,1,NULL,2,NULL,NULL
+1158,50805,"Khin Maung Shwe",Security,28,,1,NULL,2,NULL,NULL
+809,50807,"Mo Hnin Zaw",NULL,34,"09 799 9758 99",T,"2004-03-17 00:00:00",2,NULL,NULL
+1353,50807,"Myint Lwin",Security,28,,1,NULL,2,NULL,NULL
+810,50808,"Mon Mon Hlaing",NULL,34,"09 731 440 65,  09 977 2460 19,  09 974 0017 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1420,50808,"Ngwe Ohn",Security,28,,1,NULL,2,NULL,NULL
+811,50809,"Mon Yi Win Distributor Tike Kyi",NULL,34,"09 420 0623 65",T,"2004-03-17 00:00:00",2,NULL,NULL
+1644,50809,"Thaung Win",Security,28,,1,NULL,2,NULL,NULL
+812,50810,Monywa,NULL,34,"09 963 4004 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+1506,50810,"San Maung",Security,28,,1,NULL,2,NULL,NULL
+1341,50811,"Mya Win",Security,28,,1,NULL,2,NULL,NULL
+814,50812,"Myat Myo Naing",NULL,34,"09 451 2381 84",T,"2004-03-17 00:00:00",2,NULL,NULL
+755,50812,"Hla Tun",Security,34,"09 319 3102 0",T,"2004-03-17 00:00:00",2,NULL,NULL
+823,50821,"Naw Moe Thuzar Hla",NULL,34,"09 730 6335 4,  09 798 4524 69",T,"2004-03-17 00:00:00",2,NULL,NULL
+454,50821,"Shwe Yee Aye","AP Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+540,50822,"Thin Yu Nwe","Business Process Lead",10,"09 532 0954",T,"2004-03-17 00:00:00",2,NULL,NULL
+526,50823,"Thet Tun","Key Account Manager",4,"09 421 0889 77",T,"2004-03-17 00:00:00",2,NULL,NULL
+825,50823,"Nay Pyi Taw",NULL,34,"09 672 6028,  09 672 6322",T,"2004-03-17 00:00:00",2,NULL,NULL
+826,50824,"Nwe Nwe Khing",NULL,34,"09 421 1427 31",T,"2004-03-17 00:00:00",2,NULL,NULL
+134,50824,"Hnin Nandar Hlaing","Order Processing Officer",28,"09 731 2255 4,  09 969 9097 14",T,"2004-03-17 00:00:00",2,NULL,NULL
+135,50824,"Hnin Nandar Hlaing","Order Processing Officer",28,"09 731 2255 4,  09 969 9097 14",T,"2004-03-17 00:00:00",2,NULL,NULL
+827,50825,"Nyan Lin",NULL,34,"09 795 2147 78,  09 260 6956 61",T,"2004-03-17 00:00:00",2,NULL,NULL
+654,50825,"Zar Chi Zaw Win","AR Team Lead",10,"09 795 2329 93",T,"2004-03-17 00:00:00",2,NULL,NULL
+1305,50826,"Me Me Khaing","Order Processing Officer",48,,1,NULL,2,NULL,NULL
+828,50826,"Nyaung Oo",NULL,34,"09 920 0900 8",T,"2004-03-17 00:00:00",2,NULL,NULL
+206,50831,"Kyaw May May Lwin","Order Processing Officer",28,"09 799 8176 10",T,"2004-03-17 00:00:00",2,NULL,NULL
+970,50832,"Aung Thet Khaing","Delivery Driver",39,,1,NULL,2,NULL,NULL
+285,50834,"Min Zaw Oo","Delivery Driver",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+836,50834,"Phyo Ko",NULL,34,"09 792 6223 54",T,"2004-03-17 00:00:00",2,NULL,NULL
+842,50840,Rose,NULL,34,"09 780 3979 65",T,"2004-03-17 00:00:00",2,NULL,NULL
+1781,50840,"Win Naung Oo",Checker,30,,1,NULL,2,NULL,NULL
+1518,50846,"Saw Kalal Phaw","Delivery Driver",39,,1,NULL,2,NULL,NULL
+849,50847,"Si Thu Tun",NULL,34,"09 973 2487 04",T,"2004-03-17 00:00:00",2,NULL,NULL
+103,50847,"Ei Ei Theint","Route Settlement Officer",10,"09 420 2165 64",T,"2004-03-17 00:00:00",2,NULL,NULL
+1275,50849,"Lin Khaing","Sales Representative",3,,1,NULL,2,NULL,NULL
+299,50852,"Myat Su Mon","Sales Admin Clerk",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+854,50852,"Su Yee Phyo",NULL,34,"09 973 1208 45",T,"2004-03-17 00:00:00",2,NULL,NULL
+856,50854,"Tele Sale",NULL,34,"09 969 9234 78,  09 969 9234 79",T,"2004-03-17 00:00:00",2,NULL,NULL
+221,50854,"Kyaw Tun Nyein","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+857,50855,"Than Htun",NULL,34,"09 425 3723 39,  09 795 2018 36",T,"2004-03-17 00:00:00",2,NULL,NULL
+469,50855,"Soe Min Lwin","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+316,50856,"Myo Min Oo","Delivery Driver",28,"09 789 5551 00",T,"2004-03-17 00:00:00",2,NULL,NULL
+858,50856,"Than Sein",NULL,34,"09 731 0383 4",T,"2004-03-17 00:00:00",2,NULL,NULL
+863,50861,"Thidar Lwin",NULL,34,"09 421 0148 73,  09 799 6050 171",T,"2004-03-17 00:00:00",2,NULL,NULL
+1471,50861,"Phyo Wai Maung Maung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+864,50862,"Thin Hamar",NULL,34,"09 263 2166 89",T,"2004-03-17 00:00:00",2,NULL,NULL
+1205,50862,"Kyaw Kyaw Thet","Delivery Helper",39,,1,NULL,2,NULL,NULL
+866,50864,"Thinzar Aye",NULL,34,"09 420 2454 93,  09 774 7545 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1683,50864,"Thiha Soe Myint","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1855,50865,"Zaw Lin Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+867,50865,Thirty,NULL,34,"09 430 0112 8",T,"2004-03-17 00:00:00",2,NULL,NULL
+868,50866,"Thuzar Myo",NULL,34,"09 262 9077 92",T,"2004-03-17 00:00:00",2,NULL,NULL
+980,50866,"Aung Thura","Delivery Driver",39,,1,NULL,2,NULL,NULL
+18,50867,"Aung Kyaw Kyaw","Sales Team Lead",28,"09 420 0303 59",T,"2004-03-17 00:00:00",2,NULL,NULL
+869,50867,"Thuzar Naing",NULL,34,"09 421 1558 91",T,"2004-03-17 00:00:00",2,NULL,NULL
+684,50873,"Zayar Win Hlaing","Sales Team Lead",28,"09 4210 233 52",T,"2004-03-17 00:00:00",2,NULL,NULL
+586,50875,"Htun Zarni Win","Territory Sales Manager",28,"09 520 1447,  09 969 909 641",T,"2004-03-17 00:00:00",2,NULL,NULL
+1839,50877,"Yinnmar Lin","Planning Analyst",56,,1,NULL,2,NULL,NULL
+510,50878,"Thant Thant Swe","Finance Operations Manager",10,"09 450 0046 94,  09 799 6877 03",T,"2004-03-17 00:00:00",2,NULL,NULL
+1238,50880,"Kyaw Tayzar Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1563,50883,"Soe Myat Thu","Delivery Driver",39,,1,NULL,2,NULL,NULL
+886,50884,Yadanar,NULL,34,"09 789 6025 41",T,"2004-03-17 00:00:00",2,NULL,NULL
+931,50884,"Aung Kyaw Oo","Delivery Driver",39,,1,NULL,2,NULL,NULL
+888,50886,"Ye Htut Shein",NULL,34,"09 402 5125 55",T,"2004-03-17 00:00:00",2,NULL,NULL
+679,50886,"Zayar Aung Win Htut","Region Capability Lead",28,"09 9699 09 724,  09 4200 15036",T,"2004-03-17 00:00:00",2,NULL,NULL
+893,50891,"Yu Ya Zaw",NULL,34,"09 508 2612",T,"2004-03-17 00:00:00",2,NULL,NULL
+642,50891,"Ye Zaw Oo","Route Planner",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+462,50893,"Sithu Aung","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+317,50894,"Myo Min Soe","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+259,50895,"May Thet Oo","Route Settlement Officer",10,9421141025,T,"2004-03-17 00:00:00",2,NULL,NULL
+897,50895,"Zaw Myint Htoo",NULL,34,"09 450 0407 77",T,"2004-03-17 00:00:00",2,NULL,NULL
+898,50896,"Zaw Myo Thant",NULL,34,"09 250 6692 27",T,"2004-03-17 00:00:00",2,NULL,NULL
+488,50896,"Su Su Mon","Sales Admin Clerk",28,"09 421 0708 28",T,"2004-03-17 00:00:00",2,NULL,NULL
+900,50898,"Zaya Lin Htin",NULL,34,"09 550 5463",T,"2004-03-17 00:00:00",2,NULL,NULL
+1681,50898,"Thidar Than","Route Settlement Officer",2,,1,NULL,2,NULL,NULL
+1615,50901,"Than Soe Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+903,50901,"Zin Lae Win",NULL,34,"09 430 5200 5,  09 799 4671 44",T,"2004-03-17 00:00:00",2,NULL,NULL
+160,50907,"Kalyar Theint Theint","Business Planning Manager",10,"09 538 5171",T,"2004-03-17 00:00:00",2,NULL,NULL
+432,50908,Sandar,"Key Account Analyst",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+619,50909,"Yadanar Sein Myint","Route Settlement Analyst",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1792,50911,"Wut Yi Phyoe","Internal Auditor",50,,1,NULL,2,NULL,NULL
+1391,50913,"Naing Naing Thitsar Lin","Senior Business Partner",51,,1,NULL,2,NULL,NULL
+185,50914,"Khin Thidar Kyaw","Route Settlement Officer",10,"09 425 3061 37,  09 799 9191 04,  09 440 7455 68",T,"2004-03-17 00:00:00",2,NULL,NULL
+1919,50915,"Zu Hlaing Moe","AR Officer",2,,1,NULL,2,NULL,NULL
+548,50925,"Thura Zaw","Electrical Supervisor",23,"09 797 9924 48,  09 420 0365 44",T,"2004-03-17 00:00:00",2,NULL,NULL
+549,50925,"Thura Zaw","Electrical Supervisor",28,"09 797 9924 48,  09 420 0365 44",T,"2004-03-17 00:00:00",2,NULL,NULL
+1547,50927,"Soe Hla Aung","Generator Technician",23,,1,NULL,2,NULL,NULL
+186,50929,"Khin Thu","Mechanical Supervisor",17,,T,"2004-03-17 00:00:00",2,NULL,NULL
+580,50930,"Tun Myat Aung","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+233,50933,"Kyu Kyu Aye","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+995,50934,"Aye Aye Aung","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1542,50938,"Sithu Paing","Deplletizer Operator",23,,1,NULL,2,NULL,NULL
+1728,50940,"Tun Lin Myat","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1197,50941,"Kyaw Khaing Win","Utility Technician",23,,1,NULL,2,NULL,NULL
+1725,50942,"Tun Ko Ko","Mechanical Supervisor",23,,1,NULL,2,NULL,NULL
+1498,50944,"Sai Aung Hmai","Forklift Driver",30,,1,NULL,2,NULL,NULL
+318,50945,"Myo Min Zaw","Maintenance Manager",32,"09 450 0423 02",T,"2004-03-17 00:00:00",2,NULL,NULL
+1177,50948,"Khoi Swam Kein","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1339,50953,"Mya Min Oo","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1677,50955,"Thet Thet Lwin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1031,50958,"Chit Ko Ko Lin","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1497,50959,"Sabal Oo","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1688,50960,"Thin Thin Aung","Labeller Operator",23,,1,NULL,2,NULL,NULL
+599,50961,"Win Ko Oo","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1793,50962,"Ya Wai Maung","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+611,50965,"Win Thandar","Production Clerk",32,"09 425 3068 70",T,"2004-03-17 00:00:00",2,NULL,NULL
+406,50972,"Pyae Phyo Maung Maung","Maintenance planner",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+232,50973,"Kyin Kyin Ni","TPM & Best Fresh Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1631,50974,"Thant Zin Htay","Processing Technician",23,,1,NULL,2,NULL,NULL
+1347,50979,"Myat Thu","Production Helper",23,,1,NULL,2,NULL,NULL
+923,50980,"Aung Ko Htet","Filler Operator",23,,1,NULL,2,NULL,NULL
+622,50981,"Yan Paing Phyo","Production Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1580,50984,"Su Hlaing Hnin","Online Supervisor",24,,1,NULL,2,NULL,NULL
+1786,50986,"Win Win Htay","Packer Operator",23,,1,NULL,2,NULL,NULL
+1419,50996,"Ngwe Lin","WT Technician",24,,1,NULL,2,NULL,NULL
+1823,50997,"Ye Naing Htut","WT Technician",24,,1,NULL,2,NULL,NULL
+224,50998,"Kyaw Win Htut","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1763,50999,"Wai Yan Htet","Generator Technician",23,,1,NULL,2,NULL,NULL
+1900,51001,"Zayar Tun","Processing Helper",23,,1,NULL,2,NULL,NULL
+1367,51002,"Myo Ko Ko Thet","Processing Helper",23,,1,NULL,2,NULL,NULL
+1739,51003,"Tun Win","WT Helper",24,,1,NULL,2,NULL,NULL
+1804,51004,"Ye Htut Zaw","Processing Helper",23,,1,NULL,2,NULL,NULL
+1469,51005,"Phyo Wai Aung","Processing Helper",23,,1,NULL,2,NULL,NULL
+1266,51006,"Kyawt Hmoo Wai","QA Supervisor",24,,1,NULL,2,NULL,NULL
+413,51010,"R Ka Maung","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1913,51011,"Zin Moe Oo","Production Helper",23,,1,NULL,2,NULL,NULL
+1541,51012,"Sithu Naing","Production Helper",23,,1,NULL,2,NULL,NULL
+1897,51013,"Zayar Aung","Production Helper",23,,1,NULL,2,NULL,NULL
+918,51014,"Aung Htet Lin","Production Helper",23,,1,NULL,2,NULL,NULL
+1652,51015,"Thein Than","Production Helper",23,,1,NULL,2,NULL,NULL
+878,51016,"Wai Phyo","Processing Helper",34,"09 254 9485 69,  09 799 1063 07",T,"2004-03-17 00:00:00",2,NULL,NULL
+1299,51019,"May San Thi","Business Process Lead",54,,1,NULL,2,NULL,NULL
+908,51020,"Arkar Maung Maung","Online Technician",24,,1,NULL,2,NULL,NULL
+561,51021,"Tin Ko Latt","Processing Executive",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1001,51026,"Aye Kyu Thin","Packer Operator",23,,1,NULL,2,NULL,NULL
+1825,51029,"Ye Thike Oo","Production Helper",23,,1,NULL,2,NULL,NULL
+1483,51030,"Pyae Phyo Kyaw","Production Helper",23,,1,NULL,2,NULL,NULL
+1480,51031,"Pyae Phyo Aung (2)","Production Helper",23,,1,NULL,2,NULL,NULL
+1659,51034,"Theint Thu Thu Aung","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1731,51036,"Tun Min Latt","Blow Operator",23,,1,NULL,2,NULL,NULL
+945,51038,"Aung Myint Myat","Filler Operator",23,,1,NULL,2,NULL,NULL
+1582,51039,"Su Myat Hlaing","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1893,51040,"Zawe Min Htet","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1449,51041,"Paing Soe Thein","Electrical Technician",23,,1,NULL,2,NULL,NULL
+682,51044,"Zayar Min","Inbound Logistics Executive",22,"09 422 5302 42",T,"2004-03-17 00:00:00",2,NULL,NULL
+122,51046,"Hein Dipar","Sr. Inbound Logistics Specialist",22,"09 503 3967",T,"2004-03-17 00:00:00",2,NULL,NULL
+640,51048,"Ye Nyunt Win","Store Supervisor",16,"09 260 0448 75,  09 799 7991 61",T,"2004-03-17 00:00:00",2,NULL,NULL
+429,51049,"San Htay","Store Supervisor",16,"09 430 5566 8,  09 788 1806 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+81,51050,"Chan Aye Min","Store Supervisor",16,"09 450 0777 68",T,"2004-03-17 00:00:00",2,NULL,NULL
+1872,51051,"Zaw Nyein Aye","Transport Driver",32,,1,NULL,2,NULL,NULL
+507,51052,"Than Win",Executive,28,"09 425 2976 23",T,"2004-03-17 00:00:00",2,NULL,NULL
+322,51053,"Myo Win Hlaing","Store Supervisor",16,"09 421 1738 64",T,"2004-03-17 00:00:00",2,NULL,NULL
+41,51054,"Aung Thaw Htoo","Transport Clerk",33,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1417,51055,"Nay Win","Transport Driver",32,,1,NULL,2,NULL,NULL
+1345,51056,"Myat Myo Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+1609,51057,"Than Lwin","Transport Driver",32,,1,NULL,2,NULL,NULL
+1350,51058,"Myint Htwe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1216,51059,"Kyaw Min Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+610,51062,"Win Sandar Hlaing","Transport Clerk",33,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1706,51063,"Tin Ko Ko Kyi","Transport Driver",32,,1,NULL,2,NULL,NULL
+616,51065,"Win Zaw Thein","Store Supervisor",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1237,51066,"Kyaw Swar Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+1727,51067,"Tun Lin Aung","Transport Driver",32,,1,NULL,2,NULL,NULL
+1096,51068,"Htay Lwin","Transport Driver",32,,1,NULL,2,NULL,NULL
+1122,51069,"Htun Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+521,51071,"Thet Ko Ko Htwe","Store Supervisor",16,"09 420 0040 98",T,"2004-03-17 00:00:00",2,NULL,NULL
+175,51072,"Khin Maung Than","Store Supervisor",16,"09 731 8873 0",T,"2004-03-17 00:00:00",2,NULL,NULL
+1018,51074,"Bo Bo Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+174,51075,"Khin Maung Htoo","Store Executive",16,"09 450 1980 90,  09 264 4504 43",T,"2004-03-17 00:00:00",2,NULL,NULL
+1638,51078,"That Lwin","Transport Driver",32,,1,NULL,2,NULL,NULL
+1358,51080,"Myint Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+937,51081,"Aung Kyaw Thu","Transport Clerk",32,,1,NULL,2,NULL,NULL
+906,51083,"Addie Kyaw Wai","Transport Driver",32,,1,NULL,2,NULL,NULL
+1212,51085,"Kyaw Min Htay","Transport Driver",32,,1,NULL,2,NULL,NULL
+1702,51087,"Thurein Oo","Store Keeper (Spare Part)",44,,1,NULL,2,NULL,NULL
+535,51088,"Thiha Aung","Forklift Driver",28,"09 9699 09 667",T,"2004-03-17 00:00:00",2,NULL,NULL
+1219,51089,"Kyaw Min Zaw","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1637,51090,"Thant Zin Win","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1591,51091,"Tayzar Myo Aung","Store Keeper",30,,1,NULL,2,NULL,NULL
+303,51093,"Myint Shwe","Distributor Supervisor",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1852,51094,"Zaw Htay Myint","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1320,51095,"Min Thein Tun","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1568,51096,"Soe Nyein Thu","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1730,51097,"Tun Lin Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1154,51098,"Khin Maung Htwe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1572,51100,"Soe Thu Aung",Checker,33,,1,NULL,2,NULL,NULL
+658,51102,"Zaw Htike",Checker,28,"09 421 1196 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1262,51104,"Kyaw Zin Latt","Store Helper",30,,1,NULL,2,NULL,NULL
+1264,51105,"Kyaw Zin Tun","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1144,51106,"Khaing Soe","Forklift Driver",30,,1,NULL,2,NULL,NULL
+979,51107,"Aung Thu Win","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1057,51108,"Han Lin Thaw","Store Helper",30,,1,NULL,2,NULL,NULL
+1539,51109,"Sithu Hein","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1430,51110,"Nwet Nwet Win","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1838,51112,"Yin Yin Htay","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1304,51113,"May Zin Phyo",Checker,30,,1,NULL,2,NULL,NULL
+1592,51114,"Tha Zin Oo",Checker,30,,1,NULL,2,NULL,NULL
+1450,51115,"Pan Ei Phyu","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+141,51118,"Hnin Yu Maw","Store Clerk",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1703,51119,"Thuya Tun","Store Keeper",30,,1,NULL,2,NULL,NULL
+129,51120,"Hlaing Min Tun","Region Capability Lead",28,"09 730 0814 5",T,"2004-03-17 00:00:00",2,NULL,NULL
+1381,51131,"Myo Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+72,51132,"Bo Aung","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1799,51133,"Yan Naung Soe","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1666,51134,"Thet Maung Maung Oo","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1809,51136,"Ye Kyaw Thu","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1490,51142,"Pyae Sone Aung","Sales Helper",3,,1,NULL,2,NULL,NULL
+148,51143,"Htet Wai Phyo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+452,51149,"Shwe Lin Soe","Sales Team Lead",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1185,51150,"Ko Ko Latt","Sales Helper",3,,1,NULL,2,NULL,NULL
+54,51152,"Aye Aye Mu","Route Settlement Officer",10,"09 311 7656 1",T,"2004-03-17 00:00:00",2,NULL,NULL
+1813,51154,"Ye Min Naing","Sales Helper",3,,1,NULL,2,NULL,NULL
+987,51155,"Aung Tun Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+468,51156,"Soe Min","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1519,51159,"Saw Kaw Lel Lo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1742,51160,"Tun Win Tun","Store Keeper",33,,1,NULL,2,NULL,NULL
+655,51162,"Zar Ni Shin","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1798,51163,"Yan Naing Soe","Sales Helper",3,,1,NULL,2,NULL,NULL
+1806,51168,"Ye Ko Ko Tun","Sales Helper",3,,1,NULL,2,NULL,NULL
+1613,51169,"Than Naing Win","Sales Helper",3,,1,NULL,2,NULL,NULL
+402,51171,"Pyae Myat Noe Aung","Route Settlement Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1060,51172,"Han Nyein Wai","Sales Helper",3,,1,NULL,2,NULL,NULL
+913,51173,"Aung Aung Myo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1543,51175,"Sithu Win","Sales Representative",3,,1,NULL,2,NULL,NULL
+1805,51176,"Ye Ko Ko","Sales Helper",3,,1,NULL,2,NULL,NULL
+667,51177,"Zaw Oo","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+961,51178,"Aung Pyae Sone","GSM Driver",3,,1,NULL,2,NULL,NULL
+1654,51191,"Thein Thein Chit","Route Settlement Officer",2,,1,NULL,2,NULL,NULL
+1882,51192,"Zaw Win Maung","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+331,51195,"Naing Naing Oo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1862,51196,"Zaw Min Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1372,51197,"Myo Min Tun","Store Keeper",33,,1,NULL,2,NULL,NULL
+1556,51201,"Soe Maung Maung","Sales Helper",3,,1,NULL,2,NULL,NULL
+1011,51202,"Aye Myo","Sales Helper",3,,1,NULL,2,NULL,NULL
+204,51206,"Kyaw Lin Aung","Sales Representative",28,"09 9699 10 647",T,"2004-03-17 00:00:00",2,NULL,NULL
+216,51209,"Kyaw Swar Win","Sales Representative",28,"09 420 1387 72",T,"2004-03-17 00:00:00",2,NULL,NULL
+1045,51210,"Doe Doe Aung","Sales Helper",3,,1,NULL,2,NULL,NULL
+1884,51211,"Zaw Win Maung","Sales Helper",3,,1,NULL,2,NULL,NULL
+1337,51212,"Mr. Khan","Expat & Mobility Services Manager",58,,1,NULL,2,NULL,NULL
+7,51217,"Aung Aung","Admin Helper",4,"09 421 1079 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+1639,51219,"Thaung Aye","Admin Helper",37,,1,NULL,2,NULL,NULL
+1313,51221,"Min Min Aung","Admin Helper",37,,1,NULL,2,NULL,NULL
+717,51223,"Bo Bo Lwin","Admin Helper",34,"09 791 7085 27",T,"2004-03-17 00:00:00",2,NULL,NULL
+1200,51224,"Kyaw Kyaw","Admin Helper",37,,1,NULL,2,NULL,NULL
+1295,51225,"Maung Maung Soe","Admin Helper",37,,1,NULL,2,NULL,NULL
+1421,51226,"Ni Lar",Helper,37,,1,NULL,2,NULL,NULL
+1340,51227,"Mya Mya Htay",Receptionist,5,,1,NULL,2,NULL,NULL
+128,51229,"Hlaine Nay Chi Tint Wai","Asst. Supervisor",12,"09 731 7400 4",T,"2004-03-17 00:00:00",2,NULL,NULL
+1653,51230,"Thein Thein",Cleaner,37,,1,NULL,2,NULL,NULL
+319,51231,"Myo Pa Pa","Sr. Executive - OD",12,"09 541 4966",T,"2004-03-17 00:00:00",2,NULL,NULL
+1164,51235,"Khin Soe",Cleaner,37,,1,NULL,2,NULL,NULL
+1589,51236,"Swe Zin Khaing",Cleaner,37,,1,NULL,2,NULL,NULL
+118,51237,"George Kyaw Zaw","Manager - Administration ",12,"09 450 0094 31",T,"2004-03-17 00:00:00",2,NULL,NULL
+392,51239,"Phyu Phyu Khaing","Business Application Manager",14,"09 505 5335",T,"2004-03-17 00:00:00",2,NULL,NULL
+355,51241,"Nilar Aye Aye Lwin","IT Infrastructure Specialist",14,"09 731 896 10, 09 257 40 0101",T,"2004-03-17 00:00:00",2,NULL,NULL
+30,51243,"Aung Myo Nyunt","Fleet Manager",17,,T,"2004-03-17 00:00:00",2,NULL,NULL
+880,51244,"War War Aye","Fleet Maintenance Clerk",34,"01 378 875,  01 377 539,  01 379 975",T,"2004-03-17 00:00:00",2,NULL,NULL
+598,51245,"Win Htein Soe","Maintenance Supervisor",17,,T,"2004-03-17 00:00:00",2,NULL,NULL
+571,51246,"Tint Lwin","Maintenance Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1921,51247,`,"Fleet Supervisor",17,,1,NULL,2,NULL,NULL
+240,51249,"Lwin Lwin Kyaw","RTM Analyst",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+788,51250,"Kyaw Zaw","Office Driver",34,"09 316 4608 4",T,"2004-03-17 00:00:00",2,NULL,NULL
+709,51252,"Aung Myint Thein","Office Driver",34,"09 799 1078 20,  09 421 1624 87",T,"2004-03-17 00:00:00",2,NULL,NULL
+1168,51253,"Khin Zaw","Office Driver",40,,1,NULL,2,NULL,NULL
+1169,51254,"Khin Zaw (2)","Office Driver",40,,1,NULL,2,NULL,NULL
+767,51255,"Khin Maung Chin","Office Driver",34,"09 972 4088 82",T,"2004-03-17 00:00:00",2,NULL,NULL
+783,51256,"Kyaw Oo","Office Driver",34,"09 253 5394 30,  09 313 0594 1",T,"2004-03-17 00:00:00",2,NULL,NULL
+763,51259,"Kaung Myat Zaw","Office Driver",34,"09 428 1836 98",T,"2004-03-17 00:00:00",2,NULL,NULL
+851,51261,"Soe Thura","Office Driver",34,"09 421 0014 34,  09 799 9196 49",T,"2004-03-17 00:00:00",2,NULL,NULL
+820,51263,"Naing Oo","Office Driver",34,"09 420 0865 68",T,"2004-03-17 00:00:00",2,NULL,NULL
+1125,51266,"Kan Oo",Security,28,,1,NULL,2,NULL,NULL
+1496,51267,"Sa Aye Myint",Security,28,,1,NULL,2,NULL,NULL
+1619,51268,"Than Tun Win",Security,28,,1,NULL,2,NULL,NULL
+1442,51269,"Nyunt Hlaing",Security,28,,1,NULL,2,NULL,NULL
+1297,51271,"Maung Thein",Security,28,,1,NULL,2,NULL,NULL
+1734,51272,"Tun Shein",Security,28,,1,NULL,2,NULL,NULL
+1362,51273,"Myint Wai",Security,28,,1,NULL,2,NULL,NULL
+1837,51274,"Yin Myo",Security,28,,1,NULL,2,NULL,NULL
+334,51275,"Naing Win",Security,34,"09 795 2138 97",T,"2004-03-17 00:00:00",2,NULL,NULL
+1509,51276,"San Oo",Security,28,,1,NULL,2,NULL,NULL
+1383,51280,"Myo Win Htut",Security,28,,1,NULL,2,NULL,NULL
+1887,51281,"Zaw Win Tun",Security,28,,1,NULL,2,NULL,NULL
+601,51282,"Win Kyaw",Security,28,"09 799 1692 54,  09 263 1021 47",T,"2004-03-17 00:00:00",2,NULL,NULL
+100,51292,"Ei Ei Maw","GL Accountant SIV & Submission",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+365,51294,"Nwe Nwe Yee Thin","Manager : Financial Controller (Manager)",10,"09 502 5775",T,"2004-03-17 00:00:00",2,NULL,NULL
+1848,51295,"Zar Yin Lin","GL Accountant Branches",2,,1,NULL,2,NULL,NULL
+292,51307,"Mon Hnin Zaw","Tax Compliance",2,,T,"2004-03-17 00:00:00",2,NULL,NULL
+195,51308,"Ko Ko Lwin","Fleet Maintenance Clerk",11,,T,"2004-03-17 00:00:00",2,NULL,NULL
+555,51309,"Thwe Zin Oo","Trade Marketing Manager",4,"09 511 1744",T,"2004-03-17 00:00:00",2,NULL,NULL
+509,51311,"Thandar Oo","Marketing Analyst",4,"09 254 9524 87",T,"2004-03-17 00:00:00",2,NULL,NULL
+1256,51315,"Kyaw Zay Yar","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+390,51317,"Phyo Win Ko","Trade Marketing Lead",19,"09 421 1098 09,  09 260 9950 84",T,"2004-03-17 00:00:00",2,NULL,NULL
+234,51320,"L Naung","Teen Recruitment Lead",19,"09 795 6895 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+1807,51321,"Ye Ko Naing","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+252,51322,"Maw Kyu Aung",Analyst,4,"09 420 2165 05,  09 781 9565 64",T,"2004-03-17 00:00:00",2,NULL,NULL
+1051,51330,"Ei Myat Chail","CDE Analyst",52,,1,NULL,2,NULL,NULL
+237,51331,"Lin Thu Zar Nwe","Marketing Analyst",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+808,51332,"Min Thein","Procurement Executive",34,"09 795 8057 09,  09 9666 29 092",T,"2004-03-17 00:00:00",2,NULL,NULL
+59,51336,"Aye Mon Mon Toe","Sr. Procurement Specialist",22,"09 537 4304",T,"2004-03-17 00:00:00",2,NULL,NULL
+8,51338,"Aung Bo Bo Min","Sr. Procurement Specialist",22,"09 421 0333 85,  09 780 7883 10",T,"2004-03-17 00:00:00",2,NULL,NULL
+21,51339,"Aung Kyaw Myo","Territory Sales Manager",28,"09 511 1755",T,"2004-03-17 00:00:00",2,NULL,NULL
+877,51341,"Wai Lin Tun","Territory Sales Manager",34,"09 430 4074 6",T,"2004-03-17 00:00:00",2,NULL,NULL
+33,51346,"Aung Nay Tun","Territory Sales Manager",28,"09 969 9096 59, 09 421 0535 39  09 798 1191 77",T,"2004-03-17 00:00:00",2,NULL,NULL
+368,51347,"Nyan Thein","National Planning Manager",4,"09 730 8835 7,  09 250 2335 76",T,"2004-03-17 00:00:00",2,NULL,NULL
+61,51350,"Aye Myintzu Nu","Sales Admin Manager",28,"09 730 6068 9,  09 969 9097 13,  09 799 7667 31",T,"2004-03-17 00:00:00",2,NULL,NULL
+569,51351,"Tin Tin Thein",Cashier,10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+99,51355,"Ei Ei Khin","Sales Admin Clerk",28,"09 420 7735 50",T,"2004-03-17 00:00:00",2,NULL,NULL
+1142,51356,"Khaing Nwe Nwe Kyi","Master Data Officer",54,,1,NULL,2,NULL,NULL
+359,51358,"Nwe Ni Aung","Order Processing Officer",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+482,51359,"Su Ei Ei Mon","Sales Admin Clerk",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+356,51361,"Nu Nu Wai","Sales Analyst",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+537,51362,"Thin Thin Aye",Cashier,10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+189,51363,"Khine Khine Aung","Sales Analyst",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1711,51365,"Tin Myo Thu Zar Win","Sales Admin Clerk",48,,1,NULL,2,NULL,NULL
+139,51366,"Hnin Wai Yan","Route Settlement Officer",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+673,51370,"Zaw Zaw Latt","Sales Team Lead",28,"09 420 1515 60,  09 969 9097 26",T,"2004-03-17 00:00:00",2,NULL,NULL
+467,51376,"Soe Lwin Lwin","Sales Team Lead",28,"09 9699 09 642",T,"2004-03-17 00:00:00",2,NULL,NULL
+514,51377,"Thein Htay Aung","Region Capability Lead",26,"09 540 5741",T,"2004-03-17 00:00:00",2,NULL,NULL
+1590,51378,"Tay Zar Aung","Sales Representative",3,,1,NULL,2,NULL,NULL
+29,51380,"Aung Myo Myat","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+315,51381,"Myo Min Naing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+501,51384,"Than Aung","Key Account Supervisor",28,"09 254 2201 76",T,"2004-03-17 00:00:00",2,NULL,NULL
+1673,51386,"Thet Paing Tun","Sales Representative",3,,1,NULL,2,NULL,NULL
+944,51387,"Aung Myint Myat","Delivery Driver",39,,1,NULL,2,NULL,NULL
+621,51388,"Yan Naung Tun","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+670,51392,"Zaw Win Aung","Sales Team Lead",28,"09 263 9115 63,  09 785 4155 13",T,"2004-03-17 00:00:00",2,NULL,NULL
+306,51395,"Myo Htut","Region Capability Lead",4,"09 448 0058 72",T,"2004-03-17 00:00:00",2,NULL,NULL
+324,51398,"Myo Zaw Oo","Sales Team Lead",28,"09 9699 09 663",T,"2004-03-17 00:00:00",2,NULL,NULL
+1159,51401,"Khin Maung Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+940,51404,"Aung Moe Hein","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1199,51405,"Kyaw Ko Ko Lat","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1777,51406,"Win Min Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1314,51407,"Min Min Aye","Delivery Helper",39,,1,NULL,2,NULL,NULL
+703,51408,"Aung Thu","Delivery Helper",28,"09 9699 09 647",T,"2004-03-17 00:00:00",2,NULL,NULL
+1218,51409,"Kyaw Min Tun (1)","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1434,51410,"Nyein Chan Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1801,51412,"Yar Zar","Delivery Helper",39,,1,NULL,2,NULL,NULL
+57,51413,"Aye Min Ko","Delivery Helper",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1388,51414,"Naing Lin Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1815,51415,"Ye Min Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1504,51418,"San Ko Ko","Delivery Driver",39,,1,NULL,2,NULL,NULL
+807,51419,"Min Min Thein","Office Driver",34,"09 254 2535 24",T,"2004-03-17 00:00:00",2,NULL,NULL
+1230,51422,"Kyaw Soe","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1279,51430,"Lin Tin Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1248,51431,"Kyaw Thu Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+951,51433,"Aung Myo Htike","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1254,51436,"Kyaw Zaw Naing","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1524,51439,"Saw San Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1030,51441,"Chit Ko","Delivery Helper",39,,1,NULL,2,NULL,NULL
+883,51445,"Win Min Than  ","Delivery Driver",34,"09 784 1498 94",T,"2004-03-17 00:00:00",2,NULL,NULL
+508,51446,"Than Zaw Oo","Delivery Driver",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1077,51448,"Hla Min Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1870,51449,"Zaw Naing","Delivery Driver",39,,1,NULL,2,NULL,NULL
+956,51451,"Aung Naing Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1413,51452,"Nay Min Shein","Sales Representative",41,,1,NULL,2,NULL,NULL
+1326,51454,"Min Zaw","Delivery Driver",39,,1,NULL,2,NULL,NULL
+613,51456,"Win Tun","Key Account Sales Representative",28,"09 960 9313 66",T,"2004-03-17 00:00:00",2,NULL,NULL
+813,51458,"Mya Darli Lwin ","Cash Collector",34,"09 250 2944 71,  09 778 9249 55",T,"2004-03-17 00:00:00",2,NULL,NULL
+377,51459,"Pan Myintzu","Key Account Developer",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1107,51460,"Htet Htet Wai","Key Account Developer",38,,1,NULL,2,NULL,NULL
+463,51463,"Sithu Myint Swe","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+354,51465,"Ni Ni Tun","Key Account Sales Representative",28,"09 795 8883 67",T,"2004-03-17 00:00:00",2,NULL,NULL
+1351,51467,"Myint Khaing Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1352,51468,"Myint Ko Ko Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1360,51470,"Myint Swe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1359,51474,"Myint Soe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1737,51475,"Tun Tun Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+947,51476,"Aung Myint Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+986,51477,"Aung Tin San","Transport Driver",32,,1,NULL,2,NULL,NULL
+1444,51478,"Nyunt Win","Transport Driver",32,,1,NULL,2,NULL,NULL
+1355,51480,"Myint Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+948,51481,"Aung Myo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1319,51483,"Min Thaw","Transport Driver",32,,1,NULL,2,NULL,NULL
+1270,51484,"Kyi Than","Transport Driver",32,,1,NULL,2,NULL,NULL
+1733,51485,"Tun Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+89,51487,"Cho Cho Lin","Transport Clerk",33,"09 777 7286 63",T,"2004-03-17 00:00:00",2,NULL,NULL
+1481,51492,"Pyae Phyo Aung (2)","Transport Driver",32,,1,NULL,2,NULL,NULL
+1369,51494,"Myo Min Htike","Transport Driver",32,,1,NULL,2,NULL,NULL
+1714,51497,"Tin Oo Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+1740,51499,"Tun Win Aung","Transport Driver",32,,1,NULL,2,NULL,NULL
+1157,51500,"Khin Maung Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1710,51501,"Tin Myo Min","Transport Driver",32,,1,NULL,2,NULL,NULL
+511,51503,"Thant Zaw","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+126,51505,"Hla Htay","Mechanical Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1026,51506,"Char Le","Utility Technician",44,,1,NULL,2,NULL,NULL
+314,51507,"Myo Min Aung","Boiler Technician",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1828,51509,"Ye Win Aung","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+688,51513,"Zin Lae War","Production Clerk",16,"09 420 2339 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+180,51514,"Khin Myo Win","Production Clerk",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+559,51516,"Tin Aung Win","Electrical Supervisor",32,"09 795 8289 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+1363,51517,"Myint Win","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1221,51520,"Kyaw Moe Oo","Processing Supervisor",23,,1,NULL,2,NULL,NULL
+343,51522,"Nay Lin","Processing Supervisor",21,"09 942 0249 016",T,"2004-03-17 00:00:00",2,NULL,NULL
+1309,51523,"Min Htike Aung","Processing Technician",23,,1,NULL,2,NULL,NULL
+45,51525,"Aung Zaw Oo","Processing Supervisor",21,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1220,51527,"Kyaw Moe Khaing","QA Supervisor",24,,1,NULL,2,NULL,NULL
+1785,51529,"Win Thu","QA Supervisor",24,,1,NULL,2,NULL,NULL
+173,51530,"Khin Mar Lwin","QA Supervisor",24,"09 421 1237 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1548,51531,"Soe Ko Ko Naing","Processing Technician",23,,1,NULL,2,NULL,NULL
+581,51533,"Tun Tun","Bottle Washer Operator",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1736,51534,"Tun Tun Oo","Machine Operator",23,,1,NULL,2,NULL,NULL
+1854,51535,"Zaw Ko Ko Htet Naing","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1670,51536,"Thet Naing Win","Filler Operator",23,,1,NULL,2,NULL,NULL
+1194,51538,"Kyaw Hlaing Win","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1328,51540,"Min Zaw Aung","Filler Operator",23,,1,NULL,2,NULL,NULL
+1748,51542,"Wai Lin Phyo","Filler Operator",23,,1,NULL,2,NULL,NULL
+1611,51543,"Than Naing Oo","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1056,51544,"Han Chit Min","Forklift Driver",33,,1,NULL,2,NULL,NULL
+1879,51545,"Zaw Win Htike","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1004,51546,"Aye Min Naing","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1324,51549,"Min Yar Zar","Forklift Driver",33,,1,NULL,2,NULL,NULL
+1513,51552,"Sarmon Bwe Oak Htan","Forklift Driver",33,,1,NULL,2,NULL,NULL
+818,51553,"Myo Min Thu","Forklift Driver",34,"09 423 7036 80",T,"2004-03-17 00:00:00",2,NULL,NULL
+1408,51554,"Nay Lin Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1327,51555,"Min Zaw","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1773,51557,"Win Kyaw Kyaw","Forklift Driver",30,,1,NULL,2,NULL,NULL
+539,51559,"Thin Thin Nwe","Store Clerk",16,"09 420 1318 27",T,"2004-03-17 00:00:00",2,NULL,NULL
+313,51560,"Myo Min","Store Supervisor",31,"09 421 0970 18,  09 795 2125 65",T,"2004-03-17 00:00:00",2,NULL,NULL
+993,51565,"Aung Zin Moe","Forklift Driver",33,,1,NULL,2,NULL,NULL
+1797,51568,"Yan Naing Lin","Store Keeper",30,,1,NULL,2,NULL,NULL
+309,51570,"Myo Kyaw","Store Keeper",16,"09 420 1110 92",T,"2004-03-17 00:00:00",2,NULL,NULL
+1389,51574,"Naing Lin Tun",Checker,30,,1,NULL,2,NULL,NULL
+207,51576,"Kyaw Min Htet","Store Keeper",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+287,51578,"Moe Lwin","Store Keeper",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+614,51579,"Win Zaw","Store Supervisor",16,"09 263 9932 37",T,"2004-03-17 00:00:00",2,NULL,NULL
+220,51582,"Kyaw Thura",Checker,28,"09 790 2341 83,  09 2592 566 94",T,"2004-03-17 00:00:00",2,NULL,NULL
+977,51584,"Aung Thu Phyo","Production Helper",23,,1,NULL,2,NULL,NULL
+1292,51585,"Maung Maung Oo","Bottle Washer Operator",23,,1,NULL,2,NULL,NULL
+167,51586,"Khaing Win","Production Helper",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1203,51588,"Kyaw Kyaw Min","Bottle Washer Operator",23,,1,NULL,2,NULL,NULL
+1196,51590,"Kyaw Khaing Win","Production Helper",23,,1,NULL,2,NULL,NULL
+952,51591,"Aung Myo Kyaw","Botle Washer Operator",23,,1,NULL,2,NULL,NULL
+1432,51592,"Nyan Linn Tun","Packer Operator",23,,1,NULL,2,NULL,NULL
+1307,51593,"Min Aung Soe","Production Helper",23,,1,NULL,2,NULL,NULL
+1143,51594,"Khaing Shwe Phyo","Decrater Operator",23,,1,NULL,2,NULL,NULL
+1617,51595,"Than Tin","Decrater Operator",23,,1,NULL,2,NULL,NULL
+1682,51596,"Thiha Kyaw","Production Helper",23,,1,NULL,2,NULL,NULL
+1816,51599,"Ye Min Zaw","Forklift Driver",30,,1,NULL,2,NULL,NULL
+964,51600,"Aung San Htwe","Forklift Driver",30,,1,NULL,2,NULL,NULL
+930,51602,"Aung Kyaw Moe","Production Helper",23,,1,NULL,2,NULL,NULL
+1767,51603,"Win Aung","Bottle Washer Operator",23,,1,NULL,2,NULL,NULL
+1800,51604,"Yan Wai Soe","Bottle Washer Operator",23,,1,NULL,2,NULL,NULL
+1392,51606,"Naing Win Hlaing","Packer Operator",23,,1,NULL,2,NULL,NULL
+1601,51609,"Than Htike Kyaw","Production Helper",23,,1,NULL,2,NULL,NULL
+1243,51611,"Kyaw Thin Khaing",Checker,33,,1,NULL,2,NULL,NULL
+1475,51612,"Phyu Soe Lin","Production Helper",23,,1,NULL,2,NULL,NULL
+1232,51613,"Kyaw Soe Lin","Production Helper",23,,1,NULL,2,NULL,NULL
+1000,51614,"Aye Kyi","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1091,51616,"Hnin Wai Wai Soe","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1529,51617,"Sein Myint","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+529,51618,"Thi Thi Win",Cashier,10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1719,51619,"Tin Zar Win","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1834,51621,"Yi Yi Than","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1048,51624,"Ei Ei Phyo","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1718,51626,"Tin Zar Hlaing","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+136,51629,"Hnin Nway Aung","AP Officer",10,"09 254 3291 20",T,"2004-03-17 00:00:00",2,NULL,NULL
+998,51631,"Aye Chan","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+997,51634,"Aye Aye Thwe",Checker,30,,1,NULL,2,NULL,NULL
+1616,51636,"Than Than Nwe",Checker,30,,1,NULL,2,NULL,NULL
+1759,51637,"Wai Wai Naing","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1696,51638,"Thu Thu Soe Naing",Checker,30,,1,NULL,2,NULL,NULL
+1686,51639,"Thin Hay Mar",Clerk,33,,1,NULL,2,NULL,NULL
+1704,51640,"Thuzar Phyo",Checker,33,,1,NULL,2,NULL,NULL
+1680,51642,"Thida Theint",Checker,30,,1,NULL,2,NULL,NULL
+1695,51643,"Thu Thu Mon",Checker,30,,1,NULL,2,NULL,NULL
+1424,51645,"Nilar Wai",Checker,33,,1,NULL,2,NULL,NULL
+1146,51649,"Khin Cho Satt",Cashier,2,,1,NULL,2,NULL,NULL
+1058,51650,"Han Naing Oo","Store Keeper",33,,1,NULL,2,NULL,NULL
+600,51651,"Win Kyaing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1291,51654,"Maung Maung Kyi","Sales Helper",3,,1,NULL,2,NULL,NULL
+1618,51656,"Than Tun",Security,28,,1,NULL,2,NULL,NULL
+1717,51657,"Tin Tun",Security,28,,1,NULL,2,NULL,NULL
+669,51660,"Zaw Win","Sales Helper",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+229,51661,"Kyi Nyunt","Sales Team Lead",28,"09 4025 854 09",T,"2004-03-17 00:00:00",2,NULL,NULL
+1186,51662,"Ko Ko Lay",Security,28,,1,NULL,2,NULL,NULL
+367,51663,"Nyan Naing Win","Sales Team Lead",28,"09 787 4631 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+1229,51665,"Kyaw Shwe",Security,28,,1,NULL,2,NULL,NULL
+996,51669,"Aye Aye Khaing","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+1623,51674,"Than Zaw Min","Delivery Helper",39,,1,NULL,2,NULL,NULL
+636,51675,"Ye Myint Tun","Sales Representative",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1856,51676,"Zaw Linn Htoo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+698,51678,"Thiha Zaw","Delivery Helper",28,"09 799 7800 24",T,"2004-03-17 00:00:00",2,NULL,NULL
+592,51679,"Wai Lwin Aung","Sales Team Lead",28,"09 402 6733 90",T,"2004-03-17 00:00:00",2,NULL,NULL
+1290,51681,"Maung Htun",Security,28,,1,NULL,2,NULL,NULL
+520,51682,"Thet Htar Wai","Route Settlement officer",28,"09 256 1953 04",T,"2004-03-17 00:00:00",2,NULL,NULL
+512,51686,"Thaung Zaw Oo","Shift Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+58,51687,"Aye Min Oo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+44,51689,"Aung Wai Phyo","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+337,51693,"Nan Ohnmar Win","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+623,51695,"Yaw Thu ya","Territory Sales Manager",28,"09 440 481 399",T,"2004-03-17 00:00:00",2,NULL,NULL
+1461,51698,"Phyo Maung Maung","Territory Sales Manager",3,,1,NULL,2,NULL,NULL
+288,51699,"Moe Moe Hlaing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1227,51700,"Kyaw San Lwin","Store Helper",33,,1,NULL,2,NULL,NULL
+1201,51704,"Kyaw Kyaw","Store Keeper",33,,1,NULL,2,NULL,NULL
+1250,51705,"Kyaw Win Hlaing","Sales Helper",3,,1,NULL,2,NULL,NULL
+1775,51706,"Win Kyi",Security,28,,1,NULL,2,NULL,NULL
+1757,51707,"Wai Phyo Htike","Sales Helper",3,,1,NULL,2,NULL,NULL
+1622,51709,"Than Zaw Htut","Sales Helper",3,,1,NULL,2,NULL,NULL
+925,51711,"Aung Ko Latt","Sales Helper",3,,1,NULL,2,NULL,NULL
+465,51712,"Soe Htun Oo","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+50,51713,"Ayar Bo Bo Zaw","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1080,51715,"Hla Myo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1236,51716,"Kyaw Swar Linn","Sales Helper",3,,1,NULL,2,NULL,NULL
+1246,51719,"Kyaw Thu Lwin","Store Helper",33,,1,NULL,2,NULL,NULL
+484,51720,"Su Su Hlaing",Cashier,16,"09 422 5536 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+485,51720,"Su Su Hlaing",Cashier,16,"09 422 5536 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+486,51720,"Su Su Hlaing",Cashier,10,"09 422 5536 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+1274,51722,"Kyi Win",Security,28,,1,NULL,2,NULL,NULL
+212,51724,"Kyaw Phyo Oo","Sales Team Lead",28,"09 956 6159 8",T,"2004-03-17 00:00:00",2,NULL,NULL
+1375,51726,"Myo Myint Soe","Store Helper",33,,1,NULL,2,NULL,NULL
+896,51729,"Zaw Min Htay","Store Keeper",34,"09 449 0111 89",T,"2004-03-17 00:00:00",2,NULL,NULL
+1575,51732,"Soe Win",Security,28,,1,NULL,2,NULL,NULL
+1081,51733,"Hla Soe","Sales Helper",3,,1,NULL,2,NULL,NULL
+1184,51734,"Ko Ko Htike","Sales Helper",3,,1,NULL,2,NULL,NULL
+1505,51735,"San Lwin","Sales Helper",3,,1,NULL,2,NULL,NULL
+283,51740,"Min Than Oo","Territory Sales Manager",34,"09 312 1642 9,  09 795 7275 70",T,"2004-03-17 00:00:00",2,NULL,NULL
+999,51742,"Aye Cho",Security,28,,1,NULL,2,NULL,NULL
+1827,51743,"Ye Tun Lay","Sales Helper",3,,1,NULL,2,NULL,NULL
+352,51746,"Ngwe Soe","Distributor Supervisor",28,"09 796 3441 22",T,"2004-03-17 00:00:00",2,NULL,NULL
+1648,51748,"Thein Htike San","Store Keeper",33,,1,NULL,2,NULL,NULL
+1516,51749,"Saw Htike Htet","Sales Helper",3,,1,NULL,2,NULL,NULL
+1530,51751,"Set Naing Win","Sales Representative",3,,1,NULL,2,NULL,NULL
+1567,51755,"Soe Naing Oo",Security,28,,1,NULL,2,NULL,NULL
+1510,51756,"San Phay","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+683,51757,"Zayar Myo Lwin","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+974,51767,"Aung Thike","Store Keeper",33,,1,NULL,2,NULL,NULL
+608,51769,"Win Pa Pa",Cashier,12,"09 336 9662 7",T,"2004-03-17 00:00:00",2,NULL,NULL
+1569,51770,"Soe Pyae Chan Thar","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+226,51771,"Kyaw Zayar Oo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1452,51772,"Phoe Zaw","Sales Helper",3,,1,NULL,2,NULL,NULL
+1535,51775,"Shwe Toe","Sales Helper",3,,1,NULL,2,NULL,NULL
+1093,51778,"Hnin Wut Yi","Route Settlement Officer",2,,1,NULL,2,NULL,NULL
+1226,51780,"Kyaw San","Sales Helper",3,,1,NULL,2,NULL,NULL
+193,51782,"Khun Chit Thaung","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1282,51783,"Lwin Ko Ko Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1228,51784,"Kyaw Sein","Sales Helper",3,,1,NULL,2,NULL,NULL
+1455,51785,"Phone Naing Htoo","Sales Helper",3,,1,NULL,2,NULL,NULL
+280,51790,"Min Min Latt","Territory Sales Manager",28,"09 420 1758 98,  09 969 9106 27",T,"2004-03-17 00:00:00",2,NULL,NULL
+437,51796,"Saw Ge Htoo Gay","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+369,51805,"Nyan Win Tun","Sales Driver",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1322,51807,"Min Tin",Security,28,,1,NULL,2,NULL,NULL
+1070,51809,"Hein Latt Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1700,51810,"Thura Win","Sales Helper",3,,1,NULL,2,NULL,NULL
+969,51811,"Aung Thein Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1640,51812,"Thaung Htay Oo","Sales Helper",3,,1,NULL,2,NULL,NULL
+1667,51813,"Thet Naing",Security,28,,1,NULL,2,NULL,NULL
+181,51906,"Khin Nandar Kyaw","Business Application Specialist",14,"09 730 8282 5,  09 264 5658 06",T,"2004-03-17 00:00:00",2,NULL,NULL
+584,51912,"Tun Tun Lin","Sales Helper",28,"09 9699 09 741",T,"2004-03-17 00:00:00",2,NULL,NULL
+1614,51916,"Than Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1656,51919,"Thein Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1871,51920,"Zaw Naing Soe","Lab Technician",24,,1,NULL,2,NULL,NULL
+108,51922,"Ei Zin Moe Ko","Store Keeper",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1316,51924,"Min Min Soe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1876,51940,"Zaw Thiha","Delivery Driver",39,,1,NULL,2,NULL,NULL
+473,51941,"Soe Thu","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+490,51949,"Sunil Singh",CIO,6,,T,"2004-03-17 00:00:00",2,NULL,NULL
+414,51950,"Ramesh Janardhan","Commercial Director",6,,T,"2004-03-17 00:00:00",2,NULL,NULL
+53,51957,"Aye Aye Min","Store Supervisor",28,"09 449 0039 55,  09 797 5724 49",T,"2004-03-17 00:00:00",2,NULL,NULL
+289,51959,"Moe Moe San","Sales Admin Clerk",28,"09 797 4742 04,  09 400 4950 21",T,"2004-03-17 00:00:00",2,NULL,NULL
+1415,51961,"Nay Myo Htike","Forklift Driver",30,,1,NULL,2,NULL,NULL
+764,51962,"Khaing Khaing Zin","Store Clerk",34,"09 420 2916 53",T,"2004-03-17 00:00:00",2,NULL,NULL
+1103,51963,"Htet Aung Lin","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1869,51964,"Zaw Myo Oo","Store Helper",30,,1,NULL,2,NULL,NULL
+1332,51966,"Moe Hein","GSM Driver",3,,1,NULL,2,NULL,NULL
+615,51969,"Win Zaw Than","Sr. Supervisor",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+524,51970,"Thet Naung Soe","Key Account Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+938,51999,"Aung Kyaw Zaw","Store Keeper",30,,1,NULL,2,NULL,NULL
+1819,52007,"Ye Myint Aung","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+24,52010,"Aung Moe","National Strategic Distribution Manager",4,"09 431 0418 7",T,"2004-03-17 00:00:00",2,NULL,NULL
+1463,52017,"Phyo Min Than","Store Keeper",30,,1,NULL,2,NULL,NULL
+1770,52027,"Win Htut Aung","Store Keeper",30,,1,NULL,2,NULL,NULL
+301,52029,"Myat Thu Soe","Territory Sales Manager",34,"09 423 7207 90",T,"2004-03-17 00:00:00",2,NULL,NULL
+1892,52032,"Zaw Zaw Htwe",Security,28,,1,NULL,2,NULL,NULL
+1357,52035,"Myint Oo",Security,28,,1,NULL,2,NULL,NULL
+1283,52038,"Lwin Min Naing","Sales Representative",41,,1,NULL,2,NULL,NULL
+9,52043,"Aung Bo Bo Zan","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+228,52044,"Kyaw Zin Kyi","Territory Sales Manager",28,"09 450 2410 86,  09 428 1546 66,  09 969 9096 20",T,"2004-03-17 00:00:00",2,NULL,NULL
+70,52045,"Aye Tun","Admin Executive",12,"09 970 5314 70",T,"2004-03-17 00:00:00",2,NULL,NULL
+1612,52046,"Than Naing Soe","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1655,52047,"Thein Toe Zaw","Sales Helper",3,,1,NULL,2,NULL,NULL
+132,52052,"Hnin Maung Win","Region Capability Lead",4,"09 9699 09  660",T,"2004-03-17 00:00:00",2,NULL,NULL
+1071,52055,"Hein Lin","Electrical Technician",44,,1,NULL,2,NULL,NULL
+966,52083,"Aung Swe Lin","Filler Operator",23,,1,NULL,2,NULL,NULL
+1085,52086,"Hlaing Myo Thu","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+1067,52087,"Hay Hman","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+1552,52091,"Soe Linn Phyo","Sales Representative",3,,1,NULL,2,NULL,NULL
+1661,52094,"Thet Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1555,52096,"Soe Lynn","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1851,52099,"Zaw Hlaing Htay",Security,28,,1,NULL,2,NULL,NULL
+603,52102,"Win Lin Naing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+582,52104,"Tun Tun Latt","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+325,52108,"Myo Zaw Zaw Hein","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1500,52109,"Sai Nyein Chan Aung","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+1561,52111,"Soe Min Win","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+387,52112,"Phyo Satt Aung","Distributor Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1349,52115,"Myint Han","Transport Driver",32,,1,NULL,2,NULL,NULL
+75,52117,"Bo Bo Tun","Sales Representative",28,9969909651,T,"2004-03-17 00:00:00",2,NULL,NULL
+1512,52119,"San Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+187,52121,"Khin Thu Thu Han","Transport Clerk",34,"09 972 0881 42",T,"2004-03-17 00:00:00",2,NULL,NULL
+198,52122,"Kyaw Htay Lwin","Territory Sales Manager",34,"09 401 5763 85,  09 334 6670 9",T,"2004-03-17 00:00:00",2,NULL,NULL
+1564,52129,"Soe Myint Naing","Delivery Driver",39,,1,NULL,2,NULL,NULL
+42,52135,"Aung Thu Sein","Medical Executive Officer",27,"09 500 8970,  09 974 2720 75",T,"2004-03-17 00:00:00",2,NULL,NULL
+1817,52139,"Ye Myint","Forklift Driver",30,,1,NULL,2,NULL,NULL
+725,52141,"Chan Ye Aung","Office Driver",34,"09 421 1110 35,  09 799 9131 94",T,"2004-03-17 00:00:00",2,NULL,NULL
+968,52152,"Aung Thant Zin Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1849,52177,"Zarni Ko","Processing Helper",23,,1,NULL,2,NULL,NULL
+558,52181,"Tin Aung Myo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1501,52182,"Sai Tun Tun Naing","Blender Operator",23,,1,NULL,2,NULL,NULL
+1885,52184,"Zaw Win Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+249,52195,"Mar Mar Swe","Procurement Manager",22,"09 799 8435 75",T,"2004-03-17 00:00:00",2,NULL,NULL
+250,52195,"Mar Mar Swe","Procurement Manager",22,"09 799 8435 75",T,"2004-03-17 00:00:00",2,NULL,NULL
+1841,52196,"Yu Pa","Transport Driver",32,,1,NULL,2,NULL,NULL
+1198,52202,"Kyaw Ko Ko Aung","Transport Clerk",32,,1,NULL,2,NULL,NULL
+910,52216,"Arkar Soe","Machine Operator",23,,1,NULL,2,NULL,NULL
+194,52220,"Ko Ko Aung","Territory Sales Manager",28,"09 430 5641 0,  09 969 9097 23",T,"2004-03-17 00:00:00",2,NULL,NULL
+585,52221,"Tun Tun Naing","Region Capability Lead",4,"09 421 1200 69",T,"2004-03-17 00:00:00",2,NULL,NULL
+754,52239,"Hla Myo Kyu","Office Driver",34,"09 795 1505 52,  09 253 7132 70",T,"2004-03-17 00:00:00",2,NULL,NULL
+879,52240,"Wai Phyo Myint","Office Driver",34,"09 778 0011 84",T,"2004-03-17 00:00:00",2,NULL,NULL
+201,52241,"Kyaw Kyaw Myint","Office Driver",28,"09 799 5697 52",T,"2004-03-17 00:00:00",2,NULL,NULL
+1323,52242,"Min Tun Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+373,52248,"Nyi Nyi Khine","Manager - C&B, Payroll",12,"09 254 3826 41,  09 977 8080 710",T,"2004-03-17 00:00:00",2,NULL,NULL
+1741,52252,"Tun Win Htike","Office Driver",40,,1,NULL,2,NULL,NULL
+1102,52281,"Htet Aung","Processing Helper",23,,1,NULL,2,NULL,NULL
+777,52284,"Kyaw Kyaw Lin ","Office Driver",34,"09 421 0130 05",T,"2004-03-17 00:00:00",2,NULL,NULL
+1729,52344,"Tun Lin Naing","Blender Operator",23,,1,NULL,2,NULL,NULL
+389,52349,"Phyo Thinzar Than Htoon","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1768,52350,"Win Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1214,52351,"Kyaw Min Naing","Forklift Driver",30,,1,NULL,2,NULL,NULL
+305,52375,"Myo Htet","General Sales Manager",28,"09 250 0563 18",T,"2004-03-17 00:00:00",2,NULL,NULL
+20,52380,"Aung Kyaw Min","Assistant Key Account Manager",4,"09 977 1807 51",T,"2004-03-17 00:00:00",2,NULL,NULL
+102,52396,"Ei Ei Phyu","Sales Admin Clerk",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+665,52532,"Zaw Myo Htet","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+408,52534,"Pyae Sone Htun","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+11,52535,"Aung Khant","Sales Representative",28,"09 4565 58001",T,"2004-03-17 00:00:00",2,NULL,NULL
+342,52541,"Nay Kyaw Soe","IT Infrastructure Specialist",14,"09 420 0151 87",T,"2004-03-17 00:00:00",2,NULL,NULL
+567,52542,"Tin Naing Zaw","National Business System Manager",14,"09 420 0568 88",T,"2004-03-17 00:00:00",2,NULL,NULL
+1378,52574,"Myo Thu","Sales Helper",3,,1,NULL,2,NULL,NULL
+1411,52576,"Nay Lin Tun","Sales Helper",3,,1,NULL,2,NULL,NULL
+336,52578,"Nan Myint Thu","CDE Analyst",4,"09 789 4463 51",T,"2004-03-17 00:00:00",2,NULL,NULL
+1587,52580,"Swe Lin Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1649,52581,"Thein Htun Aung","Store Helper",33,,1,NULL,2,NULL,NULL
+145,52582,"Htet Htet Aung","Delivery Helper",33,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1380,52584,"Myo Thureign","Delivery Helper",39,,1,NULL,2,NULL,NULL
+916,52585,"Aung Hein Thu","Sales Helper",3,,1,NULL,2,NULL,NULL
+162,52586,"Kay Thi Soe","CDE Analyst",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1663,52663,"Thet Htike Aung","Production Helper",23,,1,NULL,2,NULL,NULL
+1242,52664,"Kyaw Thet Oo","Production Helper",23,,1,NULL,2,NULL,NULL
+1861,52666,"Zaw Min Naing","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1065,52668,"Hanny Htun","Online Technician",24,,1,NULL,2,NULL,NULL
+258,52695,"May Thaw Htike","Labeller Operator",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1069,52713,"Hein Htet Aung",Mechanic,17,,1,NULL,2,NULL,NULL
+438,52714,"Saw Han Lin Swe","WT Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+917,52717,"Aung Htay","Office Driver",40,,1,NULL,2,NULL,NULL
+1464,52718,"Phyo Min Thu","Store Keeper",30,,1,NULL,2,NULL,NULL
+1188,52719,"Ko Ko Maung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1472,52722,"Phyo Wai Oo","Admin Helper",37,,1,NULL,2,NULL,NULL
+125,52729,"Hein Win Kyaw","Sales Team Lead",28,"09 9699 09 654",T,"2004-03-17 00:00:00",2,NULL,NULL
+602,52731,"Win Kyaw Hein","RTM Executive",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+573,52733,"Toe Toe","Store Keeper",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+848,52736,"Seint Thidar Oo","Production Executive",34,"09 450 0268 33",T,"2004-03-17 00:00:00",2,NULL,NULL
+627,52737,"Ye Htut Thein","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1917,52739,"Zin Zin Moe Myint","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1204,52743,"Kyaw Kyaw Min","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1646,52745,"The Su Moe","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+943,52748,"Aung Myat Soe","Production Helper",23,,1,NULL,2,NULL,NULL
+1396,52749,"Naing Zaw Tun","Production Helper",23,,1,NULL,2,NULL,NULL
+1692,52750,"Thu Hein Oo","Processing Helper",23,,1,NULL,2,NULL,NULL
+1100,52754,"Htet Arkar","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1684,52757,"Thiha Tun","Filler Operator",23,,1,NULL,2,NULL,NULL
+1765,52777,"Wai Yan Sithu",Checker,33,,1,NULL,2,NULL,NULL
+1132,52779,"Kaung San Ye",Checker,33,,1,NULL,2,NULL,NULL
+1288,52799,"Margaret Stewart","Human Resources Director",13,,1,NULL,2,NULL,NULL
+426,52800,"Ronnie Asuncion","Procurement Director",6,,T,"2004-03-17 00:00:00",2,NULL,NULL
+90,52801,"Chung Ngo Huy","Chief Finance Officer",6,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1766,52802,"Wai Yan Thein Zin","Admin Helper",37,,1,NULL,2,NULL,NULL
+123,52804,"Hein Htet Tin","Training Coordinator",12,"09 421 0951 60",T,"2004-03-17 00:00:00",2,NULL,NULL
+170,52808,"Khin Hnin Wai Hlaing","Route Settlement Analyst",10,9799168316,T,"2004-03-17 00:00:00",2,NULL,NULL
+433,52809,"Sandar Swe",Cashier,10,"09 421 0574 50",T,"2004-03-17 00:00:00",2,NULL,NULL
+607,52813,"Win Nyunt","Store Keeper",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1538,52815,"Si Thar Shein Min","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1863,52824,"Zaw Min Oo","Sales Representative",41,,1,NULL,2,NULL,NULL
+578,52894,"Tun Kyaw","Distributor Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+606,52918,"Win Naing Oo","Sales Team Lead",34,"09 360 1640 5",T,"2004-03-17 00:00:00",2,NULL,NULL
+22,52920,"Aung Kyaw San","Distributor Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1249,52922,"Kyaw Thu Ya","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+364,52923,"Nwe Nwe Win","Sales Analyst",28,"09 425 2718 24",T,"2004-03-17 00:00:00",2,NULL,NULL
+1115,52924,"Htet Wai Yan","Sales Helper",3,,1,NULL,2,NULL,NULL
+651,52925,"Yu Par Win","Key Account Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1137,52927,"Kay Zin Thaw","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+1053,52928,"Ei Shwe Zin Myo","Route Settlement Officer",2,,1,NULL,2,NULL,NULL
+715,52931,"Aye Thandar Kyaw","Sales Admin Supervisor",34,"09 431 7760 6",T,"2004-03-17 00:00:00",2,NULL,NULL
+222,52932,"Kyaw Wai Yan Oo","Territory Sales Manager",34,"09 974 5979 99",T,"2004-03-17 00:00:00",2,NULL,NULL
+1139,52933,"Khaing Mar Kyi","Sales Analyst",3,,1,NULL,2,NULL,NULL
+2,52935,"Zin Ko Ko","Sales Helper",3,09,T,"2017-03-31 10:06:41",2,"2017-03-31 10:06:41",2
+1422,52937,"Ni Ni Htun","Sales Admin Clerk",48,,1,NULL,2,NULL,NULL
+978,52940,"Aung Thu Soe","Sales Representative",3,,1,NULL,2,NULL,NULL
+1790,52941,"Wunna Htun","Front End Specialist",55,,1,NULL,2,NULL,NULL
+637,52945,"Ye Naung Hein","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+631,52946,"Ye Lwin Aung","Distributor Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1635,52950,"Thant Zin Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+448,52992,"Sein Htay","Sales Team Lead",28,"09 969 9097 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+349,55320,"Nay Thu","Production Executive",32,"09 798 1088 34",T,"2004-03-17 00:00:00",2,NULL,NULL
+661,55321,"Zaw Min Min Tun","Production Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1308,55340,"Min Htet Aung","Sales Helper",3,,1,NULL,2,NULL,NULL
+912,55341,"Aung Aung Myint","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1234,55343,"Kyaw Soe Moe","Delivery Driver",39,,1,NULL,2,NULL,NULL
+624,55344,"Ye Aung","Store Helper",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1571,55345,"Soe Thiha","Store Helper",33,,1,NULL,2,NULL,NULL
+1818,55355,"Ye Myint","Production Helper",23,,1,NULL,2,NULL,NULL
+949,55361,"Aung Myo Htet","Production Helper",23,,1,NULL,2,NULL,NULL
+1401,55369,"Nandar Lin Tun","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1598,55370,"Than Htike","Sales Helper",3,,1,NULL,2,NULL,NULL
+1252,55372,"Kyaw Win Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+17,55375,"Aung Ko Win","Delivery Driver",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+311,55378,"Myo Latt Naing","General Sales Manager",34,"09 967 9365 51",T,"2004-03-17 00:00:00",2,NULL,NULL
+46,55379,"Aung Zaya","Territory Sales Manager",28,"09 254 0326 24, 09 781 5512 46",T,"2004-03-17 00:00:00",2,NULL,NULL
+1131,55380,"Kaung Pyae Tun","Sales Helper",3,,1,NULL,2,NULL,NULL
+1010,55382,"Aye Myintzu",Secretary,2,,1,NULL,2,NULL,NULL
+920,55385,"Aung Khant Soe","Processing Technician",23,,1,NULL,2,NULL,NULL
+662,55386,"Zaw Min Tun","Processing Technician",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1881,55387,"Zaw Win Htut","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1845,55390,"Zar Ni Aung","Filler Operator",23,,1,NULL,2,NULL,NULL
+963,55391,"Aung San","Sales Driver",3,,1,NULL,2,NULL,NULL
+1788,55394,"Wint Wah Htwe","Labeller Operator",23,,1,NULL,2,NULL,NULL
+1342,55395,"Myat Aye Chan","Market Surveyor",49,,1,NULL,2,NULL,NULL
+119,55397,"Han Nwe Soe","Surveyor Lead",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1374,55406,"Myo Myint","Store Keeper",33,,1,NULL,2,NULL,NULL
+146,55407,"Htet Naing Win Kyi","IT Infrastructure Specialist",14,"09 9964 100 316",T,"2004-03-17 00:00:00",2,NULL,NULL
+475,55408,"Soe Zarli Aung","Business Application Specialist",14,"09 550 1670",T,"2004-03-17 00:00:00",2,NULL,NULL
+1810,55409,"Ye Linn Aung","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+294,55413,"Mone Mone Naing","Production Planner",32,"09 421 0734 91",T,"2004-03-17 00:00:00",2,NULL,NULL
+1012,55424,"Aye Nandar Oo","Packer Operator",23,,1,NULL,2,NULL,NULL
+323,55427,"Myo Zaw Htwe","Sales Team Lead",26,"09 4490 039 63,  09 2608 211 94",T,"2004-03-17 00:00:00",2,NULL,NULL
+632,55428,"Ye Lynn Kyaw","Enviromental Health & Safety Manager",27,"09 975 5364 09",T,"2004-03-17 00:00:00",2,NULL,NULL
+308,55429,"Myo Ko Ko Htet","Territory Sales Manager",28,"09 451 2303 49,  09 791 1331 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+147,55430,"Htet Paing Soe","Distributor Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+663,55432,"Zaw Myint Than","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1915,55433,"Zin Oo Maung","Sales Representative",3,,1,NULL,2,NULL,NULL
+690,55434,"Zin May Thwin","AR Officer",10,"09 422 4636 11",T,"2004-03-17 00:00:00",2,NULL,NULL
+513,55435,"Thazin Aung","AP Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+200,55436,"Kyaw Kyaw Htoo","Key Account Manager - Horeca",28,"09 250 6626 25,  09 731 7323 0",T,"2004-03-17 00:00:00",2,NULL,NULL
+456,55437,"Shwe Zin Thet","Sales Force Automation Specialist",4,9795437512,T,"2004-03-17 00:00:00",2,NULL,NULL
+1210,55438,"Kyaw Linn Naing","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+1918,55444,"Zon Zin Sue","Market Surveyor",49,,1,NULL,2,NULL,NULL
+1106,55447,"Htet Htet Oo","Online Technician",24,,1,NULL,2,NULL,NULL
+1272,55448,"Kyi Thar Kyaw Shwe ","Packer Operator",23,,1,NULL,2,NULL,NULL
+1224,55449,"Kyaw Nyi Nyi Phyo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1474,55451,"Phyo Yar Zar","Store Keeper",33,,1,NULL,2,NULL,NULL
+374,55457,"Nyi Nyi Soe","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1906,55458,"Zin Mar Htay Winn","Packer Operator",23,,1,NULL,2,NULL,NULL
+1437,55460,"Nyi Nyi Moe","Processing Technician",23,,1,NULL,2,NULL,NULL
+1629,55462,"Thant Zaw Oo","Filler Operator",23,,1,NULL,2,NULL,NULL
+973,55463,"Aung Thet Oo","Online Technician",24,,1,NULL,2,NULL,NULL
+1577,55474,"Soe Win Htike","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1441,55477,"Nyo Win Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1124,55484,"July Win","Transport Clerk",32,,1,NULL,2,NULL,NULL
+23,55486,"Aung Lin","Store Helper",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1669,55491,"Thet Naing Tun","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1910,55492,"Zin Min Htike","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1912,55493,"Zin Min Tun","Store Helper",33,,1,NULL,2,NULL,NULL
+1576,55495,"Soe Win Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1865,55497,"Zaw Moe Win","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1062,55501,"Han Zaw Latt","Processing Technician",23,,1,NULL,2,NULL,NULL
+1664,55502,"Thet Khaing Oo","Processing Technician",23,,1,NULL,2,NULL,NULL
+1494,55503,"Pyi Kyaw Han","Sales Representative",3,,1,NULL,2,NULL,NULL
+1231,55506,"Kyaw Soe Lin","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1658,55507,"Thein Zaw Naing","Sales Helper",3,,1,NULL,2,NULL,NULL
+534,55508,"Thida Win","Store Keeper",16,"09 258 6204 535",T,"2004-03-17 00:00:00",2,NULL,NULL
+104,55509,"Ei Khaing","Business Partner",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1263,55510,"Kyaw Zin Oo","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1245,55511,"Kyaw Thu Lin","Deplletizer Operator",23,,1,NULL,2,NULL,NULL
+341,55512,"Nay Htet Lin","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+458,55514,"Si Thu Aung",Checker,28,"09 9699 09 742",T,"2004-03-17 00:00:00",2,NULL,NULL
+304,55515,"Myint Thu","Territory Sales Manager",28,"09 421 1190 72",T,"2004-03-17 00:00:00",2,NULL,NULL
+1894,55535,"Zay Yar Lin","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1642,55537,"Thaung Nyunt","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1179,55538,"Khun Dawna",Security,28,,1,NULL,2,NULL,NULL
+347,55541,"Nay Myo Kyaw","Territory Sales Manager",28,"09 254 7352 80",T,"2004-03-17 00:00:00",2,NULL,NULL
+1412,55549,"Nay Min Htun","Sales Representative",3,,1,NULL,2,NULL,NULL
+657,55551,"Zarni Win","QA Manager",24,"09 796 3013 48,  09 400 4010 90",T,"2004-03-17 00:00:00",2,NULL,NULL
+1843,55553,"Zar Chi May","Market Surveyor",49,,1,NULL,2,NULL,NULL
+142,55554,"Hsu Mon Yee","Business Partner",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1791,55555,"Wunna Soe Aung","Forklift Driver",33,,1,NULL,2,NULL,NULL
+1397,55561,"Nan Aye Khin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1546,55564,"Soe Arkar","Delivery Helper",39,,1,NULL,2,NULL,NULL
+149,55566,"Htin Lin Htwe","Distributor Supervisor",26,"09 783 5777 50",T,"2004-03-17 00:00:00",2,NULL,NULL
+1846,55567,"Zar Ni Tun","Delivery Driver",39,,1,NULL,2,NULL,NULL
+984,55568,"Aung Thuraing Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+403,55571,"Pyae Phyo Aung","Delivery Helper",28,"09 790 4446 60",T,"2004-03-17 00:00:00",2,NULL,NULL
+404,55571,"Pyae Phyo Aung","Delivery Helper",28,"09 790 4446 60",T,"2004-03-17 00:00:00",2,NULL,NULL
+1732,55572,"Tun Min Naing","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1022,55573,"Chan Myae Zan","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1774,55576,"Win Kyaw Swar ","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1079,55577,"Hla Moe ","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1063,55578,"Han Zaw Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1382,55579,"Myo Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1025,55580,"Chan Thar ","Delivery Helper",39,,1,NULL,2,NULL,NULL
+538,55627,"Thin Thin Latt","Route Settlement Officer",10,"09 423 6836 07",T,"2004-03-17 00:00:00",2,NULL,NULL
+562,55633,"Tin Lin Naing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1435,55638,"Nyein Chan Aung","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1691,55645,"Thu Aung Phyo","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+1148,55646,"Khin July Win","Market Surveyor",49,,1,NULL,2,NULL,NULL
+1540,55653,"Sithu Maung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+326,55654,"Naing Lin","Delivery Helper",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+156,55675,"Jaco Prins","Business Process & Compliance Manager",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1531,55677,"Shashi Giri","RTM Director",43,,1,NULL,2,NULL,NULL
+1579,55678,"Sreekant Reddy","Plant Manager",31,,1,NULL,2,NULL,NULL
+489,55688,"Sun Htut","Warehouse Manager",26,"09 250 90 1849",T,"2004-03-17 00:00:00",2,NULL,NULL
+674,55691,"Zaw Zaw Paing","Sales Representative",28,"09 9699 10 646",T,"2004-03-17 00:00:00",2,NULL,NULL
+372,55692,"Nyi Nyi Aung","Sales Representative",28,"09 430 1763 2,  09 797 8462 00",T,"2004-03-17 00:00:00",2,NULL,NULL
+1909,55695,"Zin Mar Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+620,55699,"Yan Naing Aung","Sales Representative",28,"09 9699 09 737",T,"2004-03-17 00:00:00",2,NULL,NULL
+1891,55701,"Zaw Zaw Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1020,55702,"Chan Myae Kyaw","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1779,55704,"Win Moe Kyaw",Checker,30,,1,NULL,2,NULL,NULL
+1160,55709,"Khin May Zin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+38,55710,"Aung San Oo","Store Keeper",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+628,55711,"Ye Htut Win","Sales Team Lead",34,"09 792 7059 84",T,"2004-03-17 00:00:00",2,NULL,NULL
+1271,55713,"Kyi Thar Han","Transport Supervisor",40,,1,NULL,2,NULL,NULL
+113,55750,"Feisal Baghazal","Sales Director",6,,T,"2004-03-17 00:00:00",2,NULL,NULL
+612,55792,"Win Tin","Electrical Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1533,55795,"Shine Htet Zaw","Processing Technician",23,,1,NULL,2,NULL,NULL
+1484,55798,"Pyae Phyo Lwin","Key Account Developer",38,,1,NULL,2,NULL,NULL
+39,55799,"Aung Than Oo","Delivery Driver",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1712,55801,"Tin Nwe Myint","Store Keeper",33,,1,NULL,2,NULL,NULL
+1830,55803,"Ye Yint Kyaw","Filler Operator",23,,1,NULL,2,NULL,NULL
+975,55804,"Aung Thu Hein","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1044,55805,"Chu San Thu","Online Technician",24,,1,NULL,2,NULL,NULL
+256,55806,"May Su Han","Labeller Operator",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+837,55807,"Phyo Wai Lin","Enviroment & WWPT Executive",34,"09 260 6144 90",T,"2004-03-17 00:00:00",2,NULL,NULL
+1594,55808,"Thae Mu Mu Aung","Online Technician",24,,1,NULL,2,NULL,NULL
+1842,55809,"Yu Wai Hnin","Packer Operator",23,,1,NULL,2,NULL,NULL
+950,55811,"Aung Myo Htet","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+954,55812,"Aung Naing","Forklift Driver",33,,1,NULL,2,NULL,NULL
+1409,55814,"Nay Lin Ko","Sales Helper",3,,1,NULL,2,NULL,NULL
+1451,55815,"Phoe Phyu","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1859,55817,"Zaw Min Htike","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1607,55818,"Than Htut Oo","Forklift Driver",30,,1,NULL,2,NULL,NULL
+32,55861,"Aung Naing Moe","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+431,55862,"San Yin","Key Account Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1446,55863,"Ohnmar Myint","Sales Analyst",3,,1,NULL,2,NULL,NULL
+310,55868,"Myo Kyaw Han","Sr. Procurement Specialist",22,"09 799 1221 45",T,"2004-03-17 00:00:00",2,NULL,NULL
+957,55870,"Aung Paing Soe","Sales Helper",3,,1,NULL,2,NULL,NULL
+1756,55874,"Wai Phyo Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1911,55875,"Zin Min Paing","Delivery Driver",39,,1,NULL,2,NULL,NULL
+666,55876,"Zaw Naing Toe","Transport Supervisor",33,"09 422 4921 64",T,"2004-03-17 00:00:00",2,NULL,NULL
+1583,55879,"Su Myat Mon","Packer Operator",23,,1,NULL,2,NULL,NULL
+1597,55880,"Thae Su Nway","Packer Operator",23,,1,NULL,2,NULL,NULL
+909,55886,"Arkar Myint Kyaw","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1049,55887,"Ei Ei Thaw","Packer Operator",23,,1,NULL,2,NULL,NULL
+411,55894,"Pyone Moh Moh Win","Assistant Marketing Manager",28,"09 421 0467 71",T,"2004-03-17 00:00:00",2,NULL,NULL
+1003,55895,"Aye Min","Sales Helper",3,,1,NULL,2,NULL,NULL
+1095,55896,"Htat Hlan Paing","Sales Helper",3,,1,NULL,2,NULL,NULL
+1794,55897,"Yan Aung","Sales Helper",3,,1,NULL,2,NULL,NULL
+330,55904,"Naing Naing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+553,55905,"Thurein Tun","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1812,55907,"Ye Min Htet","Market Surveyor",49,,1,NULL,2,NULL,NULL
+1329,55912,"Min Zaw Htun","Sales Helper",3,,1,NULL,2,NULL,NULL
+279,55916,"Min Min Htun","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+551,55977,"Thurain Oo","Store Keeper (Spare Parts",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1860,55978,"Zaw Min Htut","Store Helper",33,,1,NULL,2,NULL,NULL
+1,55982,"Nyein Chan","Business Application Specialist",1,09974665534,T,"2017-03-03 11:34:37",2,"2017-03-03 11:34:37",2
+401,55983,"Pyae Hsu Kyaw","IT Service Engineer",14,"09 799 6493 09",T,"2004-03-17 00:00:00",2,NULL,NULL
+1502,55984,"San Aung",Security,28,,1,NULL,2,NULL,NULL
+604,55985,"Win Min Hein","Business Analyst",3,"09 428 1941 24,  09 964 4344 49",T,"2004-03-17 00:00:00",2,NULL,NULL
+1873,55986,"Zaw Nyein Soe","Electrical Technician",23,,1,NULL,2,NULL,NULL
+689,55988,"Zin Lei Wynn","Procurement Manager",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1170,55993,"Khin Zaw Min",Security,28,,1,NULL,2,NULL,NULL
+1406,55994,"Nay Khant Naing","WWTP Helper",11,,1,NULL,2,NULL,NULL
+1687,55996,"Thin Su Naing","Packer Operator",23,,1,NULL,2,NULL,NULL
+1039,55998,"Chit Paing Lwin","Delivery Driver",39,,1,NULL,2,NULL,NULL
+273,55999,"Min Aung","Office Driver",28,"09 251 0513 03",T,"2004-03-17 00:00:00",2,NULL,NULL
+870,56000,"Tin Aye","GSM Driver",34,"09 791 4305 64",T,"2004-03-17 00:00:00",2,NULL,NULL
+1366,56002,"Myo Htet Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1387,56003,"Naing Ko Ko","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1492,56005,"Pyae Thu Aung","Store Helper",30,,1,NULL,2,NULL,NULL
+695,56007,"Zin Phyo Wai","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1674,56098,"Thet Paing Tun","Sales Representative",3,,1,NULL,2,NULL,NULL
+593,56103,"Wai Lwin Naing Oo","Distributor Supervisor",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1431,56122,"Nyan Linn Tun","Office Driver",40,,1,NULL,2,NULL,NULL
+1015,56130,"Aye Thidar Tun","Transport Clerk",32,,1,NULL,2,NULL,NULL
+681,56135,"Zayar Linn","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+911,56140,"Arkar Zaw","Processing Technician",23,,1,NULL,2,NULL,NULL
+1312,56142,"Min Ko Ko","WT Technician",24,,1,NULL,2,NULL,NULL
+1902,56159,"Zin Ko Aung","Processing Technician",23,,1,NULL,2,NULL,NULL
+1293,56232,"Maung Maung Oo","Fleet Driver",17,,1,NULL,2,NULL,NULL
+124,56233,"Hein Thu Maung","Distributor Supervisor",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+183,56234,"Khin Soe Soe Latt","GL Manager",10,"09 425 3066 89,  09 799 6779 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+1311,56235,"Min Ko Ko","Store Helper",33,,1,NULL,2,NULL,NULL
+1207,56236,"Kyaw Kyaw Win","Sales Representative",3,,1,NULL,2,NULL,NULL
+218,56237,"Kyaw Thet Aung","Sales Representative",28,"09 9699 09 732",T,"2004-03-17 00:00:00",2,NULL,NULL
+981,56241,"Aung Thura","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1006,56242,"Aye Min Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1074,56243,"Hein Zaw Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1215,56245,"Kyaw Min Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1365,56247,"Myo Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1390,56248,"Naing Linn","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1393,56250,"Naing Win Than","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1515,56252,"Saw Hlaing Zaw Moe","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1599,56253,"Than Htike Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1647,56254,"Thein Hla Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1735,56256,"Tun Thiri Aung","Online Technician",24,,1,NULL,2,NULL,NULL
+1850,56259,"Zaw Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+177,56268,"Khin Moe","Internal Auditor",10,"09 420 2538 94",T,"2004-03-17 00:00:00",2,NULL,NULL
+528,56269,"Thet Zay Min","Business Process Lead",10,"09 973 8377 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+625,56296,"Ye Htike","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1066,56311,"Harish Kumar","Nat Analytics & RGM Mgr",4,,1,NULL,2,NULL,NULL
+1875,56318,"Zaw Sine Moe",Security,28,,1,NULL,2,NULL,NULL
+1522,56319,"Saw Nay Lin Htike",Security,28,,1,NULL,2,NULL,NULL
+1608,56320,"Than Kyaw Htay","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1632,56321,"Thant Zin Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+806,56323,"Min Min Myo","Delivery Helper",34,"09 254 0210 33",T,"2004-03-17 00:00:00",2,NULL,NULL
+1261,56324,"Kyaw Zin Latt","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1750,56325,"Wai Linn","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1306,56326,"Mi Mi Khine","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1528,56327,"Sein Lwin","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1280,56328,"Linn Ko Ko","Delivery Helper",39,,1,NULL,2,NULL,NULL
+660,56330,"Zaw Min Htet","Delivery Helper",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1636,56331,"Thant Zin Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1082,56333,"Hla Win","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1394,56334,"Naing Win Tun","Sales Representative",41,,1,NULL,2,NULL,NULL
+1094,56336,"Htain Lin Oo","GSM Driver",3,,1,NULL,2,NULL,NULL
+1722,56337,"Toe Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1239,56338,"Kyaw Than Shwe","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1826,56340,"Ye Thu","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1017,56343,"Bo Bo Myint","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+518,56347,"Thein Than Htwe","Sales Representative",28,"09 9699 09 739",T,"2004-03-17 00:00:00",2,NULL,NULL
+1479,56349,"Pyae Phyo",Mechanic,17,,1,NULL,2,NULL,NULL
+1465,56350,"Phyo Pyae Sone","Online Technician",24,,1,NULL,2,NULL,NULL
+991,56353,"Aung Zaw Hein","Online Technician",24,,1,NULL,2,NULL,NULL
+990,56354,"Aung Ye Linn","Store Keeper (Spare Part)",44,,1,NULL,2,NULL,NULL
+487,56356,"Su Su Lwin","Logistics Analyst",16,"09 421 0900 17",T,"2004-03-17 00:00:00",2,NULL,NULL
+1517,56357,"Saw Jude","Fleet Driver",17,,1,NULL,2,NULL,NULL
+1336,56358,"Mon Mon Thuya","Online Technician",24,,1,NULL,2,NULL,NULL
+5,56372,"Arkar Oo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+36,56413,"Aung Pyae Htoo","Sales Representative",28,"09 966 4263 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+781,56414,"Kyaw Lin Thein","Office Driver",34,"09 253 5381 48",T,"2004-03-17 00:00:00",2,NULL,NULL
+1620,56415,"Than Zaw Aung","Office Driver",40,,1,NULL,2,NULL,NULL
+758,56417,"Htet Wai Lin","Office Driver",34,"09 796 7697 19",T,"2004-03-17 00:00:00",2,NULL,NULL
+348,56419,"Nay Myo Win",Security,28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+137,56420,"Hnin Phyu Aye","Sales Admin Clerk",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1289,56421,"Maung Chit Ko Ko","Project Manager",43,,1,NULL,2,NULL,NULL
+605,56422,"Win Myint","QA Manager",24,"09 420 0762 34,  09 797 4145 15",T,"2004-03-17 00:00:00",2,NULL,NULL
+302,56423,"Myint Myint Soe","Sales Admin Clerk",28,9969909658,T,"2004-03-17 00:00:00",2,NULL,NULL
+1477,56424,"Poe Ei Theint","Key Account Developer",38,,1,NULL,2,NULL,NULL
+992,56427,"Aung Zayar Lin","Sales Representative",3,,1,NULL,2,NULL,NULL
+257,56430,"May Thae War","Sales Admin Clerk",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1296,56431,"Maung Maung Win",Security,28,,1,NULL,2,NULL,NULL
+133,56433,"Hnin Moh Moh","Sr. Inbound Logistics Specialist",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1301,56436,"May Thet Zun","Key Account Developer",38,,1,NULL,2,NULL,NULL
+546,56437,"Thura Aung","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+547,56437,"Thura Aung","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+779,56441,"Kyaw Kyaw Tun","General Sales Manager",34,"09 550 6223",T,"2004-03-17 00:00:00",2,NULL,NULL
+780,56441,"Kyaw Kyaw Tun","General Sales Manager",34,"09 255 7286 11",T,"2004-03-17 00:00:00",2,NULL,NULL
+643,56442,"Yi Yi Hlaing","HRBP - Sales & Commercial",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+362,56472,"Nwe Nwe Khaing","Procurement Manager",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+106,56474,"Ei Mon Aung","AP Officer",10,"09 799 9709 35",T,"2004-03-17 00:00:00",2,NULL,NULL
+239,56482,"Lu Sin","Procurement Manager",22,"09 516 7307",T,"2004-03-17 00:00:00",2,NULL,NULL
+1233,56483,"Kyaw Soe Min","Transport Driver",32,,1,NULL,2,NULL,NULL
+1400,56484,"Nan Zayar Oo",Security,28,,1,NULL,2,NULL,NULL
+241,56502,"Lwin Naing Aye","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+933,56513,"Aung Kyaw Soe","Store Keeper",30,,1,NULL,2,NULL,NULL
+1789,56514,"Wint War","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+932,56516,"Aung Kyaw Sett","Packer Operator",23,,1,NULL,2,NULL,NULL
+1545,56520,"So Pyay Naing","Filler Operator",23,,1,NULL,2,NULL,NULL
+1778,56526,"Win Min Htwe","WWTP Helper",11,,1,NULL,2,NULL,NULL
+560,56529,"Tin Htoo","Store Supervisor",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+914,56532,"Aung Aung Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1364,56533,"Myint Zin Yu","Transport Driver",32,,1,NULL,2,NULL,NULL
+1348,56536,"Myat Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1330,56537,"Min Zaw Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1173,56539,"Khine Phyo Win","Transport Driver",32,,1,NULL,2,NULL,NULL
+1650,56543,"Thein Min Htwe","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1002,56545,"Aye Lwin","Delivery Driver",39,,1,NULL,2,NULL,NULL
+544,56548,"Thu Zar Oo","AR officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+545,56548,"Thu Zar Oo","AR officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1083,56550,"Hla Win","Transport Driver",32,,1,NULL,2,NULL,NULL
+1550,56554,"Soe Kyaw Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+894,56555,"Zaw Min","Transport Driver",34,"09 250 1414 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+895,56555,"Zaw Min","Transport Driver",34,"09 315 1637 3",T,"2004-03-17 00:00:00",2,NULL,NULL
+1009,56557,"Aye Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+1672,56558,"Thet Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1665,56563,"Thet Ko Ko Tun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1208,56564,"Kyaw Kyaw Win","Transport Driver",32,,1,NULL,2,NULL,NULL
+1738,56565,"Tun Wai","Transport Driver",32,,1,NULL,2,NULL,NULL
+1780,56566,"Win Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+1840,56567,"Yu Naing","Transport Driver",32,,1,NULL,2,NULL,NULL
+1257,56568,"Kyaw Zayar Myo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1858,56570,"Zaw Min Hlaing Htwe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1433,56571,"Nyan Myint","Transport Driver",32,,1,NULL,2,NULL,NULL
+1416,56602,"Nay Shan Tel","Lab Technician",24,,1,NULL,2,NULL,NULL
+1584,56603,"Su Su Hnin",Checker,30,,1,NULL,2,NULL,NULL
+1641,56606,"Thaung Min Htike",Security,28,,1,NULL,2,NULL,NULL
+1032,56607,"Chit Ko Ko Oo",Security,28,,1,NULL,2,NULL,NULL
+517,56608,"Thein Pe Myint","Territory Sales Manager",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+281,56616,"Min Min Oo","Sales Team Lead",3,"09 420 0266 31",T,"2004-03-17 00:00:00",2,NULL,NULL
+1276,56618,"Lin Kyaw Swar","Sales Representative",41,,1,NULL,2,NULL,NULL
+967,56621,"Aung Than Zaw","Sales Representative",41,,1,NULL,2,NULL,NULL
+439,56622,"Saw Jin Me Tun","Distributor Supervisor",28,"09 421 0185 75",T,"2004-03-17 00:00:00",2,NULL,NULL
+1713,56623,"Tin Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1743,56625,"Tun Zaw Hlaing",Security,28,,1,NULL,2,NULL,NULL
+1268,56639,"Kyi Khine","WWTP Technician",11,,1,NULL,2,NULL,NULL
+15,56640,"Aung Ko Oo","Distributor Supervisor",28,"09 254 0949 30",T,"2004-03-17 00:00:00",2,NULL,NULL
+16,56640,"Aung Ko Oo","Distributor Supervisor",26,"09 254 0949 30",T,"2004-03-17 00:00:00",2,NULL,NULL
+953,56641,"Aung Myo Thu","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1035,56642,"Chit Lin Ko","WWTP Helper",11,,1,NULL,2,NULL,NULL
+388,56643,"Phyo Thet Paing Oo","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+982,56644,"Aung Thura Soe","Sales Representative",3,,1,NULL,2,NULL,NULL
+436,56645,"Saung Thazin","Business Partner",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+353,56646,"Ni Mar Win","IT Service Engineer",14,,T,"2004-03-17 00:00:00",2,NULL,NULL
+474,56647,"Soe Thura Aung","Warehouse Manager",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+536,56649,"Thiha Soe","Warehouse Manager",34,"09 430 5133 9",T,"2004-03-17 00:00:00",2,NULL,NULL
+49,56651,"Aung Zayar Oo","Sales Team Lead",28,"09 969 9097 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+55,56654,"Aye Aye Thet","Recruitment Assistant",12,"09 253 5142 55",T,"2004-03-17 00:00:00",2,NULL,NULL
+1508,56657,"San Nyunt Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+290,56658,"Moe Win Thu","Sales Team Lead",28,"09 926 2671 570",T,"2004-03-17 00:00:00",2,NULL,NULL
+1429,56672,"Nwe Oo Khin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1265,56674,"Kyaw Zin Win","Sales Representative",3,,1,NULL,2,NULL,NULL
+1029,56675,"Chit Chit","Blow Operator",23,,1,NULL,2,NULL,NULL
+52,56676,"Aye Aye Kyway","Store Keeper",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+307,56681,"Myo Ko Ko Hlaing","Online Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+172,56682,"Khin Lay Myint","Sales Admin Clerk",28,"09 798 9236 87",T,"2004-03-17 00:00:00",2,NULL,NULL
+1370,56685,"Myo Min Htun","Filler Operator",23,,1,NULL,2,NULL,NULL
+1783,56686,"Win Thandar Oo","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+523,56687,"Thet Naing Soe","Taxation Manager",10,"09 505 0907",T,"2004-03-17 00:00:00",2,NULL,NULL
+590,56688,"Wai Lin Ko","Store Keeper (Spare Part)",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+901,56689,"Zayar Htun","Palletizer Operator",34,"09 788 6189 09",T,"2004-03-17 00:00:00",2,NULL,NULL
+1073,56690,"Hein Zaw Htet","Blow Operator",23,,1,NULL,2,NULL,NULL
+1811,56692,"Ye Linn Soe","Sales Helper",3,,1,NULL,2,NULL,NULL
+236,56696,"Lin Lin Htun","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+282,56717,"Min Naing Oo","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1084,56719,"Hlaing Myo Thu","Sales Representative",3,,1,NULL,2,NULL,NULL
+527,56722,"Thet Wai Phyo","Sales Representative",28,"09 4459 117 53",T,"2004-03-17 00:00:00",2,NULL,NULL
+988,56723,"Aung Win",Security,28,,1,NULL,2,NULL,NULL
+693,56724,"Zin Nwe Aye",Cashier,34,"09 797 1103 67,  09 402 5434 54",T,"2004-03-17 00:00:00",2,NULL,NULL
+1156,56725,"Khin Maung Lwin",Security,28,,1,NULL,2,NULL,NULL
+1824,56726,"Ye Nyi Nyi ","Sales Representative",3,,1,NULL,2,NULL,NULL
+687,56729,"Zin Bo Bo","HRIS Analyst",12,"09 425 0198 98,  09 973 4212 66",T,"2004-03-17 00:00:00",2,NULL,NULL
+26,56741,"Aung Myint Soe","Sales Team Lead",28,"09 9699 09 644",T,"2004-03-17 00:00:00",2,NULL,NULL
+696,56743,"Zin Zin Mon",Cashier,34,"09 254 0317 61",T,"2004-03-17 00:00:00",2,NULL,NULL
+1121,56744,"Htun Lin Soe","Sales Representative",3,,1,NULL,2,NULL,NULL
+1605,56745,"Than Htoo Aung","Blow Operator",23,,1,NULL,2,NULL,NULL
+1459,56746,"Phyo Hay Mahn Paing","Packer Operator",23,,1,NULL,2,NULL,NULL
+1853,56757,"Zaw Htwe Myint","Sales Representative",3,,1,NULL,2,NULL,NULL
+1273,56758,"Kyi Thar Soe","Sales Representative",41,,1,NULL,2,NULL,NULL
+955,56760,"Aung Naing Soe","Sales Representative",3,,1,NULL,2,NULL,NULL
+1507,56762,"San Min Aung","Sales Representative",41,,1,NULL,2,NULL,NULL
+516,56763,"Thein Myint Aung","Sales Team Lead",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1037,56781,"Chit Min Hlaing","Delivery Driver",39,,1,NULL,2,NULL,NULL
+56,56782,"Aye Min Aung","RTM Manager (Lower Myanmar)",28,"09 421 1053 22",T,"2004-03-17 00:00:00",2,NULL,NULL
+924,56785,"Aung Ko Htet","Sales Driver",3,,1,NULL,2,NULL,NULL
+1423,56793,"Nilar Aung","Key Account Developer",38,,1,NULL,2,NULL,NULL
+1191,56794,"Kyaw Bo Bo Oo","Key Account Developer",38,,1,NULL,2,NULL,NULL
+1537,56796,"Si Phyo Aung","Office driver",40,,1,NULL,2,NULL,NULL
+293,56797,"Mon Mon Naing","Warehouse Executive",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+596,56798,"War War Myint","Executive Assistant",12,"09 254 0729 66",T,"2004-03-17 00:00:00",2,NULL,NULL
+939,56800,"Aung Linn","Sales Representative",41,,1,NULL,2,NULL,NULL
+1754,56801,"Wai Min Htet","Sales Representative",41,,1,NULL,2,NULL,NULL
+629,56802,"Ye Khant","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1223,56804,"Kyaw Nyi Nyi Aung","Delivery Driver",39,,1,NULL,2,NULL,NULL
+335,56805,"Nan Aye Mya Sandar","Asst Manager, Category Management",4,"09 254 0690 55",T,"2004-03-17 00:00:00",2,NULL,NULL
+1098,56806,"Htein Lin","Filler Operator",23,,1,NULL,2,NULL,NULL
+1553,56807,"Soe Lwin",Security,28,,1,NULL,2,NULL,NULL
+962,56809,"Aung Pyae Zaw","Production Helper",23,,1,NULL,2,NULL,NULL
+1088,56810,"Hnin Nu Wai","Packer Operator",23,,1,NULL,2,NULL,NULL
+1087,56811,"Hnin Ei Khaing","Labeller Operator",23,,1,NULL,2,NULL,NULL
+497,56812,"Thae Mar Soe","Palletizer Operator",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+515,56814,"Thein Min Win","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1140,56815,"Khaing Min","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+566,56816,"Tin Naing Tun","WWTP Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1678,56818,"Thet Wai Soe","Sales Representative",41,,1,NULL,2,NULL,NULL
+1209,56829,"Kyaw Lin Tun","Production Helper",23,,1,NULL,2,NULL,NULL
+971,56832,"Aung Thet Khant","Filler Operator",23,,1,NULL,2,NULL,NULL
+1178,56834,"Khon Htun Khaing","Sales Representative",3,,1,NULL,2,NULL,NULL
+773,56835,"Khine Khine Oo","Palletizer Operator",34,"09 364 4282 5",T,"2004-03-17 00:00:00",2,NULL,NULL
+1118,56836,"Htin Kyaw","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+1822,56837,"Ye Myo Aung","Filler Operator",23,,1,NULL,2,NULL,NULL
+1244,56838,"Kyaw Thu","Electrical Technician",44,,1,NULL,2,NULL,NULL
+35,56839,"Aung Phyo Win","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1651,56847,"Thein Tan","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1343,56848,"Myat Hsu Wai","Maintenance Store Clerk",44,,1,NULL,2,NULL,NULL
+1588,56849,"Swe Thet Maung Maung","Production Supervisor",23,,1,NULL,2,NULL,NULL
+577,56854,"Tun Aye Kyaw","Sales Representative",28,"09 9699 10 663",T,"2004-03-17 00:00:00",2,NULL,NULL
+1544,56857,"Slai Zaw Myo Htat","Processing Supervisor",23,,1,NULL,2,NULL,NULL
+481,56862,"Su Darli Cho","AP Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+66,56863,"Aye Sandar","Store Clerk",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+277,56864,"Min Min",Security,16,"09 797 4553 77",T,"2004-03-17 00:00:00",2,NULL,NULL
+609,56870,"Win Pa Pa Kyaw","Recruitment Officer",34,"09 421 1251 50,  09 795 6967 95",T,"2004-03-17 00:00:00",2,NULL,NULL
+530,56871,"Thida Lwin","HR Executive - Supply Chain",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+691,56872,"Zin Min Thu","Key Account Supervisor",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+692,56872,"Zin Min Thu","Key Account Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1645,56874,"Thazin Phyu","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1867,56876,"Zaw Myo Myint","Blow Operator",23,,1,NULL,2,NULL,NULL
+946,56880,"Aung Myint Sein","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1896,56885,"Zay Yar Win","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+915,56887,"Aung Bo Bo","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1796,56888,"Yan Naing La Pyae","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+254,56890,"May Nyein Chan","Trade Marketing Lead",4,"09 264 7508 51",T,"2004-03-17 00:00:00",2,NULL,NULL
+1721,56891,"Tint Tint Htun","Route Settlement Officer",2,,1,NULL,2,NULL,NULL
+163,56893,"Khaing Khaing Oo",Cashier,28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1916,56895,"Zin Soe Mya",Cashier,2,,1,NULL,2,NULL,NULL
+639,56896,"Ye Nyi Nyi Paing","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+442,56922,"Saw Win Tun","Sales Representative",28,"09 9699 09 735",T,"2004-03-17 00:00:00",2,NULL,NULL
+84,56924,"Cherry Aung","Demand Planner",7,"09 450 0556 96",T,"2004-03-17 00:00:00",2,NULL,NULL
+101,56925,"Ei Ei Nyein Chan","Recruitment Administrator",12,"09 795 9586 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+1559,56931,"Soe Min Thu","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+503,56932,"Than Kyaw Hein","Distributor Supervisor",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1771,56933,"Win Htut Oo","Boiler Technician",23,,1,NULL,2,NULL,NULL
+1570,56935,"Soe Thet Naing",Security,28,,1,NULL,2,NULL,NULL
+1511,56936,"San Tun",Security,28,,1,NULL,2,NULL,NULL
+1565,56937,"Soe Naing",Security,28,,1,NULL,2,NULL,NULL
+1705,56938,"Tin Htoo Naing","Sales Helper",3,,1,NULL,2,NULL,NULL
+1059,56939,"Han Naing Tun","Sales Helper",3,,1,NULL,2,NULL,NULL
+649,56940,"Yin Nyein Hmwe","Store Clerk",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+230,56941,"Kyi Pyar Wint Htet","AP Officer",10,"09 422 5370 69",T,"2004-03-17 00:00:00",2,NULL,NULL
+994,56945,"Aung Zin Phyo","Sales Representative",3,,1,NULL,2,NULL,NULL
+1195,56946,"Kyaw Htet Khaung","Sales Representative",3,,1,NULL,2,NULL,NULL
+1258,56961,"Kyaw Zayar Soe","Sales Representative",3,,1,NULL,2,NULL,NULL
+557,56964,"Tin Aung Myint","General Sales Manager",28,"09 420 3296 91,  09 797 0052 62",T,"2004-03-17 00:00:00",2,NULL,NULL
+882,56965,"Win Htut","Office Driver",34,"09 301 5850 7",T,"2004-03-17 00:00:00",2,NULL,NULL
+904,56967,"Zwe Paing Oo","Office Driver",34,"09 455 2066 28",T,"2004-03-17 00:00:00",2,NULL,NULL
+905,56967,"Zwe Paing Oo","Office Driver",34,"09 455 2066 28",T,"2004-03-17 00:00:00",2,NULL,NULL
+171,56968,"Khin Kyawt Kyawt Hlaing","Sales Team Lead",26,"09 4311 4796",T,"2004-03-17 00:00:00",2,NULL,NULL
+138,56971,"Hnin Wai Wai Lwin","Production Clerk",32,"09 798 3937 29",T,"2004-03-17 00:00:00",2,NULL,NULL
+214,56975,"Kyaw Swar Aung","Facility Manager",23,"09 508 0164",T,"2004-03-17 00:00:00",2,NULL,NULL
+215,56975,"Kyaw Swar Aung","Facility Manager",9,"09 508 0164",T,"2004-03-17 00:00:00",2,NULL,NULL
+1116,56978,"Htet Wai Yan Aung","Store Helper",33,,1,NULL,2,NULL,NULL
+926,56980,"Aung Ko Linn","Store Helper",30,,1,NULL,2,NULL,NULL
+360,56983,"Nwe Ni Lwin","HR Officer",12,"09 791 9462 40,  09 9767 91 139",T,"2004-03-17 00:00:00",2,NULL,NULL
+361,56983,"Nwe Ni Lwin","HR Officer",22,"09 791 9462 40",T,"2004-03-17 00:00:00",2,NULL,NULL
+209,56986,"Kyaw Myo Hein","Sales Team Lead",28,"09 9699 106 44,  09 7733 998 66",T,"2004-03-17 00:00:00",2,NULL,NULL
+505,56987,"Than Naing Aung","Sales Representative",28,"09 9699 10 649",T,"2004-03-17 00:00:00",2,NULL,NULL
+405,56989,"Pyae Phyo Maung","Sales Representative",28,"09 9699 10 645",T,"2004-03-17 00:00:00",2,NULL,NULL
+564,56990,"Tin Maung Win","Sales Representative",28,"09 9699 10 648",T,"2004-03-17 00:00:00",2,NULL,NULL
+1868,56991,"Zaw Myo Naing","Online Technician",24,,1,NULL,2,NULL,NULL
+459,56996,"Si Thu Htay","National Market Execution Manager",4,"09 263 3388 89",T,"2004-03-17 00:00:00",2,NULL,NULL
+644,57009,"Yin Lei Win","Capital Investment & Audit Manager",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+976,57012,"Aung Thu Latt","Sales Representative",3,,1,NULL,2,NULL,NULL
+1086,57015,"Hnin Ei Ei Soe",Security,28,,1,NULL,2,NULL,NULL
+1036,57017,"Chit Lin Thu","Mechanic ",17,,1,NULL,2,NULL,NULL
+1043,57018,"Cho Zin Thu","Labeller Operator",23,,1,NULL,2,NULL,NULL
+1662,57019,"Thet Htar Kay Khaing","Packer Operator",23,,1,NULL,2,NULL,NULL
+321,57020,"Myo Thet Hlaing","Production Supervisor",23,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1877,57024,"Zaw Tun Aung","Mechanic Operator",44,,1,NULL,2,NULL,NULL
+460,57025,"Si Thu Lin","Sales Representative",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1603,57027,"Than Htike Soe","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+647,57028,"Yin Moe Thwe",Secretary,22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1438,57029,"Nyi Nyi Oo","Teen Recruitment Representative",42,,1,NULL,2,NULL,NULL
+1120,57037,"Htun Lin Htet","Sales Representative",3,,1,NULL,2,NULL,NULL
+471,57039,"Soe Moe Win","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+847,57040,"Saw Khi Lar","Office Driver",34,"09 794 2875 70",T,"2004-03-17 00:00:00",2,NULL,NULL
+570,57043,"Tin Zar Aung","Procurement Manager Analytics",22,"09 796 3532 45",T,"2004-03-17 00:00:00",2,NULL,NULL
+168,57044,"Khant Min Thaw","Community Officer",20,"09 260 0083 16",T,"2004-03-17 00:00:00",2,NULL,NULL
+1403,57071,"Narasimh Moorthy","National Cold Drink Equipment Manager",52,,1,NULL,2,NULL,NULL
+1899,57089,"Zayar Tun","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+675,57108,"Zaw Zaw Tun","Sales Representative",33,,T,"2004-03-17 00:00:00",2,NULL,NULL
+676,57108,"Zaw Zaw Tun","Sales Representative",28,9777232365,T,"2004-03-17 00:00:00",2,NULL,NULL
+677,57108,"Zaw Zaw Tun","Sales Representative",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1041,57110,"Cho Cho Zin","Lab Technician",24,,1,NULL,2,NULL,NULL
+498,57115,"Thae Su Aung","Inbound Logistics Manager",22,"09 430 2682 8",T,"2004-03-17 00:00:00",2,NULL,NULL
+1627,57116,"Thant Ko","Transport Clerk",32,,1,NULL,2,NULL,NULL
+1111,57127,"Htet Myat Oo","Sales Representative",41,,1,NULL,2,NULL,NULL
+1344,57128,"Myat Ko Khaing","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+1581,57130,"Su Mon Soe","Machine Operator",23,,1,NULL,2,NULL,NULL
+1749,57131,"Wai Lin Phyo","Production Supervisor",23,,1,NULL,2,NULL,NULL
+297,57132,"Myat Ko Ko","Machine Operator",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1407,57133,"Nay Lin Aung","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1027,57135,"Chaw Su Han","Machine Operator",23,,1,NULL,2,NULL,NULL
+483,57136,"Su Sandy Myo","Palletizer Operator",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+727,57137,"Cho Thae",Security,34,"09 971 8130 15",T,"2004-03-17 00:00:00",2,NULL,NULL
+1300,57139,"May Thandar Aung","Machine Operator",23,,1,NULL,2,NULL,NULL
+1493,57140,"Pyae Wai Aung","Machine Operator",23,,1,NULL,2,NULL,NULL
+1255,57142,"Kyaw Zay Ya","Machine Operator",23,,1,NULL,2,NULL,NULL
+1585,57144,"Su Thazin Win","Machine Operator",23,,1,NULL,2,NULL,NULL
+1764,57148,"Wai Yan Kyaw","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1802,57152,"Yar Zar Naing","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1064,57154,"Han Zaw Tun","Teen Recruitment Representative",42,,1,NULL,2,NULL,NULL
+543,57156,"Thiri Khaing","C&B Executive",12,"09 254 2768 96",T,"2004-03-17 00:00:00",2,NULL,NULL
+1404,57158,"Naw Say Ser Htoo",Security,28,,1,NULL,2,NULL,NULL
+1005,57163,"Aye Min Tun","Filler Operator",23,,1,NULL,2,NULL,NULL
+522,57168,"Thet Maung Naing","Processing Supervisor",32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+327,57172,"Naing Lin Htet","WWTP Supervisor",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+386,57175,"Phyo Mi Mi Lwin","WWTP Supervisor",8,,T,"2004-03-17 00:00:00",2,NULL,NULL
+668,57177,"Zaw Phyo Wai","Distributor Supervisor",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1908,57179,"Zin Mar Linn",Checker,30,,1,NULL,2,NULL,NULL
+1890,57180,"Zaw Ye Naing","Deplletizer Operator",23,,1,NULL,2,NULL,NULL
+1864,57182,"Zaw Min Oo","Teen Recruitment Representative",42,,1,NULL,2,NULL,NULL
+1190,57183,"Ko Ko Win","Teen Recruitment Representative",42,,1,NULL,2,NULL,NULL
+1135,57184,"Kay Khing Nyein","Lab Technician",24,,1,NULL,2,NULL,NULL
+329,57185,"Naing Myo Thu","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1460,57186,"Phyo Ko Ko Oo","Sales Representative",41,,1,NULL,2,NULL,NULL
+396,57192,"Poh Poh Myint","HRBP Manager - Sales & Commercial",4,"09 503 4131,  09 785 0341 31",T,"2004-03-17 00:00:00",2,NULL,NULL
+650,57200,"Yin Yin Htike","WWTP Supervisor",8,"09 978 8962 48",T,"2004-03-17 00:00:00",2,NULL,NULL
+1491,57201,"Pyae Sone Oo","WWTP Technician",11,,1,NULL,2,NULL,NULL
+646,57202,"Yin Min Han","Order Processing Officer",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+958,57203,"Aung Phyo Ko","Office Driver",40,,1,NULL,2,NULL,NULL
+838,57204,"Pyae Phyo Han","Office Driver",34,"09 779 0374 42",T,"2004-03-17 00:00:00",2,NULL,NULL
+819,57205,"Myo Myint Myat","Office Driver",34,"09 773 0907 93",T,"2004-03-17 00:00:00",2,NULL,NULL
+1689,57206,"Thin Zar Aye",Receptionist,5,,1,NULL,2,NULL,NULL
+1499,57207,"Sai Ko Ko","WT Helper",24,,1,NULL,2,NULL,NULL
+73,57208,"Bo Bo Aung","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+862,57209,"Thet Maung Maung","Office Driver",34,"09 257 9611 14",T,"2004-03-17 00:00:00",2,NULL,NULL
+1373,57210,"Myo Min Tun","Teen Recruitment Representative",42,,1,NULL,2,NULL,NULL
+1657,57222,"Thein Win Htay","Sales Helper",3,,1,NULL,2,NULL,NULL
+672,57225,"Zaw Zaw","Sales Representative",16,"09 264 6321 34",T,"2004-03-17 00:00:00",2,NULL,NULL
+1318,57226,"Min Thant","Sales Representative",3,,1,NULL,2,NULL,NULL
+707,57228,"Aung Ko Lin","Office Driver",34,"09 256 4819 54",T,"2004-03-17 00:00:00",2,NULL,NULL
+568,57230,"Tin Naung Latt","Key Account Supervisor",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+760,57231,"Htoo Myat Thu","Office Driver",34,"09 799 7931 08",T,"2004-03-17 00:00:00",2,NULL,NULL
+1384,57233,"Myo Win Kyaw","Mechanical Technician",44,,1,NULL,2,NULL,NULL
+1052,57234,"Ei Phyu Aung","Transport Clerk ",32,,1,NULL,2,NULL,NULL
+1866,57235,"Zaw Myint Htwe","Store Keeper ",30,,1,NULL,2,NULL,NULL
+1699,57236,"Thura Min Min Chit","Mechanical Technician",44,,1,NULL,2,NULL,NULL
+1457,57237,"Phyo Aung","Store Helper",30,,1,NULL,2,NULL,NULL
+427,57251,"Rose Enn Tin Sung",Secretary,32,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1281,57252,"Linn Thet Naing Oo","WWTP Technician",11,,1,NULL,2,NULL,NULL
+86,57253,"Chit Ko Ko","Sales Representative",32,"09 250 7411 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+87,57253,"Chit Ko Ko","Sales Representative",28,"09 250 7411 01",T,"2004-03-17 00:00:00",2,NULL,NULL
+1453,57256,"Phone Myint","Store Keeper",33,,1,NULL,2,NULL,NULL
+82,57258,"Chan Min Naing","Region Capability Lead ",4,"09 976 5999 58",T,"2004-03-17 00:00:00",2,NULL,NULL
+1690,57265,"Thingi Hnin Su","Market Surveyor",49,,1,NULL,2,NULL,NULL
+1166,57266,"Khin Thandar Phyu",Cleaner,37,,1,NULL,2,NULL,NULL
+1335,57267,"Moe Tint Lwin","Transport Driver",32,,1,NULL,2,NULL,NULL
+1857,57268,"Zaw Lwin","Transport Driver",32,,1,NULL,2,NULL,NULL
+1251,57269,"Kyaw Win Htwe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1202,57270,"Kyaw Kyaw Htun","Transport Driver",32,,1,NULL,2,NULL,NULL
+1707,57271,"Tin Maung Htwe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1715,57272,"Tin Thant Zaw","Transport Driver",32,,1,NULL,2,NULL,NULL
+338,57329,"Nan Saing Linn","AR Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+664,57333,"Zaw Myo Hlaing","Key Account Supervisor",4,"09 250 1576 12",T,"2004-03-17 00:00:00",2,NULL,NULL
+1574,57334,"Soe Thu Ya","Sales Representative",41,,1,NULL,2,NULL,NULL
+1549,57335,"Soe Ko Ko Win","Store Helper",30,,1,NULL,2,NULL,NULL
+499,57337,"Thaik Tun","Plant Manager",16,"09 421 0197 76",T,"2004-03-17 00:00:00",2,NULL,NULL
+1886,57338,"Zaw Win Thein","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+1769,57339,"Win Bo","Processing Helper",23,,1,NULL,2,NULL,NULL
+1820,57340,"Ye Myint Aung","Transport Driver",32,,1,NULL,2,NULL,NULL
+506,57342,"Than Naing Htun","RTM Executive",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+328,57343,"Naing Linn Oo","RTM Executive",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+286,57344,"Mo Mo Tin Maung Ohn","Internal Communication Executive",20,"09 449 0046 39",T,"2004-03-17 00:00:00",2,NULL,NULL
+1610,57345,"Than Min Htike","Sales Representative",3,,1,NULL,2,NULL,NULL
+83,57346,"Chan Nyein Thwin","Internal Auditor",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+922,57347,"Aung Khin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1014,57348,"Aye Thida Aung","Lab Technician",24,,1,NULL,2,NULL,NULL
+659,57359,"Zaw Linn Sheinn","Key Account Director",4,"09 430 4034 2",T,"2004-03-17 00:00:00",2,NULL,NULL
+844,57360,"San Aung Phyo","Office Driver",34,"09 250 3149 16",T,"2004-03-17 00:00:00",2,NULL,NULL
+960,57362,"Aung Pyae Soe","Office Driver",40,,1,NULL,2,NULL,NULL
+1161,57363,"Khin Mie Kyaw","Internal Auditor",50,,1,NULL,2,NULL,NULL
+1021,57364,"Chan Myae Thu","Market Surveyor",49,,1,NULL,2,NULL,NULL
+1904,57365,"Zin Ko Ko Thein","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1136,57366,"Kay Thi Myint Aung","Key Account Developer",38,,1,NULL,2,NULL,NULL
+27,57367,"Aung Myint Zaw","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1573,57371,"Soe Thu Kyaw",Mechanic,17,,1,NULL,2,NULL,NULL
+1624,57372,"Than Zaw Moe","Transport Driver",32,,1,NULL,2,NULL,NULL
+1356,57374,"Myint Naing Oo","Store Helper",30,,1,NULL,2,NULL,NULL
+1814,57375,"Ye Min Tun","Admin Helper",37,,1,NULL,2,NULL,NULL
+1660,57376,"Thet Aung","Admin Helper",37,,1,NULL,2,NULL,NULL
+1488,57377,"Pyae Soe Oo","Store Helper",30,,1,NULL,2,NULL,NULL
+284,57398,"Min Thu","Sales Representative",34,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1487,57405,"Pyae Phyo Wai","Store Keeper",30,,1,NULL,2,NULL,NULL
+188,57406,"Khin Yadanar Aung","Internal Auditor",2,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1562,57407,"Soe Myat Lynn","Sales Representative",3,,1,NULL,2,NULL,NULL
+1076,57410,"Hla Min Htet","Production Helper",23,,1,NULL,2,NULL,NULL
+704,57414,"Soe Pyae Thu","Sales Representative",28,"09 9699 09 652",T,"2004-03-17 00:00:00",2,NULL,NULL
+213,57427,"Kyaw San Win","Sales Team Lead",28,"09 969 9097 45",T,"2004-03-17 00:00:00",2,NULL,NULL
+1751,57429,"Wai Linn Aung","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+594,57431,"Wai Nwe Tun","Legal Counsel",6,"09 794 3107 90",T,"2004-03-17 00:00:00",2,NULL,NULL
+1235,57434,"Kyaw Soe Thu","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1898,57435,"Zayar Aung","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1694,57437,"Thu Shein Linn","WWTP Technician",11,,1,NULL,2,NULL,NULL
+197,57442,"Kyaw Htay","Sales Representative",28,"09 791 833 23",T,"2004-03-17 00:00:00",2,NULL,NULL
+1523,57445,"Saw Sai Nan Wai","Store Keeper",30,,1,NULL,2,NULL,NULL
+1558,57446,"Soe Min Naing","Sales Team Lead",41,,1,NULL,2,NULL,NULL
+1888,57447,"Zaw Win Tun",Security,28,,1,NULL,2,NULL,NULL
+1183,57448,"Ko Ko Aye",Security,28,,1,NULL,2,NULL,NULL
+1907,57449,"Zin Mar Kyu","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1426,57450,"Nway Hnin Hlaing","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1776,57451,"Win Mar Thin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1165,57459,"Khin Swe Lin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1284,57463,"Mahura Soe Paing","Sales Representative",3,,1,NULL,2,NULL,NULL
+1495,57466,"Pyi Sone Kyi","Sales Representative",3,,1,NULL,2,NULL,NULL
+1889,57467,"Zaw Win Tun",Security,28,,1,NULL,2,NULL,NULL
+1206,57468,"Kyaw Kyaw Thet",Security,28,,1,NULL,2,NULL,NULL
+1333,57470,"Moe Kyaw Aung","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1376,57471,"Myo Thant Oo",Security,28,,1,NULL,2,NULL,NULL
+1386,57472,"Naing Ko",Security,28,,1,NULL,2,NULL,NULL
+1566,57473,"Soe Naing",Security,28,,1,NULL,2,NULL,NULL
+1153,57474,"Khin Maung Cho",Security,28,,1,NULL,2,NULL,NULL
+1117,57475,"Htin Aung",Security,28,,1,NULL,2,NULL,NULL
+1557,57476,"Soe Min Aung","WWTP Helper",11,,1,NULL,2,NULL,NULL
+295,57477,"Mya Thazin Htet","AR Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1883,57478,"Zaw Win Maung","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1024,57479,"Chan Thar","Forklift Driver",30,,1,NULL,2,NULL,NULL
+1600,57480,"Than Htike Aung","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1878,57481,"Zaw Win Hlaing","Store Keeper",33,,1,NULL,2,NULL,NULL
+1675,57482,"Thet Swe Win","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1596,57483,"Thae Su Lwin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1473,57484,"Phyo Wai Oo","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1466,57485,"Phyo Thu Aung","Generator Technician",44,,1,NULL,2,NULL,NULL
+1162,57486,"Khin Mon Oo","Labeller Operator",23,,1,NULL,2,NULL,NULL
+1019,57487,"Chan Myae Aung","Utility Technician",23,,1,NULL,2,NULL,NULL
+1832,57490,"Ye Zar Ni Htwe",Security,28,,1,NULL,2,NULL,NULL
+1334,57495,"Moe Thura Shein","Sales Representative",3,,1,NULL,2,NULL,NULL
+1534,57537,"Shoon Thet Mhuu","Sales Representative",3,,1,NULL,2,NULL,NULL
+320,57538,"Myo Pa Pa Tun","IT Service Engineer",14,"09 975 2151 57",T,"2004-03-17 00:00:00",2,NULL,NULL
+144,57541,"Htet Aung Hlaing","Order Processing Officer",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1285,57543,"Mai Chit Hsu Yee","Sales Representative",3,,1,NULL,2,NULL,NULL
+752,57544,"Hein Thu Aung","Sales Representative",34,"09 961 5930 58",T,"2004-03-17 00:00:00",2,NULL,NULL
+184,57545,"Khin Su Wai","Banking Clerk",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1325,57546,"Min Ye Htut","Office Driver",40,,1,NULL,2,NULL,NULL
+48,57547,"Aung Zayar Myint","General Sales Manager",28,"09 256 5299 79",T,"2004-03-17 00:00:00",2,NULL,NULL
+1905,57548,"Zin Lin Htet ","Forklift Driver",30,,1,NULL,2,NULL,NULL
+633,57555,"Ye Min Soe","Safety Marshal",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+634,57555,"Ye Min Soe","Safety Marshal",13,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1410,57556,"Nay Lin Oo","Store Helper",30,,1,NULL,2,NULL,NULL
+63,57558,"Aye Nan Thu Zar","Route Settlement Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+127,57560,"Hla Myo Aung","Transport Manager",33,"09 963 4376 00",T,"2004-03-17 00:00:00",2,NULL,NULL
+1746,57561,"Wai Ko Ko Oo","WWTP Technician",11,,1,NULL,2,NULL,NULL
+350,57562,"Nay Thura","Key Account Supervisor",4,,T,"2004-03-17 00:00:00",2,NULL,NULL
+941,57563,"Aung Moe Hein",Security,28,,1,NULL,2,NULL,NULL
+161,57564,"Kaung Sint Aung","System & Execution Executive",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1110,57569,"Htet Lwin Naing","Store Keeper",30,,1,NULL,2,NULL,NULL
+1189,57570,"Ko Ko Naing","WWTP Helper",11,,1,NULL,2,NULL,NULL
+936,57572,"Aung Kyaw Thu","Sales Representative",3,,1,NULL,2,NULL,NULL
+1267,57575,"Kyawt Kay Khaing","Sales Representative",3,,1,NULL,2,NULL,NULL
+1668,57578,"Thet Naing Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+680,57580,"Zayar Lin Htin","General Sales Manager",28,"09 550 5463",T,"2004-03-17 00:00:00",2,NULL,NULL
+12,57581,"Aung Ko Ko","Distributor Supervisor",26,,T,"2004-03-17 00:00:00",2,NULL,NULL
+13,57581,"Aung Ko Ko","Distributor Supervisor",16,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1099,57582,"Htein Lin Aung","Sales Team Lead",3,,1,NULL,2,NULL,NULL
+14,57583,"Aung Ko Myint","Distributor Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1761,57584,"Wai Yan","Sales Representative",3,,1,NULL,2,NULL,NULL
+1693,57589,"Thu Htet Aung",Security,28,,1,NULL,2,NULL,NULL
+1521,57590,"Saw Mu Doe","Office Driver",40,,1,NULL,2,NULL,NULL
+1425,57592,"Nilar Win",Security,28,,1,NULL,2,NULL,NULL
+635,57594,"Ye Min Thu Toe","Occupational Nurse",13,,T,"2004-03-17 00:00:00",2,NULL,NULL
+504,57595,"Than Naing","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1321,57603,"Min Thu Naing","Sales Representative",41,,1,NULL,2,NULL,NULL
+25,57604,"Aung Myat Thu","Key Account Manager",4,"09 420 2870 88",T,"2004-03-17 00:00:00",2,NULL,NULL
+1685,57605,"Thiha Tun","Sales Representative",3,,1,NULL,2,NULL,NULL
+1602,57606,"Than Htike Lin",Security,28,,1,NULL,2,NULL,NULL
+227,57608,"Kyaw Zin Htike","Sales Representative",28,"09 7748 66867",T,"2004-03-17 00:00:00",2,NULL,NULL
+1354,57609,"Myint Naing",Security,28,,1,NULL,2,NULL,NULL
+1586,57610,Swe,Cleaner,37,,1,NULL,2,NULL,NULL
+1604,57611,"Than Htike Thu","Boiler Technician",23,,1,NULL,2,NULL,NULL
+1078,57613,"Hla Min Tun","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1023,57614,"Chan Nyein Aung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1092,57615,"Hnin Wathan Thin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1113,57616,"Htet Naing Win","Sales Representative",3,,1,NULL,2,NULL,NULL
+921,57617,"Aung Khant Zin","Sales Representative",41,,1,NULL,2,NULL,NULL
+1119,57618,"Htin Kyaw Lin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1697,57619,"Thu Ya Zaw","Sales Representative",3,,1,NULL,2,NULL,NULL
+1108,57624,"Htet Khaing","Sales Helper",3,,1,NULL,2,NULL,NULL
+1440,57625,"Nyo Min","Sales Helper",3,,1,NULL,2,NULL,NULL
+1456,57626,"Phue Thet Khaing","Fleet Maintenance Clerk",17,,1,NULL,2,NULL,NULL
+1782,57627,"Win Thandar Hlaing","Lab Technician",24,,1,NULL,2,NULL,NULL
+1217,57634,"Kyaw Min Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+1034,57635,"Chit Ko Oo","Transport Driver",32,,1,NULL,2,NULL,NULL
+985,57636,"Aung Thuzar Aye","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1385,57638,"Myo Zaw Aung","WT Technician",24,,1,NULL,2,NULL,NULL
+1414,57639,"Nay Myo Hlaing","WWTP Technician",11,,1,NULL,2,NULL,NULL
+74,57640,"Bo Bo Mya","RTM Manager (Upper Myanmar)",34,"09 797 2761 51",T,"2004-03-17 00:00:00",2,NULL,NULL
+1141,57641,"Khaing Min Oo","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+700,57643,"Sai Myo Han","Sales Representative",28,"09 793 8506 85",T,"2004-03-17 00:00:00",2,NULL,NULL
+626,57644,"Ye Htut","Sales Team Lead",28,"09 963 8518 57",T,"2004-03-17 00:00:00",2,NULL,NULL
+1489,57645,"Pyae Sone Aung","Admin Helper",37,,1,NULL,2,NULL,NULL
+1470,57646,"Phyo Wai Lwin","Office Driver",40,,1,NULL,2,NULL,NULL
+151,57647,"Htun Htet Aung","IT Infrastructure Manager",14,"09 797 4058 49,  09 254 2252 37",T,"2004-03-17 00:00:00",2,NULL,NULL
+457,57648,"Si Si Kyu","Order Processing Officer",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1485,57649,"Pyae Phyo Paing","Filler Operator",23,,1,NULL,2,NULL,NULL
+1046,57650,"Eaint Nandar Aung","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1172,57651,"Khine Nyein Aye","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1758,57652,"Wai Thu Lwin","Lab Technician",24,,1,NULL,2,NULL,NULL
+179,57653,"Khin Myat Thiri","Business Analyst",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1180,57654,"Khun Kyaw Kyaw","Sales Representative",3,,1,NULL,2,NULL,NULL
+1428,57657,"Nway Nway Linn","Transport Clerk",32,,1,NULL,2,NULL,NULL
+653,57658,"Yuya Zaw","Channel Manager",4,"09 731 3453 9",T,"2004-03-17 00:00:00",2,NULL,NULL
+1795,57664,"Yan Myo Aung","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+1171,57665,"Khine Myint Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+1126,57666,"Kaung Htet Win","Sales Helper",3,,1,NULL,2,NULL,NULL
+1379,57667,"Myo Thu Lwin","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1787,57668,"Win Zaw Oo","Delivery Driver",39,,1,NULL,2,NULL,NULL
+989,57670,"Aung Yarzar Kyaw","Online Technician",24,,1,NULL,2,NULL,NULL
+383,57671,"Phone Myint Han","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1277,57674,"Lin Lin Htike","Sales Representative",41,,1,NULL,2,NULL,NULL
+68,57675,"Aye Thandar Htwe","Key Account Supervisor",4,"09 518 1879",T,"2004-03-17 00:00:00",2,NULL,NULL
+1903,57676,"Zin Ko Ko Lwin","Sales Representative",3,,1,NULL,2,NULL,NULL
+64,57678,"Aye Nyein Tun","Housekeeping Supervisor",1,"09 430 879 75",T,"2004-03-17 00:00:00",2,NULL,NULL
+1701,57679,"Thurain Tun","Sales Representative",3,,1,NULL,2,NULL,NULL
+1101,57680,"Htet Arkar Kyaw","Sales Representative",41,,1,NULL,2,NULL,NULL
+196,57681,"Kyaw Hein Soe","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1395,57682,"Naing Ye Aung","Processing Helper",23,,1,NULL,2,NULL,NULL
+1458,57684,"Phyo Aung Zan","Office Driver",40,,1,NULL,2,NULL,NULL
+1127,57685,"Kaung Htut","Storekeeper (Spare Part)",44,,1,NULL,2,NULL,NULL
+1914,57686,"Zin Myat Htway","WWTP Helper",11,,1,NULL,2,NULL,NULL
+1745,57687,"Vamsi Mohan","Regional General Manager",61,,1,NULL,2,NULL,NULL
+88,57688,"Chit Zar Lin","Sales Representative",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+699,57689,"Win Ko Ko Lwin","Sales Representative",28,"09 773 1866 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1752,57690,"Wai Lu Kyaw","Trade Marketing Representative",42,,1,NULL,2,NULL,NULL
+278,57692,"Min Min Han","Maintenance Manager",16,"09 997 6933 324,  09 421 0589 84",T,"2004-03-17 00:00:00",2,NULL,NULL
+455,57694,"Shwe Zin Myint","Master Data Officer",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1454,57695,"Phone Myint Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+928,57697,"Aung Ko Min","WWTP Helper",11,,1,NULL,2,NULL,NULL
+1133,57700,"Kay Khaing Oo","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1525,57702,"Saw Thuya Maung","General Sales Manager",41,,1,NULL,2,NULL,NULL
+275,57706,"Min Karet Mon","Occupational Nurse",12,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1286,57707,"Man Zar Aung","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+1439,57708,"Nyi Nyi Zin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1050,57709,"Ei Khaing Zin","Sales Representative",41,,1,NULL,2,NULL,NULL
+1532,57710,"Shine Htet Lin","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+1418,57711,"Nay Zaw","Sales Representative",41,,1,NULL,2,NULL,NULL
+1831,57712,"Ye Yint Tun","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+983,57713,"Aung Thurain Tun","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+298,57714,"Myat Su Aung","Internal Auditor",10,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1151,57715,"Khin La Pyea Kyaw Thu","Labeller Operator",23,,1,NULL,2,NULL,NULL
+1551,57716,"Soe Lin Htet","Blow Operator",23,,1,NULL,2,NULL,NULL
+1240,57717,"Kyaw Thet Khine","Sales Representative",3,,1,NULL,2,NULL,NULL
+1621,57718,"Than Zaw Htay","WWTP Helper",11,,1,NULL,2,NULL,NULL
+1097,57719,"Htay Min Htwe","Filler Operator",23,,1,NULL,2,NULL,NULL
+1302,57720,"May Thu Zin","Labellar Operator",23,,1,NULL,2,NULL,NULL
+1847,57721,"Zar Ni Win","Packer Operator",23,,1,NULL,2,NULL,NULL
+965,57722,"Aung Sithu","Sales Driver",3,,1,NULL,2,NULL,NULL
+1447,57723,Okkar,"Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1606,57730,"Than Htut Kyaw","Processing Technician",23,,1,NULL,2,NULL,NULL
+1007,57731,"Aye Minn Moe","Filler Operator",23,,1,NULL,2,NULL,NULL
+972,57732,"Aung Thet Oo","Blow Operator",23,,1,NULL,2,NULL,NULL
+1445,57733,"Oakkar Myo","Store Helper",30,,1,NULL,2,NULL,NULL
+1211,57734,"Kyaw Lwin Htwe","Outlet Expansion Representative",3,,1,NULL,2,NULL,NULL
+751,57736,"Han Tin Soe","Facility Technician",34,"09 262 1268 78",T,"2004-03-17 00:00:00",2,NULL,NULL
+1671,57737,"Thet Ngon Sint","Labeller Operator",23,,1,NULL,2,NULL,NULL
+440,57738,"Saw Naing Win","Key Account Supervisor",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1634,57739,"Thant Zin Phyo","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1835,57740,"Yin May Win","Packer Operator",23,,1,NULL,2,NULL,NULL
+959,57741,"Aung Phyo Kyaw","Blow Operator",23,,1,NULL,2,NULL,NULL
+1090,57742,"Hnin Thet Wai Oo","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1482,57745,"Pyae Phyo Khaing","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1803,57746,"Ye Htet Htut Khaung ","Machine Operator",23,,1,NULL,2,NULL,NULL
+1174,57747,"Khine Raza Htoo","WWTP Technician",11,,1,NULL,2,NULL,NULL
+1129,57748,"Kaung Myat Mon","Filler Operator",23,,1,NULL,2,NULL,NULL
+1377,57751,"Myo Thu","Blow Operator",23,,1,NULL,2,NULL,NULL
+219,57753,"Kyaw Thu Myo Oo","Sales Team Lead",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1402,57754,"Nant Chit Chit Zaw","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+686,57755,"Zeyar Chit","Government & Community Relations Managers",20,"09 979 2764 92",T,"2004-03-17 00:00:00",2,NULL,NULL
+1784,57764,"Win Thint Aung","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+34,57766,"Aung Phyo Myint","WWTP Supervisor",8,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1760,57767,"Wai Yan","Production Helper",23,,1,NULL,2,NULL,NULL
+1536,57768,"Shwe Zin Aye","Sales Representative",3,,1,NULL,2,NULL,NULL
+31,57769,"Aung Myo Oo","GSM Driver",28,"09 420 0522 63",T,"2004-03-17 00:00:00",2,NULL,NULL
+1054,57770,"Gaday Sithu","Sales Representative",3,,1,NULL,2,NULL,NULL
+1755,57771,"Wai Naing Htun","Generator Technician",44,,1,NULL,2,NULL,NULL
+942,57772,"Aung Moe Kyaw","Production Helper",23,,1,NULL,2,NULL,NULL
+1072,57773,"Hein Min Htet","Processing Helper",23,,1,NULL,2,NULL,NULL
+1089,57774,"Hnin Shwe Zin","Sales Representative",3,,1,NULL,2,NULL,NULL
+1724,57775,"Toe Toe Khaing","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+1368,57776,"Myo Min Htein","Electrical Technician",23,,1,NULL,2,NULL,NULL
+935,57778,"Aung Kyaw Thu","Production Helper",23,,1,NULL,2,NULL,NULL
+1042,57779,"Cho Thandar Naing",Cleaner,37,,1,NULL,2,NULL,NULL
+1298,57780,"May Myat Noe Aung","Online Technician",24,,1,NULL,2,NULL,NULL
+1593,57781,"Thae Maung Maung","Store Keeper",30,,1,NULL,2,NULL,NULL
+776,57783,"Kyaw Htay Aung","Production Manager",34,"09 420 0832 19",T,"2004-03-17 00:00:00",2,NULL,NULL
+65,57784,"Aye Nyi Maung Maung","Procurement Executive",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+262,57785,"Me Me Chit Hlaing","Procurement Executive",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+263,57785,"Me Me Chit Hlaing","Procurement Executive",22,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1405,57788,"Nay Htet Win","Admin Helper",37,,1,NULL,2,NULL,NULL
+1895,57790,"Zay Yar Phyo","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1514,57791,"Saw Aung Htake","Delivery Driver",33,,1,NULL,2,NULL,NULL
+552,57792,"Thurein Htun","Store Helper",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1698,57795,Thura,"Store Helper",30,,1,NULL,2,NULL,NULL
+1448,57796,"Okkar Min Lwin","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1033,57797,"Chit Ko Oo","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1147,57798,"Khin July Maung","Lab Technician",24,,1,NULL,2,NULL,NULL
+1134,57799,"Kay Khine Oo","Occupational Nurse",45,,1,NULL,2,NULL,NULL
+1114,57800,"Htet Thiri Win","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+793,57801,"Lwin Thawdar Oo",Recruiter,34,"09 428 0351 89",T,"2004-03-17 00:00:00",2,NULL,NULL
+1138,57802,"Khaing Khin Ei","Business Partner",51,,1,NULL,2,NULL,NULL
+1462,57803,"Phyo Min Htun","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1467,57805,"Phyo Thura Kyaw ","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+919,57807,"Aung Khaing Soe","Delivery Driver",39,,1,NULL,2,NULL,NULL
+1821,57808,"Ye Myint Myat Aung ","Electrical Technician",23,,1,NULL,2,NULL,NULL
+1038,57809,"Chit Min Oo","Delivery Helper",39,,1,NULL,2,NULL,NULL
+861,57810,"Thein Soe","Delivery Driver",34,"09 788 1568 46",T,"2004-03-17 00:00:00",2,NULL,NULL
+1155,57812,"Khin Maung Lwin","Mechanical Technician",44,,1,NULL,2,NULL,NULL
+1193,57813,"Kyaw Hlaing Oo","Online Supervisor",24,,1,NULL,2,NULL,NULL
+1040,57814,"Chit Wine","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1130,57815,"Kaung Myat Win","Processing Technician",23,,1,NULL,2,NULL,NULL
+1128,57816,"Kaung Myat Htet","WT Technician",24,,1,NULL,2,NULL,NULL
+1260,57817,"Kyaw Zin Htwe","Online Technician",24,,1,NULL,2,NULL,NULL
+1486,57818,"Pyae Phyo Wai","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+37,57820,"Aung Pyae Phyo","Mechanical Technician",28,,T,"2004-03-17 00:00:00",2,NULL,NULL
+1104,57821,"Htet Hlaing Win","Filler Operator",23,,1,NULL,2,NULL,NULL
+824,57822,"Nay Myo Htun","National Marketing Operations Manager",34,"09 798 8881 38",T,"2004-03-17 00:00:00",2,NULL,NULL
+1123,57823,"Ike Hang Yu","Supply Chain Director",31,,1,NULL,2,NULL,NULL
+1527,57826,"Saw Wai Phyo","Electrical Technician",44,,1,NULL,2,NULL,NULL
+1880,57827,"Zaw Win Htut","Electrical Technician",44,,1,NULL,2,NULL,NULL
+1175,57828,"Khine Shwe Zin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1008,57829,"Aye Myat Mon","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1213,57830,"Kyaw Min Lwin","Store Keeper",30,,1,NULL,2,NULL,NULL
+1630,57831,"Thant Zin","Online Technician",24,,1,NULL,2,NULL,NULL
+1241,57832,"Kyaw Thet Mg","Key Account Sales Representative",38,,1,NULL,2,NULL,NULL
+1182,57835,"Ko Ko","Sales Representative",41,,1,NULL,2,NULL,NULL
+1145,57836,"Khant Paing","Sales Representative",41,,1,NULL,2,NULL,NULL
+1762,57837,"Wai Yan Hein","Sales Representative",41,,1,NULL,2,NULL,NULL
+1753,57839,"Wai Min Aung","Sales Representative",41,,1,NULL,2,NULL,NULL
+1709,57842,"Tin Moe Aye","Sales Representative",41,,1,NULL,2,NULL,NULL
+1829,57843,"Ye Yint Ko","Sales Representative",41,,1,NULL,2,NULL,NULL
+1476,57844,"Poe Ei Lwin","Sales Representative",41,,1,NULL,2,NULL,NULL
+1595,57845,"Thae Su Htwe","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1187,57846,"Ko Ko Lin","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1225,57848,"Kyaw Pyae Sone","Processing Helper",23,,1,NULL,2,NULL,NULL
+1310,57849,"Min Khant Kyaw","Processing Helper",23,,1,NULL,2,NULL,NULL
+1398,57850,"Nan May Thu Lwin","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1901,57851,"Zin Ko Aung","Filler Operator",23,,1,NULL,2,NULL,NULL
+1317,57852,"Min Phone Myint Lwin","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1061,57858,"Han Thein Htay",Checker,30,,1,NULL,2,NULL,NULL
+1628,57859,"Thant Zaw Htet","Sales Representative",41,,1,NULL,2,NULL,NULL
+1468,57860,"Phyo Wai","Sales Representative",3,,1,NULL,2,NULL,NULL
+1443,57861,"Nyunt Win","Sales Representative",41,,1,NULL,2,NULL,NULL
+927,57862,"Aung Ko Min","Sales Representative",41,,1,NULL,2,NULL,NULL
+1633,57863,"Thant Zin Oo","Sales Representative",41,,1,NULL,2,NULL,NULL
+1626,57864,"Thandar Myint","Sales Representative",41,,1,NULL,2,NULL,NULL
+1075,57865,"Hla Kyaw","Sales Representative",41,,1,NULL,2,NULL,NULL
+1526,57867,"Saw Tun Kyaw Lue","Sales Representative",41,,1,NULL,2,NULL,NULL
+1028,57868,"Chaw Su Hlaing","Legal Officer",15,,1,NULL,2,NULL,NULL
+1747,57870,"Wai Lin","Production Supervisor",23,,1,NULL,2,NULL,NULL
+1679,57877,"Thida Aung","Head Of Stills",41,,1,NULL,2,NULL,NULL
+1399,57878,"Nan Win","Safety Marshal",45,,1,NULL,2,NULL,NULL
+1844,57879,"Zar Chi Tun","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1269,57880,"Kyi Pyar Soe","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1836,57881,"Yin Moe Thu","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1068,57883,"Hay Man Oo","Lab Technician",24,,1,NULL,2,NULL,NULL
+1726,57886,"Tun Kyi","Packer Operator",23,,1,NULL,2,NULL,NULL
+1253,57887,"Kyaw Ye Lin","Sales Representative",41,,1,NULL,2,NULL,NULL
+1744,57888,"Tun Zaw Naing","Delivery Helper",39,,1,NULL,2,NULL,NULL
+1371,57889,"Myo Min Naung","Delivery Helper",39,,1,NULL,2,NULL,NULL
+929,57891,"Aung Kyaw Moe","National Logistics Manager",43,,1,NULL,2,NULL,NULL
+1920,57892,"Zun Pann Phway","Supply Planner",10,,1,NULL,2,NULL,NULL
+1278,57893,"Lin Lin Zaw","Sales Representative",3,,1,NULL,2,NULL,NULL
+934,57894,"Aung Kyaw Thu","Distributor Supervisor",3,,1,NULL,2,NULL,NULL
+1315,57895,"Min Min Soe","Sales Driver",3,,1,NULL,2,NULL,NULL
+1013,57896,"Aye Sandar Kyaw",Cleaner,37,,1,NULL,2,NULL,NULL
+1112,57897,"Htet Naing Kyaw","Processing Technician",23,,1,NULL,2,NULL,NULL
+1259,57900,"Kyaw Zin Htet","Processing Technician",23,,1,NULL,2,NULL,NULL
+1427,57901,"Nway Nandar Seint","Safety Executive ",27,,1,NULL,2,NULL,NULL
+1436,57902,"Nyi Nyi","WT Technician",24,,1,NULL,2,NULL,NULL
+1176,57903,"Khine Thu Thu Zin","Online Technician",24,,1,NULL,2,NULL,NULL
+1676,57904,"Thet Thet Aung",Security,28,,1,NULL,2,NULL,NULL
+1331,57906,"Min Zayar","Sales Representative",3,,1,NULL,2,NULL,NULL
+1346,57908,"Myat Soe Paing","Admin Helper",37,,1,NULL,2,NULL,NULL
+1150,57910,"Khin Khin Tra Zaw","National Analytics Manager",2,,1,NULL,2,NULL,NULL
+1723,57911,"Toe Ko Ko","Sales Representative",3,,1,NULL,2,NULL,NULL
+1554,57912,"Soe Lwin Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+1303,57913,"May Yi Oo",Cashier,2,,1,NULL,2,NULL,NULL
+1874,57914,"Zaw Paing Oo","Sales Representative",3,,1,NULL,2,NULL,NULL
+1560,57915,"Soe Min Thu","Office Driver",40,,1,NULL,2,NULL,NULL
+1578,57916,"Soe Win Thu","Office Driver",40,,1,NULL,2,NULL,NULL
+1222,57917,"Kyaw Myo Htike","Sales Representative",3,,1,NULL,2,NULL,NULL
+1167,57922,"Khin Thu Zar Hein","Packer Operator",23,,1,NULL,2,NULL,NULL
+1152,57923,"Khin Mar Win","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1047,57924,"Ei Ei Mon","Bottle Inspector",23,,1,NULL,2,NULL,NULL
+1163,57925,"Khin Myint Myint Aye","Labeller Operator",23,,1,NULL,2,NULL,NULL
+1625,57926,"Thandar Moe","Palletizer Operator",23,,1,NULL,2,NULL,NULL
+1055,57928,"Gaurav Chaturvedi","Chief Executive Officer",61,,1,NULL,2,NULL,NULL
+1287,57929,"Mar Mar Zin","Depalletizer Operator",23,,1,NULL,2,NULL,NULL
+1520,57930,"Saw Kyaw Khant Lin","Mechanical Technician",23,,1,NULL,2,NULL,NULL
+1808,57931,"Ye Kyaw Kyaw","Sales Representative",3,,1,NULL,2,NULL,NULL
+1833,57933,"Yee Mon Kyaw","Organization Development & Learning Manager",46,,1,NULL,2,NULL,NULL
+1478,57938,"Poe Ou","Online Technician",24,,1,NULL,2,NULL,NULL
+1708,57939,"Tin Mg Mg Aye ","Online Technician",24,,1,NULL,2,NULL,NULL
+907,57940,"April Moh Moh","Online Technician",24,,1,NULL,2,NULL,NULL
+1105,57941,"Htet Hnin Wai Wai","AP Officer",2,,1,NULL,2,NULL,NULL
